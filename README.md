@@ -2,23 +2,6 @@
 
 <a id="readme-top"></a>
 
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -26,172 +9,80 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Trane20121/oDataV4">
-    <img src="https://avatars.githubusercontent.com/u/115975065?v=4" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Trane20121/Achievements_PC">
+    <img src="https://avatars.githubusercontent.com/u/115975065?v=4" alt="Logo" width="80" height="80" />
   </a>
 
-<h3 align="center">SAPUI5 oData2</h3>
+  <h3 align="center">Achievements_PC - Steam Achievement Tracker</h3>
 
   <p align="center">
-    APP oData2 SAPUI5
+    Un'applicazione web locale per tracciare i tuoi obiettivi Steam, visualizzare i progressi, i DLC e i dettagli degli achievement.
     <br />
-    <a href="https://github.com/Trane20121/oDataV4"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Trane20121/Achievements_PC"><strong>Esplora la documentazione »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Trane20121/oDataV4">View Demo</a>
+    <a href="https://github.com/Trane20121/Achievements_PC">Visualizza Demo</a>
     ·
-    <a href="https://github.com/Trane20121/oDataV4/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/Trane20121/Achievements_PC/issues/new?labels=bug&template=bug-report---.md">Segnala un Bug</a>
     ·
-    <a href="https://github.com/Trane20121/oDataV4/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/Trane20121/Achievements_PC/issues/new?labels=enhancement&template=feature-request---.md">Richiedi una Funzionalità</a>
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Indice</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">Informazioni sul Progetto</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Tecnologie Utilizzate</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Come Iniziare</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#prerequisites">Prerequisiti</a></li>
+        <li><a href="#installation">Installazione</a></li>
       </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contributing">Contribuire</a></li>
+    <li><a href="#license">Licenza</a></li>
+    <li><a href="#contact">Contatti</a></li>
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
+## Informazioni sul Progetto
 
-## About The Project
+![Screenshot](images/screenshot.png)
 
-<img src="https://github.com/user-attachments/assets/0c464533-f069-453d-885e-4a407ffe955a" width="100" height="100">
-<img src="https://github.com/user-attachments/assets/9a20c4f8-49e5-4980-b22f-741d0aec269e" width="100" height="100">
-<img src="https://github.com/user-attachments/assets/e899990c-390c-498c-8221-8b9b9546464f" width="100" height="100">
+Questa applicazione web locale ti permette di monitorare i tuoi giochi Steam, visualizzare gli achievement sbloccati, i DLC posseduti e i dettagli degli obiettivi. Supporta login tramite Steam OpenID o inserimento manuale dello SteamID64. L'interfaccia è semplice, veloce e aggiornata in tempo reale tramite chiamate API al server Python locale.
 
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
+<p align="right">(<a href="#readme-top">Torna su</a>)</p>
 
-### Built With
+### Tecnologie Utilizzate
 
-- [![Node][Node-shield]][Node-url]
-- [![Html][Html-shield]][Html-url]
-- [![Css][Css-shield]][Css-url]
-- [![JS][JS-shield]][JS-url]
+- [![Python][Python-shield]][Python-url]
+- [![Flask][Flask-shield]][Flask-url]
+- [![HTML5][Html-shield]][Html-url]
+- [![CSS3][Css-shield]][Css-url]
+- [![JavaScript][JS-shield]][JS-url]
 
+<p align="right">(<a href="#readme-top">Torna su</a>)</p>
 
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
+## Come Iniziare
 
-<!-- GETTING STARTED -->
+Scarica il progetto e segui i passaggi per avviare il server locale e utilizzare l'applicazione.
 
-## Getting Started
+### Prerequisiti
 
-Just Download the package [Download](url)
+- Python 3.8 o superiore
+- pip (gestore pacchetti Python)
 
-### Prerequisites
+### Installazione
 
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install --global @ui5/cli
-  ```
-
-### Installation
-
-1. Extract files in the corrispondend Workspace folder of Visual Studio Code
-2. Open a terminal and write:
+1. Clona o scarica il repository:
    ```sh
-    npm i -D @ui5/cli
-    ```
-3. After that write: 
-   ```sh
-    cd .\webapp\
-    ```
-4. Last step is write: 
-   ```sh
-    npm start
-    ```
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-See the [open issues](https://github.com/Trane20121/oDataV4/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-### Top contributors:
-
-<a href="https://github.com/Trane20121/oDataV4/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Trane20121/oDataV4" alt="contrib.rocks image" />
-</a>
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-<!-- CONTACT -->
-
-## Contact
-
-Trane20121 - [@X](https://x.com/Trane20121) - bounty_95@hotmail.it
-
-Project Link: [https://github.com/Trane20121/oDataV4](https://github.com/Trane20121/oDataV4)
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/Trane20121/oDataV4.svg?style=for-the-badge
-[contributors-url]: https://github.com/Trane20121/oDataV4/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Trane20121/oDataV4.svg?style=for-the-badge
-[forks-url]: https://github.com/Trane20121/oDataV4/network/members
-[stars-shield]: https://img.shields.io/github/stars/Trane20121/oDataV4.svg?style=for-the-badge
-[stars-url]: https://github.com/Trane20121/oDataV4/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Trane20121/oDataV4.svg?style=for-the-badge
-[issues-url]: https://github.com/Trane20121/oDataV4/issues
-[license-shield]: https://img.shields.io/github/license/Trane20121/oDataV4.svg?style=for-the-badge
-[license-url]: https://github.com/Trane20121/oDataV4/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/hermes-de-micheli-b7029b21b/
-[product-screenshot]: images/screenshot.png
-[Node-shield]: https://img.shields.io/badge/node.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Download]: https://github.com/Trane20121/oDataV4/archive/refs/heads/main.zip
-[Node-url]: https://nodejs.org/en
-[Html-shield]: https://img.shields.io/badge/html-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Html-url]: https://html.spec.whatwg.org/multipage/
-[Css-shield]: https://img.shields.io/badge/css-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Css-url]: https://www.w3.org/TR/css-2023/
-[JS-shield]: https://img.shields.io/badge/javascript-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[JS-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+   git clone https://github.com/Trane20121/Achievements_PC.git
+   cd Achievements_PC
