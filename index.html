@@ -2,7 +2,7 @@
 <html lang="it">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Steam Achievement Tracker Pro</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -34,33 +34,12 @@
         }
 
         input,
-        select,
         button {
             background: #101822;
             border: 1px solid #333;
             color: white;
             padding: 8px 12px;
             border-radius: 6px;
-        }
-
-        .stats-header {
-            margin-left: auto;
-            font-size: 0.9em;
-            color: var(--muted);
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-
-        .agg-stats {
-            margin-bottom: 20px;
-            display: flex;
-            gap: 30px;
-            font-size: 0.9em;
-            background: rgba(102, 192, 244, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid var(--blue);
         }
 
         .grid {
@@ -72,101 +51,63 @@
         .card {
             background: var(--card);
             border-radius: 10px;
-            overflow: visible;
+            overflow: hidden;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.03);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 240px;
         }
 
         .card:hover {
             border-color: var(--blue);
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            z-index: 10;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
 
         .img-container {
             width: 100%;
             height: 110px;
-            background: linear-gradient(45deg, #0b1114, #1b2838);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
         .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
 
         .card-info {
             padding: 12px;
-        }
-
-        .title-row {
+            flex-grow: 1;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: flex-start;
-            gap: 5px;
-            margin-bottom: 8px;
-            height: 2.4em;
-            position: relative;
         }
 
         .title {
             font-weight: bold;
             font-size: 0.95em;
             color: white;
+            margin-bottom: 10px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            line-height: 1.2em;
-            flex: 1;
-            position: relative;
+            line-height: 1.3;
+            height: 2.6em;
         }
 
-        .title:hover::after,
-        .dlc-badge:hover::after,
-        .trophy:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            background: #171a21;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            border: 1px solid var(--blue);
-            top: 100%;
-            left: 0;
-            width: max-content;
-            max-width: 250px;
-            z-index: 100;
-            font-size: 0.85em;
-            white-space: normal;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .meta-row {
+        .meta {
             display: flex;
             justify-content: space-between;
             font-size: 0.85em;
             color: var(--muted);
             align-items: center;
-            gap: 8px;
-        }
-
-        .dlc-badge,
-        .trophy {
-            position: relative;
-            cursor: help;
-            white-space: nowrap;
+            margin-top: auto;
         }
 
         .prog-bg {
@@ -179,32 +120,37 @@
 
         .prog-fill {
             height: 100%;
-            background: linear-gradient(90deg, #2a475e, var(--blue));
+            background: var(--blue);
             width: 0%;
-            transition: width .8s ease;
+            transition: width 0.8s;
         }
 
-        .card.completed .prog-fill {
-            background: linear-gradient(90deg, #b8860b, var(--gold));
+        .completed .prog-fill {
+            background: var(--gold);
         }
 
         .sp {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            width: 12px;
+            height: 12px;
+            border: 2px solid #333;
             border-top-color: var(--blue);
+            border-radius: 50%;
             animation: spin .8s linear infinite;
         }
 
         @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
+            to {
                 transform: rotate(360deg);
             }
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            backdrop-filter: blur(3px);
         }
 
         #popup {
@@ -214,316 +160,236 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: #171d25;
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             border: 1px solid var(--blue);
             z-index: 1000;
             width: 360px;
-            box-shadow: 0 0 100px #000;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
-        .overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 999;
-            backdrop-filter: blur(4px);
-        }
-
-        .pager {
+        /* Achievements list */
+        .ach-item {
             display: flex;
-            gap: 8px;
-            align-items: center;
-            margin-left: 6px;
+            gap: 10px;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 8px;
+            border-radius: 8px;
         }
 
-        .small {
-            padding: 6px 12px;
-            font-size: 0.9em;
-            cursor: pointer;
+        .ach-item img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .ach-text {
+            flex: 1;
+        }
+
+        .ach-name {
+            font-weight: 600;
+            color: white;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ach-desc {
+            color: var(--muted);
+            font-size: 0.85em;
+            margin-top: 4px;
+        }
+
+        .ach-badge {
+            font-size: 0.95em;
+            color: var(--gold);
+            margin-left: 6px;
         }
     </style>
 </head>
 
 <body>
+
     <div class="nav">
-        <input id="key" type="password" placeholder="Steam API Key" style="width:140px">
-        <input id="sid" type="text" placeholder="SteamID64" style="width:140px">
-
-        <span style="font-size:0.85em; color:var(--muted); margin-left:10px;">Carica primi:</span>
-        <input id="maxGames" type="number" value="20" min="0" style="width:80px; padding:6px;"
-            title="0 = tutti i giochi">
-
-        <button id="loadBtn" onclick="onLoadClick()"
-            style="background:var(--blue); border:none; cursor:pointer; font-weight:bold; color:#000; margin-left:10px;">Aggiorna
-            Libreria</button>
-
-        <div style="width:1px; height:30px; background:#333; margin:0 10px;"></div>
-
-        <div class="pager">
-            <button class="small" onclick="prevPage()">◀ Indietro</button>
-            <span id="pageInfo" style="font-size:0.85em; color:var(--muted); min-width:140px; text-align:center;">Pagina
-                1 / 1</span>
-            <button class="small" onclick="nextPage()">Avanti ▶</button>
-        </div>
-
-        <div style="width:1px; height:30px; background:#333; margin:0 10px;"></div>
-
-        <input id="search" type="text" placeholder="Cerca gioco..." oninput="onSearchChange()" style="flex:1">
-        <select id="sort" onchange="onSearchChange()">
-            <option value="playtime">Più giocati</option>
-            <option value="name">Nome A-Z</option>
-            <option value="completion">Completamento %</option>
-        </select>
-
-        <div class="stats-header" id="totalStats">Ore totali: <b>0h</b></div>
-    </div>
-
-    <div class="agg-stats">
-        <div>Percentuale media completamento: <b id="avgCompletion" style="color:white">0%</b></div>
-        <div style="width:1px; background:#333; height:15px; align-self:center"></div>
-        <div>DLC totali posseduti: <b id="totalDLC" style="color:white">0</b></div>
+        <input id="key" type="password" placeholder="API Key" style="width: 100px">
+        <input id="sid" type="text" placeholder="SteamID64" style="width: 140px">
+        <span>Per pagina:</span>
+        <input id="maxGames" type="number" value="40" style="width: 50px">
+        <button onclick="onLoadClick()"
+            style="background: var(--blue); color: black; font-weight: bold">Aggiorna</button>
+        <button onclick="prevPage()">◀</button>
+        <span id="pageInfo">Pagina 1 / 1</span>
+        <button onclick="nextPage()">▶</button>
+        <input id="search" type="text" placeholder="Cerca..." oninput="currentPage=0;render()" style="flex: 1">
+        <div id="totalStats">0h</div>
     </div>
 
     <div id="list" class="grid"></div>
 
-    <div id="overlay" class="overlay" onclick="closePop()"></div>
+    <div id="overlay" onclick="closePop()"></div>
     <div id="popup">
-        <h3 id="p-title" style="margin:0 0 20px 0; color:var(--blue); text-align:center; font-size:1.4em;"></h3>
-        <div style="height:160px; margin-bottom:25px;"><canvas id="p-chart"></canvas></div>
-        <div id="p-details" style="font-size:1em; line-height:1.8;"></div>
+        <h3 id="p-title" style="margin:0 0 10px 0; color: var(--blue)"></h3>
+        <div style="display:flex; gap:12px; margin-bottom:10px; align-items:center;">
+            <div
+                style="width:80px; height:80px; background:#0b0f12; border-radius:8px; display:flex; align-items:center; justify-content:center;">
+                <img id="p-img" src="" alt="" style="max-width:78px; max-height:78px; border-radius:6px;">
+            </div>
+            <div>
+                <div id="p-sub" style="color:var(--muted); font-size:0.9em"></div>
+                <div id="p-stats" style="margin-top:6px; font-weight:bold"></div>
+            </div>
+        </div>
+
+        <div style="height:260px; overflow:auto; padding-right:6px;" id="ach-list-container">
+            <div id="ach-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+        </div>
+
         <button onclick="closePop()"
-            style="width:100%; margin-top:25px; background:#2a3f5a; border:none; cursor:pointer; color:white; padding:12px; border-radius:8px; font-weight:bold;">Chiudi</button>
+            style="width:100%; margin-top:12px; background:#333; color:white; padding:8px; border-radius:6px; border:none; cursor:pointer;">Chiudi</button>
     </div>
 
     <script>
         const API = "http://localhost:5000/api";
-        let allSummary = [];      // minimal info for all games (from /games_summary)
-        let pageGames = [];       // detailed games for current page (from /games_with_achievements)
+        let allGames = [];
         let currentPage = 0;
-        const pageSize = 20;
-        let totalCount = 0;
         let chart = null;
 
-        function escapeHtml(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
-
-        async function save() {
+        async function onLoadClick() {
             const body = { steam_key: document.getElementById('key').value, steam_id: document.getElementById('sid').value };
             await fetch(`${API}/config`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-        }
-
-        function setLoadText(t) { document.getElementById('loadBtn').innerText = t; }
-
-        async function onLoadClick() {
-            setLoadText("Caricamento...");
-            await save();
+            const res = await fetch(`${API}/steam/games_summary`);
+            const data = await res.json();
+            allGames = data.games;
+            document.getElementById('totalStats').innerText = Math.round(allGames.reduce((acc, g) => acc + g.playtime, 0) / 60) + "h";
             currentPage = 0;
-            try {
-                const sres = await fetch(`${API}/steam/games_summary`);
-                const sjson = await sres.json();
-                if (sjson.error) { alert("Errore: " + sjson.error); setLoadText("Aggiorna Libreria"); return; }
-                allSummary = sjson.games || [];
-                totalCount = sjson.total_count || allSummary.length || 0;
-                const totalMinutes = allSummary.reduce((acc, g) => acc + (g.playtime || 0), 0);
-                document.getElementById('totalStats').innerHTML = `Ore totali: <b>${Math.round(totalMinutes / 60)}h</b>`;
-            } catch (e) { console.error('summary err', e); allSummary = []; totalCount = 0; }
-
-            await loadPage(currentPage);
-            setLoadText("Aggiorna Libreria");
-        }
-
-        async function loadPage(page) {
-            const maxInput = parseInt(document.getElementById('maxGames').value) || 0;
-            const offset = page * pageSize;
-            let limit = pageSize;
-            if (page === 0 && maxInput > 0) {
-                limit = Math.min(maxInput, pageSize);
-            }
-            try {
-                const q = new URL(`${API}/steam/games_with_achievements`);
-                q.searchParams.append('offset', offset);
-                q.searchParams.append('limit', limit);
-                const r = await fetch(q.toString());
-                const j = await r.json();
-                if (j.error) { alert("Errore: " + j.error); return; }
-                totalCount = j.total_count || totalCount || 0;
-                pageGames = j.games || [];
-                render();
-                await fetchVisibleData(pageGames);
-            } catch (e) { console.error('loadPage err', e); }
-        }
-
-        function getFilteredIndices() {
-            const term = document.getElementById('search').value.toLowerCase();
-            const filtered = allSummary.filter(g => g.name.toLowerCase().includes(term));
-            const sort = document.getElementById('sort').value;
-            filtered.sort((a, b) => {
-                if (sort === 'name') return a.name.localeCompare(b.name);
-                if (sort === 'completion') return 0;
-                return (b.playtime || 0) - (a.playtime || 0);
-            });
-            return filtered.map(g => g.appid);
+            render();
         }
 
         function render() {
-            const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
+            const pageSize = parseInt(document.getElementById('maxGames').value) || 20;
+            const term = document.getElementById('search').value.toLowerCase();
+            const filtered = allGames.filter(g => g.name.toLowerCase().includes(term));
+            const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
             document.getElementById('pageInfo').innerText = `Pagina ${currentPage + 1} / ${totalPages}`;
-            document.getElementById('list').innerHTML = pageGames.map(g => {
-                const isComp = g.t > 0 && g.u === g.t;
-                const dlc_total = g.dlc_total || 0;
-                const dlc_owned = g.dlc_owned || 0;
-                return `
-          <div class="card ${isComp ? 'completed' : ''}" id="card-${g.appid}" onclick="openPop('${g.appid}')">
-            <div class="img-container"><img src="${g.img}" onerror="this.style.display='none'"></div>
-            <div class="card-info">
-              <div class="title-row">
-                <span class="title" data-tooltip="${escapeHtml(g.name)}">${escapeHtml(g.name)}</span>
-                <span id="trophy-${g.appid}" class="trophy" data-tooltip="Completato al 100%" style="color: var(--gold); font-size:1.2em;">${isComp ? '🏆' : ''}</span>
-              </div>
-              <div class="meta-row">
-                <span style="font-size:0.8em;">ID: ${g.appid} | ${Math.round((g.playtime || 0) / 60)}h</span>
-                <span id="ach-${g.appid}">${g.u !== undefined ? `<b>${g.u}</b>/${g.t}` : '<div class="sp"></div>'}</span>
-                <span id="dlc-${g.appid}" class="dlc-badge" data-tooltip="Posseduti: ${dlc_owned} / Totali: ${dlc_total}">📦 ${dlc_owned}/${dlc_total}</span>
-              </div>
-              <div class="prog-bg"><div id="bar-${g.appid}" class="prog-fill" style="width:${g.t ? (g.u / g.t * 100) : 0}%"></div></div>
+
+            const slice = filtered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
+
+            document.getElementById('list').innerHTML = slice.map(g => `
+        <div class="card" id="card-${g.appid}" onclick="openPop('${g.appid}')">
+          <div class="img-container"><img src="${g.img}"></div>
+          <div class="card-info">
+            <div class="title">${g.name}</div>
+            <div class="meta">
+              <span>${Math.round(g.playtime / 60)}h</span>
+              <span id="ach-${g.appid}"><div class="sp"></div></span>
+              <span id="dlc-${g.appid}">📦 ?/?</span>
             </div>
-          </div>`;
-            }).join('');
-            updateGlobalStats();
+            <div class="prog-bg"><div id="bar-${g.appid}" class="prog-fill"></div></div>
+          </div>
+        </div>
+      `).join('');
+            fetchDetails(slice);
         }
 
-        function onSearchChange() {
-            currentPage = 0;
-            render();
-            loadPage(currentPage);
-        }
+        async function fetchDetails(games) {
+            const appids = games.map(g => g.appid);
+            const aRes = await fetch(`${API}/steam/achievements_bulk`, {
+                method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ appids })
+            });
+            const achs = await aRes.json();
 
-        async function fetchVisibleData(visibleGames) {
-            const appids = visibleGames.map(g => g.appid);
-            if (appids.length === 0) return;
-            try {
-                const r = await fetch(`${API}/steam/achievements_bulk`, {
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ appids })
-                });
-                const j = await r.json();
-                appids.forEach(aid => {
-                    const g = pageGames.find(x => x.appid === aid);
-                    if (g && j[aid]) {
-                        g.u = j[aid].u; g.t = j[aid].t;
-                        updateCardUI(aid, g.u, g.t, g.dlc_total, g.dlc_owned);
-                    }
-                });
-            } catch (e) { console.error('ach bulk err', e); }
-
-            await Promise.all(appids.map(async (aid) => {
-                try {
-                    const r = await fetch(`${API}/steam/game_details/${aid}`);
-                    const d = await r.json();
-                    const g = pageGames.find(x => x.appid === aid);
-                    if (g) {
-                        g.dlc_total = d.total_dlc || 0;
-                        g.dlc_owned = d.owned_dlc || 0;
-                        g.dlc_list = d.dlc_list || [];
-                        updateCardUI(aid, g.u, g.t, g.dlc_total, g.dlc_owned);
-
-                        if (g.dlc_total > 0 && g.dlc_owned === 0) {
-                            try {
-                                const cfg = await (await fetch(`${API}/data`)).json();
-                                const tsa_profile = cfg.tsa_profile_url || cfg.tsa_profile || '';
-                                if (tsa_profile) {
-                                    const q = new URL(`${API}/steam/tsa_owned`);
-                                    q.searchParams.append('profile_url', tsa_profile);
-                                    q.searchParams.append('appid', aid);
-                                    const rt = await fetch(q.toString());
-                                    const jt = await rt.json();
-                                    if (jt && jt.found) {
-                                        g.dlc_owned = jt.owned_dlc || g.dlc_owned;
-                                        g.dlc_total = jt.total_dlc || g.dlc_total;
-                                        updateCardUI(aid, g.u, g.t, g.dlc_total, g.dlc_owned);
-                                    }
-                                }
-                            } catch (err) { console.error('tsa fallback err', err); }
-                        }
-                    }
-                } catch (e) { console.error('game_details err', e); }
-            }));
-        }
-
-        function updateCardUI(id, u, t, dlc_total, dlc_owned) {
-            const achEl = document.getElementById(`ach-${id}`);
-            const dlcEl = document.getElementById(`dlc-${id}`);
-            const bar = document.getElementById(`bar-${id}`);
-            const trophy = document.getElementById(`trophy-${id}`);
-            const card = document.getElementById(`card-${id}`);
-
-            if (achEl) achEl.innerHTML = `<b>${u || 0}</b>/${t || 0}`;
-            if (dlcEl) {
-                dlcEl.innerText = `📦 ${dlc_owned || 0}/${dlc_total || 0}`;
-                dlcEl.setAttribute('data-tooltip', `Posseduti: ${dlc_owned || 0} / Totali: ${dlc_total || 0}`);
-            }
-            if (bar) bar.style.width = `${t > 0 ? (u / t * 100) : 0}%`;
-            if (t > 0 && u === t) {
-                if (trophy) { trophy.innerText = '🏆'; trophy.setAttribute('data-tooltip', 'Completato al 100%'); }
-                if (card) card.classList.add('completed');
-            }
-            updateGlobalStats();
-        }
-
-        function prevPage() {
-            if (currentPage > 0) {
-                currentPage--;
-                loadPage(currentPage);
-                window.scrollTo(0, 0);
-            }
-        }
-        function nextPage() {
-            const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
-            if (currentPage + 1 < totalPages) {
-                currentPage++;
-                loadPage(currentPage);
-                window.scrollTo(0, 0);
-            }
-        }
-
-        function updateGlobalStats() {
-            const totalDLCOwned = (pageGames.concat([])).reduce((acc, g) => acc + (g.dlc_owned || 0), 0);
-            const comps = pageGames.filter(g => g.t > 0).map(g => (g.u || 0) / g.t);
-            const avg = comps.length ? Math.round((comps.reduce((a, b) => a + b, 0) / comps.length) * 100) : 0;
-            document.getElementById('totalDLC').innerText = totalDLCOwned;
-            document.getElementById('avgCompletion').innerText = avg + "%";
-        }
-
-        function openPop(appid) {
-            const g = pageGames.find(x => x.appid === appid);
-            if (!g) return;
-            document.getElementById('p-title').innerText = g.name;
-            const u = g.u || 0, t = g.t || 0;
-            document.getElementById('p-details').innerHTML = `
-        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #253239; padding:8px 0;"><span>ID Gioco:</span> <b>${g.appid}</b></div>
-        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #253239; padding:8px 0;"><span>Tempo:</span> <b>${Math.round((g.playtime || 0) / 60)}h</b></div>
-        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #253239; padding:8px 0;"><span>Trofei:</span> <b>${u}/${t}</b></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0;"><span>DLC:</span> <b>${g.dlc_owned || 0}/${g.dlc_total || 0}</b></div>`;
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('popup').style.display = 'block';
-            const ctx = document.getElementById('p-chart').getContext('2d');
-            if (chart) chart.destroy();
-            chart = new Chart(ctx, {
-                type: 'doughnut',
-                data: { labels: ['Sbloccati', 'Mancanti'], datasets: [{ data: [u, t > 0 ? t - u : 1], backgroundColor: [u === t ? '#ffd700' : '#66c0f4', '#0b1111'], borderWidth: 0 }] },
-                options: { cutout: '80%', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            appids.forEach(async id => {
+                const a = achs[id];
+                const g = allGames.find(x => x.appid === id);
+                if (a) {
+                    g.u = a.u; g.t = a.t;
+                    document.getElementById(`ach-${id}`).innerHTML = `<b>${a.u}</b>/${a.t}`;
+                    document.getElementById(`bar-${id}`).style.width = (a.t > 0 ? (a.u / a.t * 100) : 0) + "%";
+                    if (a.t > 0 && a.u === a.t) document.getElementById(`card-${id}`).classList.add('completed');
+                }
+                const dRes = await fetch(`${API}/steam/game_details/${id}`);
+                const d = await dRes.json();
+                g.dlc_owned = d.owned_dlc; g.dlc_total = d.total_dlc;
+                document.getElementById(`dlc-${id}`).innerText = `📦 ${d.owned_dlc}/${d.total_dlc}`;
             });
         }
 
-        function closePop() { document.getElementById('overlay').style.display = 'none'; document.getElementById('popup').style.display = 'none'; }
+        async function openPop(appid) {
+            const g = allGames.find(x => x.appid === appid);
+            if (!g) return;
+            document.getElementById('p-title').innerText = g.name;
+            document.getElementById('p-img').src = g.img;
+            document.getElementById('p-sub').innerText = `${Math.round(g.playtime / 60)}h di gioco`;
+            document.getElementById('p-stats').innerText = `Obiettivi: ${g.u || 0}/${g.t || 0} • DLC: ${g.dlc_owned || 0}/${g.dlc_total || 0}`;
+
+            document.getElementById('ach-list').innerHTML = '<div style="color:var(--muted);padding:10px">Caricamento trofei…</div>';
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+
+            try {
+                const [schemaRes, playerRes] = await Promise.all([
+                    fetch(`${API}/steam/schema/${appid}`),
+                    fetch(`${API}/steam/player_achievements/${appid}`)
+                ]);
+                const schemaJson = await schemaRes.json();
+                const playerJson = await playerRes.json();
+
+                const schema = schemaJson.achievements || [];
+                const playerMap = playerJson.achievements || {};
+
+                if (!schema.length) {
+                    document.getElementById('ach-list').innerHTML = '<div style="color:var(--muted);padding:10px">Nessun schema trofei disponibile per questo gioco.</div>';
+                    return;
+                }
+
+                const listEl = document.getElementById('ach-list');
+                listEl.innerHTML = '';
+                schema.forEach(a => {
+                    const key = a.name || a.displayName;
+                    const player = playerMap[key] || playerMap[a.displayName] || playerMap[a.name] || { achieved: 0 };
+                    const unlocked = player.achieved && parseInt(player.achieved) === 1;
+                    const icon = unlocked ? (a.icon || a.icongray) : (a.icongray || a.icon || '');
+                    const unlocktime = player.unlocktime ? new Date(player.unlocktime * 1000).toLocaleString() : '';
+
+                    const item = document.createElement('div');
+                    item.className = 'ach-item';
+                    item.innerHTML = `
+            <img src="${icon}" onerror="this.style.opacity=0.6; this.src='${a.icongray || ''}';">
+            <div class="ach-text">
+              <div class="ach-name">${escapeHtml(a.displayName || a.name || '')} ${unlocked ? '<span class="ach-badge">✅</span>' : ''}</div>
+              <div class="ach-desc">${escapeHtml(a.description || '')}${unlocked && unlocktime ? ' — <span style="color:var(--muted);font-size:0.8em">sbloccato: ' + unlocktime + '</span>' : ''}</div>
+            </div>
+          `;
+                    listEl.appendChild(item);
+                });
+
+            } catch (e) {
+                document.getElementById('ach-list').innerHTML = '<div style="color:salmon;padding:10px">Errore nel caricamento dei trofei.</div>';
+            }
+        }
+
+        function closePop() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+        function prevPage() { if (currentPage > 0) { currentPage--; render(); window.scrollTo(0, 0); } }
+        function nextPage() { if ((currentPage + 1) * parseInt(document.getElementById('maxGames').value) < allGames.length) { currentPage++; render(); window.scrollTo(0, 0); } }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
 
         window.onload = async () => {
-            try {
-                const res = await fetch(`${API}/data`);
-                const d = await res.json();
-                document.getElementById('key').value = d.steam_key || "";
-                document.getElementById('sid').value = d.steam_id || "";
-            } catch (e) { console.error(e); }
+            const res = await fetch(`${API}/data`);
+            const d = await res.json();
+            document.getElementById('key').value = d.steam_key || "";
+            document.getElementById('sid').value = d.steam_id || "";
         };
     </script>
 </body>

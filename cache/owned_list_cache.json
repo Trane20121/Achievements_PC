@@ -1,6 +1,6 @@
 {
   "76561198031559221": {
-    "ts": 1771334908,
+    "ts": 1771338561,
     "games": [
       {
         "appid": 359550,
@@ -1518,7 +1518,7 @@
       {
         "appid": 2428980,
         "name": "Bye Sweet Carole",
-        "playtime_2weeks": 259,
+        "playtime_2weeks": 168,
         "playtime_forever": 893,
         "img_icon_url": "f006645bbe777575c74e8a087bed78412ac46e8f",
         "has_community_visible_stats": true,
