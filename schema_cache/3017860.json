@@ -1,0 +1,248 @@
+{
+  "game": {
+    "gameName": "DOOM: The Dark Ages",
+    "gameVersion": "2",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "NEW_ACHIEVEMENT_1_0",
+          "defaultvalue": 0,
+          "displayName": "A Dark Beginning",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/9d3c9dede6c965503871536ab0de801621a72dc7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/901003c28cccbe1ac5e2fae88babe77b849e5bc9.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_1",
+          "defaultvalue": 0,
+          "displayName": "Supersized Brawl",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/a87d0cd1af1662d8d85856e287bc8c09358291ad.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/d773638250d8135f2d340934c92029f6a45233d4.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_2",
+          "defaultvalue": 0,
+          "displayName": "Bringing the House Down",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/b087b2815853790004e155b552afc79b46e17f26.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/707615db4a82f62bb26fa28e7b51ac0838ddccf6.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_3",
+          "defaultvalue": 0,
+          "displayName": "Jailbreak",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/05b05c47b77c08c45c29cecba5deef61169d2571.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/e305a9093a289216a717a23cb5af85c5bed27258.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_4",
+          "defaultvalue": 0,
+          "displayName": "Too Angry to Die",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/9bd2c4e47673a869effd356d8ccb62b8cfac7106.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/15a7e00cfe09b4380e2159e681904edee3037147.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_5",
+          "defaultvalue": 0,
+          "displayName": "Argent Return",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/77647563e1e7664f12e6a7d0c4a3ef3983026b37.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/6a77464656466ff555173089fd66582bf8318b50.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_6",
+          "defaultvalue": 0,
+          "displayName": "The Only Thing They Fear",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/86ea1deded8c449b74216c8f98cf2806c27d67bb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/5544a70c047d91d31ec26b4de14ae7c5ae0bcdf1.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_7",
+          "defaultvalue": 0,
+          "displayName": "Game Complete",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/d560a35c46f0d341ce8ffdcdf652843a09daac04.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/26c50c592969367144f6636c3adcfec0bd56e56f.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_8",
+          "defaultvalue": 0,
+          "displayName": "Vagary Down!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/d21e7c54c5361e8f79d2e17fff9540ddb1931b73.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/bbefc992d9be25a8197021792949709efe569d50.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_9",
+          "defaultvalue": 0,
+          "displayName": "Agaddon Champion Down!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/cdc88b64061d44c45ca2f41a26e21d8996635897.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/617712627f370f392c9a9b4bae31d0f0ba50bffd.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_10",
+          "defaultvalue": 0,
+          "displayName": "Komodo Champion Down!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/61b80d7d4db6197ce07bc99ca10f65ae1b50feed.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/4800e29ff172172b771040830c87ade8636117a3.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_11",
+          "defaultvalue": 0,
+          "displayName": "Upgraded",
+          "hidden": 0,
+          "description": "Acquire your first weapon upgrade.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/5164fa4ade9b37cd34404844568535c03a68cf42.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/fe967c3bbc152adeccd6cf1829979043f0b46d79.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_12",
+          "defaultvalue": 0,
+          "displayName": "Fully Loaded",
+          "hidden": 0,
+          "description": "Complete the Mastery Challenge for a single weapon.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/6652f5675b10c61169a49c83ab5b127ce134ef4b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/eb97fb2971e75e2579207aee03cd7967ea119dc8.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_13",
+          "defaultvalue": 0,
+          "displayName": "Gunpletionist",
+          "hidden": 0,
+          "description": "Complete the Mastery Challenge for all weapons.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/d01c302c59c8a099dfe4979c82b17f2497ae394e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/11b3b2e14f562ece29c4d731980418c51b026593.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_14",
+          "defaultvalue": 0,
+          "displayName": "Gimme That",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/baf5e91ca928162941ab64881ea77d8e90b4b76d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/fe978d17d0ccddfa3db1ace8e1bd25a3c84426d2.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_15",
+          "defaultvalue": 0,
+          "displayName": "Shield Adept",
+          "hidden": 0,
+          "description": "Acquire all shield upgrades under the base category.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/dd502e2f6f54515a062645490362ef80b23bae6d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/a13418678b0f413aa020a37f01ba84c583092efe.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_16",
+          "defaultvalue": 0,
+          "displayName": "Ancestral Blessing",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/3f059c32e6aac3b8c4ee281674f9bd8d8b08157f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/2f1138011197f893dca43e34c6c0489dd7ddcf0e.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_17",
+          "defaultvalue": 0,
+          "displayName": "Powerful Investment",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/b10e1ccad406f7391eb3d77c5dc61d57ec8542a5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/0c04bfa27f8b63e599c60a62207dbebe13274982.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_18",
+          "defaultvalue": 0,
+          "displayName": "Melee Expert",
+          "hidden": 0,
+          "description": "Acquire all melee weapon upgrades.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/b211ec3c28f18d0c405c3b860afda3e0d3a80067.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/24957417d355a9b7f8f6df770e3150d5ae973680.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_19",
+          "defaultvalue": 0,
+          "displayName": "Berserker",
+          "hidden": 0,
+          "description": "Acquire all Shield Base, Shield Rune, and Melee Weapon upgrades.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/721bf7c81f485ac0dc2c150c5d91f09f710bcc88.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/55ca1dd8e80c6ffcc203a4b2e7f0480f5848760a.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_20",
+          "defaultvalue": 0,
+          "displayName": "Essential Upgrade",
+          "hidden": 0,
+          "description": "Acquire your first Demonic Essence upgrade.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/93357c4d3c547daf7db4b713d71f3f0e5b03e252.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/20e4ae1077dacb1fe1aa1b36480df07de8c8ade6.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_21",
+          "defaultvalue": 0,
+          "displayName": "Essential Ammo",
+          "hidden": 0,
+          "description": "Acquire all Demonic Essence ammo upgrades.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/2545d77b22181453f41e166b7b736156c12b0505.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/a0ce88d4e8519728f826d19bc156720c75dd80ad.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_22",
+          "defaultvalue": 0,
+          "displayName": "Essential Armor",
+          "hidden": 0,
+          "description": "Acquire all Demonic Essence armor upgrades.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/1b5ea1c33b00844946ecc765d5c7c0c814793717.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/432be1e509421cad0e3cac896ef9bb5399241f07.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_23",
+          "defaultvalue": 0,
+          "displayName": "Essential Health",
+          "hidden": 0,
+          "description": "Acquire all Demonic Essence Health upgrades.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/231e55f1cb403f7dd1a945a5ef9b714e7c4be782.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/0cf6083df9394f9a32a22fd944ac68049acd2c8c.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_24",
+          "defaultvalue": 0,
+          "displayName": "Essentially Unstoppable",
+          "hidden": 0,
+          "description": "Acquire all Demonic Essence upgrades.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/0e1513cd49f434dd4607272a023e7c21edc0d78a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/8774de009a1535fcbf648ae7a9c9a844ec4f63e5.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_25",
+          "defaultvalue": 0,
+          "displayName": "Challenge Completed",
+          "hidden": 0,
+          "description": "Complete all Mission Challenges in the campaign.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/3ac9289e4888b5df14d0e0c93d346b7d80bd2344.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/a4e73ce3e3f4edf58ea0c286083eed776f90c194.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_26",
+          "defaultvalue": 0,
+          "displayName": "Toy Collector",
+          "hidden": 0,
+          "description": "Acquire all Collectible demon toys.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/824d7bd33b7c4465076a311831c006f12684e320.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/7c04d261e78cccbd0a0512e6fbb3e81f1364f4bb.jpg"
+        },
+        {
+          "name": "NEW_ACHIEVEMENT_1_27",
+          "defaultvalue": 0,
+          "displayName": "Lore Nerd",
+          "hidden": 0,
+          "description": "Acquire all Codex Lore pages.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/0aa6c1ed5e365e3633006caada89cbcdd1f89850.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3017860/3f4f777b5d1be6eca904c1734b48c01d5f5cb8d6.jpg"
+        }
+      ]
+    }
+  }
+}

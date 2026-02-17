@@ -1,0 +1,487 @@
+{
+  "game": {
+    "gameName": "Steelrising",
+    "gameVersion": "3",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "REACHPARIS",
+          "defaultvalue": 0,
+          "displayName": "Sailor",
+          "hidden": 0,
+          "description": "Reach Paris by boat",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/09977811dc35b80581b9ce9eb9791734ffc55806.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "REACHCARRIAGE",
+          "defaultvalue": 0,
+          "displayName": "All aboard!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/f76edb989287079da0afaca131a88c692908da3e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/cc7d5cbdd139ff996532006b8356a49235f97b99.jpg"
+        },
+        {
+          "name": "DEFEATBISHOP",
+          "defaultvalue": 0,
+          "displayName": "Bishop: Cité",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/4a5232fa013d6a7ace1ff6c9122982a595bbeaac.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "DEFEATKNIGHT",
+          "defaultvalue": 0,
+          "displayName": "Bishop: Louvre",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/a5488b411113a93881d492f6d11614cd0fc39724.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "DEFEATALCHEMIST",
+          "defaultvalue": 0,
+          "displayName": "Rook: Luxembourg",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/f3f0c7421aa675c2d599f4f9f8bfa6a64c2703ea.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "DEFEATTOWER",
+          "defaultvalue": 0,
+          "displayName": "Rook: Les Invalides",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/8a1ab2dfb2d1cdab62bba5bf92a6d7ba94152c4a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "DEFEATCENTAURE",
+          "defaultvalue": 0,
+          "displayName": "Knight: Montmartre",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/a1d97819cd5c0c7cc9f6203c84b42ef7f143abb4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "DEFEATEXECUTIONER",
+          "defaultvalue": 0,
+          "displayName": "Knight: Bastille",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/e9fe2f4d3d942dafa3ecd71e6c8e0238a9287db0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "DEFEATDAUPHIN",
+          "defaultvalue": 0,
+          "displayName": "The Mad Titan",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/60a9979d2d601d60faf5e30afea2cdb7fc5e3e83.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "DEFEATQUEEN",
+          "defaultvalue": 0,
+          "displayName": "Queen: Versailles",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/1b43e904578d03a6c8e1139e12ab8651350e48ec.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "ALLMINIBOSS",
+          "defaultvalue": 0,
+          "displayName": "Stabiliser",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/3c0ceb1a807895a246025f96ac8dd24455b8ca0e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "QUEENSMISSION",
+          "defaultvalue": 0,
+          "displayName": "The bodyguard",
+          "hidden": 0,
+          "description": "Discover the truth about the Queen’s son and save her from certain death",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/ace2cbf0e68ba9a7dc3007a3c95c70210ae021f3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "CONSPIRACY",
+          "defaultvalue": 0,
+          "displayName": "Conspiracy",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/8912610b96ad96ed2600893005303c71d572ccf2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "THEOLDALCHEMIST",
+          "defaultvalue": 0,
+          "displayName": "The Old Alchemist",
+          "hidden": 0,
+          "description": "Conduct an investigation for Abbé Grégoire",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/1a8b37cff5938d4193af82e9a0c4f39cdceced49.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "FAMILYAFFAIRS",
+          "defaultvalue": 0,
+          "displayName": "Automat at your service",
+          "hidden": 0,
+          "description": "Help Mirabeau solve his family problems",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/d26d9f6bfbd6cbec7802a1afd8d5efb0c47ac89a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "AGAINSTSLAVERY",
+          "defaultvalue": 0,
+          "displayName": "Abolishing slavery",
+          "hidden": 0,
+          "description": "Help Julien Raimond in his fight against slavery",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/c31494b2335c84a21ef734cfd8d2a5f9d2d3b4d9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "TRUTHABOUTLUDIA",
+          "defaultvalue": 0,
+          "displayName": "Ludia",
+          "hidden": 0,
+          "description": "Follow Bailly's advice to find out the truth about Ludia",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/01d0f70765ffbbbff7c2cf6c41b218abb1054c54.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "NECKERSFAMILY",
+          "defaultvalue": 0,
+          "displayName": "Love before money",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/e364bf0af6e2447f00aacf7173ce331e4a57542c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "STATEGICALLIANCE",
+          "defaultvalue": 0,
+          "displayName": "Lanterns of the dead",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/538aa073ed5d35d2aeb7cb513b73b2f1854bd0ba.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/cc7d5cbdd139ff996532006b8356a49235f97b99.jpg"
+        },
+        {
+          "name": "POWDERTRACES",
+          "defaultvalue": 0,
+          "displayName": "Traces of powder",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/3266b170c5ea6673c720849f8bd0175ba958fe41.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "JOURNALISTETHICS",
+          "defaultvalue": 0,
+          "displayName": "Apprentice journalist",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/0c35c1360e084033e5721eba4c877617be1a74cc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "ROBESPIERRESIDE",
+          "defaultvalue": 0,
+          "displayName": "Incorruptible",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/982465194c7affb19b66e2995cf7b74dbb3c6c53.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "LAFAYETTESIDE",
+          "defaultvalue": 0,
+          "displayName": "Royalist",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/b183c45565bcf64fd47729e76ea01295972bc491.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "ALLSIDEQUESTS",
+          "defaultvalue": 0,
+          "displayName": "Shield of the Cordeliers",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/caf72f5771b92b04d790be441857d998fc505d3f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "SENSEOFDUTY",
+          "defaultvalue": 0,
+          "displayName": "Friend of the people",
+          "hidden": 0,
+          "description": "Complete all citizen stories",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/e20eea577f406881633906044f61fd6fdcfde9f2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "ALLLUDIAANCHORS",
+          "defaultvalue": 0,
+          "displayName": "Résurgence",
+          "hidden": 0,
+          "description": "Collect all of Athenaïs's echoes",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/5ca3946c5363d8251badfe9a5d97f2b78f75e3c2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "ALLTITANSANCHORS",
+          "defaultvalue": 0,
+          "displayName": "Saviour",
+          "hidden": 0,
+          "description": "Awaken the 7 characters bound to Titans",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/76e2ee2ec016bfb12a150b362a8b8886344ab8fd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "UNLOCKMOSTVESTALS",
+          "defaultvalue": 0,
+          "displayName": "Safe passage",
+          "hidden": 0,
+          "description": "Activate 20 Vestals",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/f3fcaa7ecb119c627586b841a5c280937656d846.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "GRENADIER",
+          "defaultvalue": 0,
+          "displayName": "Grenadier",
+          "hidden": 0,
+          "description": "Defeat 25 enemies with grenades",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/f5b2b1a679be056d07c44498096e74513bdebd0a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "FLAMETHROWER",
+          "defaultvalue": 0,
+          "displayName": "Pyromaniac",
+          "hidden": 0,
+          "description": "Ignite enemies 100 times",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/2851daef34858c9716126b9820d681fc3885eea7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "TESLAANCESTOR",
+          "defaultvalue": 0,
+          "displayName": "Positively shocking",
+          "hidden": 0,
+          "description": "Electrocute enemies 100 times",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/4806420a83e3aa1da0e2145806da1c9ba690f9cc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "ICETERMINATOR",
+          "defaultvalue": 0,
+          "displayName": "Ms Freeze",
+          "hidden": 0,
+          "description": "Freeze enemies 100 times",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/9b52ce5748de289939130ef233a6af6982faee9b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "COOLER",
+          "defaultvalue": 0,
+          "displayName": "Supercooled",
+          "hidden": 0,
+          "description": "Use Rapid Cooling 50 times",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/3287dd9d4a9961ff0c513c71e641f15edee46bdb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "PERFECTCOOLER",
+          "defaultvalue": 0,
+          "displayName": "Cold-blooded",
+          "hidden": 0,
+          "description": "Perform 10 Perfect Cooldowns",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/2525ecfb696dbed3d6389d7aa978979129e6b76f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "PARRYCOUNTER",
+          "defaultvalue": 0,
+          "displayName": "Untouchable",
+          "hidden": 0,
+          "description": "Perform 50 counterattacks",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/1f153b3e09b69e18db5d6c6749c4134fffd18e31.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "COLLATERALDAMAGE",
+          "defaultvalue": 0,
+          "displayName": "Collateral damage",
+          "hidden": 0,
+          "description": "Have an enemy be killed by a direct hit from another enemy 5 times",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/2b198c3286636dba597fec2dad63697ccddf98e5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "SNEAKYATTACK",
+          "defaultvalue": 0,
+          "displayName": "Stealth itself",
+          "hidden": 0,
+          "description": "Surprise 20 enemies with stealth attacks",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/de3438f5138afa9bb0b59ad3ae3a7af6a4f70322.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "OSAEKOMI",
+          "defaultvalue": 0,
+          "displayName": "Finish him",
+          "hidden": 0,
+          "description": "Immobilise 70 enemies",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/59e0617d5d051a7bf63ff3eb2098d993b5ff6d2c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "ASSASSIN",
+          "defaultvalue": 0,
+          "displayName": "Titan assassin",
+          "hidden": 0,
+          "description": "Defeat a Titan without using the Oil Burette",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/fdc73f825f908d6bceed49ac01f15049a2820910.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "MODULEMAX",
+          "defaultvalue": 0,
+          "displayName": "Technician",
+          "hidden": 0,
+          "description": "Equip 4 level 3 modules",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/a6c732d5533fc5bd272714e6e0efa47506e9f43c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "DAVIDANDGOLIATH",
+          "defaultvalue": 0,
+          "displayName": "David vs. Goliath",
+          "hidden": 0,
+          "description": "Kill an enemy with a cobblestone",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/d6e679ae9839dbbd37d7cdb63c5bc66653ccb6ed.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "PROHEALER",
+          "defaultvalue": 0,
+          "displayName": "Professional care",
+          "hidden": 0,
+          "description": "Fully upgrade the Oil Burette (3x dosage, 4x effectiveness)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/70f714c1c24ca6cf726fc8229d90674feaf2a0d3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "BLACKSMITH",
+          "defaultvalue": 0,
+          "displayName": "Blacksmith",
+          "hidden": 0,
+          "description": "Upgrade a weapon from each of the 7 classes to level 5",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/9b3dc2a5145ae8539e1c3bc1cf6e3745eb34c7eb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "SHIELD",
+          "defaultvalue": 0,
+          "displayName": "The Aegis",
+          "hidden": 0,
+          "description": "Block 50 attack impacts with a shield special move",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/d52259b00ef5dfcb28dd2ab7afc5f74a361d8e3d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "SPECIALSNIPER",
+          "defaultvalue": 0,
+          "displayName": "Musketeer",
+          "hidden": 0,
+          "description": "Kill 20 enemies with a ranged shot",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/770a370fc4a0941ff1699cc34f60e09ef14bd5b9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "AREASPECIALIST",
+          "defaultvalue": 0,
+          "displayName": "AoE specialist",
+          "hidden": 0,
+          "description": "Perform 10 attacks affecting 3 enemies at once",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/6980fef96e8a412822fee7d2ff9f8d69fb284e22.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "HAWKEYE",
+          "defaultvalue": 0,
+          "displayName": "Eagle-eyed",
+          "hidden": 0,
+          "description": "Hit 20 hidden enemies",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/fdef3fe86bc8725731fff91ffce4265ac96e90c5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "EXTREMEACHIEVER",
+          "defaultvalue": 0,
+          "displayName": "Completionist",
+          "hidden": 0,
+          "description": "Finish the game without using the Oil Burette (after the tutorial)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/05c0c8d6c14790488cc7e0595d457cea770b2be5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "CATCHTHEMALL",
+          "defaultvalue": 0,
+          "displayName": "Fashion victim",
+          "hidden": 0,
+          "description": "Acquire all outfits in the base game",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/884943ac5eabbcf1e306fdf5cf9908f92950cbb6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/afd57cc144411b53ae371ead780844d024094861.jpg"
+        },
+        {
+          "name": "NECROMANCER",
+          "defaultvalue": 0,
+          "displayName": "Angel of death",
+          "hidden": 0,
+          "description": "Defeat 30 of the following enemies: Necromancers, Gravediggers, and Apothecaries",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/a1ee2cdf181705444dadb90c4021ff3992dcb62b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/ff939e93f9e77bd50c945f6897a28d251ce2ba79.jpg"
+        },
+        {
+          "name": "IRONICVICTORY",
+          "defaultvalue": 0,
+          "displayName": "New toys",
+          "hidden": 0,
+          "description": "Defeat the Scribe using only weapons found in “Cagliostro's Secrets”",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/6f3f9eb57a12ed5767fa482557e3328683b5d0da.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/ff939e93f9e77bd50c945f6897a28d251ce2ba79.jpg"
+        },
+        {
+          "name": "HOSPITALLIMBO",
+          "defaultvalue": 0,
+          "displayName": "Anti-Necromancer",
+          "hidden": 0,
+          "description": "Defeat the unstable Automat at the hospital",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/49f4fe8abe4db7809025f5d34bef8a1ebfd4def5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/ff939e93f9e77bd50c945f6897a28d251ce2ba79.jpg"
+        },
+        {
+          "name": "DEFEATSCRIBE",
+          "defaultvalue": 0,
+          "displayName": "The Hospital Scribe",
+          "hidden": 0,
+          "description": "Defeat the Scribe",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/3c87ebd12fbd4579581089eb66d21e73de87c226.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/ff939e93f9e77bd50c945f6897a28d251ce2ba79.jpg"
+        },
+        {
+          "name": "TEMPLAR",
+          "defaultvalue": 0,
+          "displayName": "Templar",
+          "hidden": 0,
+          "description": "Complete the secret area in the Quartier du Temple",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/aadfa0a6dbb5971ed48c5f34f13fa2e8b48b0b52.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/ff939e93f9e77bd50c945f6897a28d251ce2ba79.jpg"
+        },
+        {
+          "name": "CAGLIOSTROSECRETS",
+          "defaultvalue": 0,
+          "displayName": "Cagliostro's Secrets",
+          "hidden": 0,
+          "description": "Complete “Cagliostro's Secrets”, save Brissot and bring him back to the Cordeliers",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/a8160ebf5d4a6fdf3deb32ed197225a9d72e29da.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1283400/ff939e93f9e77bd50c945f6897a28d251ce2ba79.jpg"
+        }
+      ]
+    }
+  }
+}

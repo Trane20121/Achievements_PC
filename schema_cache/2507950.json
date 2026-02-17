@@ -1,0 +1,637 @@
+{
+  "game": {
+    "gameName": "Delta Force",
+    "gameVersion": "26",
+    "availableGameStats": {
+      "stats": [
+        {
+          "name": "playerlevelsol1",
+          "defaultvalue": 0,
+          "displayName": "等级"
+        },
+        {
+          "name": "playerlevelmp1",
+          "defaultvalue": 0,
+          "displayName": "等级"
+        },
+        {
+          "name": "leisiskill",
+          "defaultvalue": 0,
+          "displayName": "次"
+        },
+        {
+          "name": "saiyidekill",
+          "defaultvalue": 0,
+          "displayName": "次"
+        },
+        {
+          "name": "demulankill",
+          "defaultvalue": 0,
+          "displayName": "次"
+        },
+        {
+          "name": "storehouse",
+          "defaultvalue": 0,
+          "displayName": "次"
+        },
+        {
+          "name": "vehiclekill",
+          "defaultvalue": 0,
+          "displayName": "辆"
+        },
+        {
+          "name": "savemp",
+          "defaultvalue": 0,
+          "displayName": "次"
+        },
+        {
+          "name": "playerlevelsol2",
+          "defaultvalue": 0,
+          "displayName": "等级"
+        },
+        {
+          "name": "playerlevelmp2",
+          "defaultvalue": 0,
+          "displayName": "等级"
+        },
+        {
+          "name": "killmp",
+          "defaultvalue": 0,
+          "displayName": "次"
+        },
+        {
+          "name": "distance1",
+          "defaultvalue": 0,
+          "displayName": "米"
+        },
+        {
+          "name": "distance2",
+          "defaultvalue": 0,
+          "displayName": "米"
+        },
+        {
+          "name": "headkillmp",
+          "defaultvalue": 0,
+          "displayName": "次"
+        },
+        {
+          "name": "Avengekill",
+          "defaultvalue": 0,
+          "displayName": "次"
+        },
+        {
+          "name": "kaisol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "kaimp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "longsol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "longmp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "smeesol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "smeemp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "zoyasol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "zoyamp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "terrysol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "terrymp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "davidsol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "davidmp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "lunasol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "lunamp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "maisol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "maimp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "dunsol",
+          "defaultvalue": 0,
+          "displayName": "点"
+        },
+        {
+          "name": "dunmp",
+          "defaultvalue": 0,
+          "displayName": "点"
+        }
+      ],
+      "achievements": [
+        {
+          "name": "30001",
+          "defaultvalue": 0,
+          "displayName": "Top Agent",
+          "hidden": 0,
+          "description": "Reach max Operations level.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/dd1857c1760bfb444a5d8b8075b50c774a2b6cba.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/df6f4df7ef9c148dd2f06468e2aa1244784dd72e.jpg"
+        },
+        {
+          "name": "30002",
+          "defaultvalue": 0,
+          "displayName": "Veteran Operator",
+          "hidden": 0,
+          "description": "Reach Operations Lv.30.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/40a90c0f2d9ae33e1067f18d117968e26e494e84.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/4acedc3a07cfd8b37b51f46a4cef9ebe7f64ca33.jpg"
+        },
+        {
+          "name": "30003",
+          "defaultvalue": 0,
+          "displayName": "Field Marshal ",
+          "hidden": 0,
+          "description": "Reach max Warfare level.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/3f0e4bc68063bccb9f2d19619a898c230b7b131f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/be8baf03ae6aeb9bab65abde17be99496e4a0d2d.jpg"
+        },
+        {
+          "name": "30004",
+          "defaultvalue": 0,
+          "displayName": "Field Vanguard",
+          "hidden": 0,
+          "description": "Reach Warfare Lv.25.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/76401240bc86a4e8731344974ee5edec9af2fc34.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/cffb2142e20c70927aa3dc016ef600c00ce34427.jpg"
+        },
+        {
+          "name": "30006",
+          "defaultvalue": 0,
+          "displayName": "Everlasting Heart",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/5801bcfb0bc4349a8e301d62c02ff1ff2170831d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/047538a427af86eb7a421c0e24cbe7d3566dc1ba.jpg"
+        },
+        {
+          "name": "30007",
+          "defaultvalue": 0,
+          "displayName": "Military Enthusiast",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/3d14ed2735dc5496fc6c482b7047367c642c5992.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/ddcdd173c8ff14bb9ede430cf979f783c05c0d7d.jpg"
+        },
+        {
+          "name": "30008",
+          "defaultvalue": 0,
+          "displayName": "Mechanical Cardio",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/5b6d17eaaa4eb97e6f7091553e368cd0f78f0f85.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/001ef88638e7df0a8deb0ea6fa3d130f99af776d.jpg"
+        },
+        {
+          "name": "30009",
+          "defaultvalue": 0,
+          "displayName": "Physical Hacker",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/c039e165cd0410891faeb015c2a42b778e9a636b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/f4d22a98054ec72d8ed80fc54df585521d6ee88e.jpg"
+        },
+        {
+          "name": "30010",
+          "defaultvalue": 0,
+          "displayName": "Next-Gen Material",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/3d4bef4a33c59aa4fad770df55a4da04774eed1c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/81f157df96f2d797ea89970ca3fcb94ef7c236ad.jpg"
+        },
+        {
+          "name": "30011",
+          "defaultvalue": 0,
+          "displayName": "Precise Detection",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/aea32c7d3a45d1c125d70ce469289708b7c0ff0f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/205c251582921a417cd9628b1df63c2b630200e5.jpg"
+        },
+        {
+          "name": "30012",
+          "defaultvalue": 0,
+          "displayName": "Multi-Core Processing",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/2d5808e38c41660c1c56ac332897285e6e999747.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/262dc91d8e4bc999dc3392e059b16c492019361a.jpg"
+        },
+        {
+          "name": "30013",
+          "defaultvalue": 0,
+          "displayName": "Cleaner Bot",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/3869cb109654ed40159a11ce25aabea2b00ccaf6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/5a388b1ee169e936387c9d14b4e6e2a6418db56f.jpg"
+        },
+        {
+          "name": "30014",
+          "defaultvalue": 0,
+          "displayName": "My Turf",
+          "hidden": 0,
+          "description": "Kill 8 enemy operators in an Operations match.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/219bf995805bd27bb3ebba3eb39dbc6200c22172.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/a6c744c35b2a99ac509e856af1b40cbd69621d2f.jpg"
+        },
+        {
+          "name": "30015",
+          "defaultvalue": 0,
+          "displayName": "Brickyard Supervisor",
+          "hidden": 0,
+          "description": "Decode 1 MandelBrick in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/1aca0a3dac712f4ad415971fd74c2b64cd5157f2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/ec383f97a77922e6c2402b8d35293bf6d58843d0.jpg"
+        },
+        {
+          "name": "30016",
+          "defaultvalue": 0,
+          "displayName": "Hotel Ownership Transfer Notice",
+          "hidden": 0,
+          "description": "Kill Reis 5 times in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/a06492c9c7db2dafbe646c1753d00cea78b93641.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/f8b6496d980e70fe795ce6b0e970583c3a7d95a4.jpg"
+        },
+        {
+          "name": "30017",
+          "defaultvalue": 0,
+          "displayName": "Ghost in the Halls",
+          "hidden": 0,
+          "description": "Kill Saeed 5 times in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/eb64dfa8e9a0811fbf79366b7fc7259c69411ded.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/3234254daa5c54e347e9bd5a5fac3048a3a0fe5d.jpg"
+        },
+        {
+          "name": "30018",
+          "defaultvalue": 0,
+          "displayName": "On the Scope",
+          "hidden": 0,
+          "description": "Kill Desmoulins 5 times in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/1817439d58a4bda2933b3bbe65fa378f32520fdc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/b8e2575c341d4753b0f1cd9486651b5f433d6859.jpg"
+        },
+        {
+          "name": "30019",
+          "defaultvalue": 0,
+          "displayName": "Ultimate Stash",
+          "hidden": 0,
+          "description": "Upgrade the Black Site Stash to max level in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/38b94436ba418877bda0a6b131f58095fe9dc1a6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/a45b7eee962cebfce264ca4fd0de3cd6e91aaa8d.jpg"
+        },
+        {
+          "name": "30021",
+          "defaultvalue": 0,
+          "displayName": "First Victory",
+          "hidden": 0,
+          "description": "Win 1 Warfare match.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/9951f6b6f1e87efb3f542260d2e7c4fa4273aa33.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/ae77f06d3c1098eeb154d384571ae6e4d4d17276.jpg"
+        },
+        {
+          "name": "30022",
+          "defaultvalue": 0,
+          "displayName": "Tank Terminator",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/302b839c8ce53fd05ada5455c219f7f45ef343aa.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/07e7d4a3b8a1f5f43a05d315bc758012040d7c11.jpg"
+        },
+        {
+          "name": "30023",
+          "defaultvalue": 0,
+          "displayName": "Rescue More!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/6995181a530e60a2f5c6457af40fde0cc18d5520.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/e9d6040a8fb5a13b16d92b9b13e8d8616a46bfea.jpg"
+        },
+        {
+          "name": "30024",
+          "defaultvalue": 0,
+          "displayName": "Killing Machine",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/932fb8dd1de5710c45c7d54263355fae2e2945b2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/27d4b641ac5d66371f2a642c82ba3abce4cd3d87.jpg"
+        },
+        {
+          "name": "30025",
+          "defaultvalue": 0,
+          "displayName": "Welding Warlord",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/904234b09e0eb6cfb7b6c115af8c760f8e25501f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/136eaa0d348a99dc33728f54c206fac35d0801b6.jpg"
+        },
+        {
+          "name": "30026",
+          "defaultvalue": 0,
+          "displayName": "Ace Sniper",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/dc6d8354b82997dc5d9475f58e7af1056ffd0c72.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/f53b79f197aeb55d6a4dae57479069041189829e.jpg"
+        },
+        {
+          "name": "30027",
+          "defaultvalue": 0,
+          "displayName": "Nuclear Strike",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/ba81b5d52d0d616f5f31a5775422592b0daceb3d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/a6f7134df8cdd1fe221f460e0b7d9cb447483b35.jpg"
+        },
+        {
+          "name": "30028",
+          "defaultvalue": 0,
+          "displayName": "Headshot Expert",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/d401d16aa6e8e7d81cb8b0f200a420dcc0c441eb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/3848bbffcb8b07c7f6441249423c4a932c0e78bd.jpg"
+        },
+        {
+          "name": "30029",
+          "defaultvalue": 0,
+          "displayName": "Endless Barrage",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/5303a77702372a0fe9c48f6e1276058f30a9d76b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/45c2424104f4872f222e12ac207ae91ef357b955.jpg"
+        },
+        {
+          "name": "30030",
+          "defaultvalue": 0,
+          "displayName": "Pistol Cleaner",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/e4e4437719f478d3a34cb072cf09a1bc3d037a33.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/940ccfad47c365c6a39f370e4452a5425685e61e.jpg"
+        },
+        {
+          "name": "30031",
+          "defaultvalue": 0,
+          "displayName": "Heavy Barrage",
+          "hidden": 0,
+          "description": "Destroy 500 vehicles in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/1d86026bf0728bbedd4dd17319fb652d9a109ad4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/7208daad03a77ceecec8ef72bc2e14404cd0761d.jpg"
+        },
+        {
+          "name": "30032",
+          "defaultvalue": 0,
+          "displayName": "Battlefield Angel",
+          "hidden": 0,
+          "description": "Rescue 5,000 allies in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/575632732afcc0f9d048eb26d39347fc73d77f44.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/3799298588e476c89ac7216f12430627f5791b80.jpg"
+        },
+        {
+          "name": "30033",
+          "defaultvalue": 0,
+          "displayName": "The Butcher",
+          "hidden": 0,
+          "description": "Kill 10,000 enemies in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/bc2a3dd2e4da2abf0e81a9421b21bbca84c4556f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/66ec6f8e7680b84349e2a3e4e25aceacac1ca321.jpg"
+        },
+        {
+          "name": "30034",
+          "defaultvalue": 0,
+          "displayName": "Field Marathon",
+          "hidden": 0,
+          "description": "Move 42.195km in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/bca6bf5bc02ae0acdffe0be32a0afc8c13449fd9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/f2cea780ff23ff0cec4365081de8faf153be652c.jpg"
+        },
+        {
+          "name": "30035",
+          "defaultvalue": 0,
+          "displayName": "Field Half-Marathon",
+          "hidden": 0,
+          "description": "Move 21.97km in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/07c22095b919109e143dbbc21a0cdfeee2f426f4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/451eb681b32d623dd729c4b98fc401716cc509d2.jpg"
+        },
+        {
+          "name": "30036",
+          "defaultvalue": 0,
+          "displayName": "Bone Collector",
+          "hidden": 0,
+          "description": "Make 1,000 headshot kills in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/f07b7c54e33f747078bf8cc3d109aee9c40a9625.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/d6af8b0d1a94c48262efaae29b8efe19be95ee47.jpg"
+        },
+        {
+          "name": "30037",
+          "defaultvalue": 0,
+          "displayName": "An Eye for an Eye",
+          "hidden": 0,
+          "description": "Revenge 500 times in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/2094d2633aeb83b28e68721219a06c94cbb20a2e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/4e4cb46b539fb234764836b8ec52ab921607acfb.jpg"
+        },
+        {
+          "name": "30038",
+          "defaultvalue": 0,
+          "displayName": "D-wolf - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as D-wolf in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/0dd445c3d1f07204087f4d683fdfc49b23d66431.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/5ae865186bf25183993bf450a65ae1f48e066b4f.jpg"
+        },
+        {
+          "name": "30039",
+          "defaultvalue": 0,
+          "displayName": "D-wolf - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as D-wolf in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/06682027782f52e7dbdf8c5d09467f16664b3664.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/d056634888ba7cbba545c86f2e68d26642b7efa4.jpg"
+        },
+        {
+          "name": "30040",
+          "defaultvalue": 0,
+          "displayName": "Vyron - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as Vyron in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/858ab41ccc020df786f2f5e80b9ab9db089c3fd4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/0d8d97b3d18e1df607bd3e1f6efceafd6a67a225.jpg"
+        },
+        {
+          "name": "30041",
+          "defaultvalue": 0,
+          "displayName": "Vyron - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as Vyron in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/26889a95ceaf4b3a566106337851f23dfbafcc60.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/8214cef68cedc9b3bca3cf9410e2fa115669f6e3.jpg"
+        },
+        {
+          "name": "30042",
+          "defaultvalue": 0,
+          "displayName": "Stinger - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as Stinger in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/2f99a888b8eea20e4956157072f48a6ca022cc0a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/c9ff075077544a1ba6c34d13d1390c5a27b9e9a0.jpg"
+        },
+        {
+          "name": "30043",
+          "defaultvalue": 0,
+          "displayName": "Stinger - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as Stinger in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/6fd7142b8d78a8e3569af418d88586168794fa1e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/9410993da9626560ed9b66373e892010afa8da8f.jpg"
+        },
+        {
+          "name": "30044",
+          "defaultvalue": 0,
+          "displayName": "Toxik - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as Toxik in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/eca97415dc7dbbd04a506dca381d7151f707ad1b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/5c00cb4b439a1a16701c62163b4e2f239c45036f.jpg"
+        },
+        {
+          "name": "30045",
+          "defaultvalue": 0,
+          "displayName": "Toxik - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as Toxik in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/dda090629e382af7bda1a002d77e2bfcdb81974f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/af3e3febed9a03e547d1d7f8f983c5d893be8c27.jpg"
+        },
+        {
+          "name": "30046",
+          "defaultvalue": 0,
+          "displayName": "Shepherd - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as Shepherd in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/fbee22d6aa7af427decce57f9c5bff5fb7162349.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/3c86b6e6ea85010f44f3066c827116fdeacc3ef2.jpg"
+        },
+        {
+          "name": "30047",
+          "defaultvalue": 0,
+          "displayName": "Shepherd - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as Shepherd in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/107a902a2bbbb6746a5d7f8fba18ccb1f0b81257.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/86c96bb2fb9719cfd035aba426cb146512df6de7.jpg"
+        },
+        {
+          "name": "30048",
+          "defaultvalue": 0,
+          "displayName": "Uluru - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as Uluru in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/258a80febcd7103d6c090f69948271aa0842b33b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/33b8313ac80776f54d4c9bb18a27f4ccafe2e0d9.jpg"
+        },
+        {
+          "name": "30049",
+          "defaultvalue": 0,
+          "displayName": "Uluru - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as Uluru in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/1632bac4955d45cb11d0e2e21da91ac5146b7d6a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/5b237fa0ee7c5ad19b146f83ad50ebf984edb5fe.jpg"
+        },
+        {
+          "name": "30050",
+          "defaultvalue": 0,
+          "displayName": "Luna - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as Luna in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/9cd34526c673bde86c9d5382860f9347cb79e2bc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/fb3ef66c23aa9bfc7d648bd198a61f74bf81a16d.jpg"
+        },
+        {
+          "name": "30051",
+          "defaultvalue": 0,
+          "displayName": "Luna - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as Luna in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/445b1d1d3202de85ff118e78f096e2f5037be456.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/e0f11e3ad5ddba924e6c5e85e5634379339d8827.jpg"
+        },
+        {
+          "name": "30052",
+          "defaultvalue": 0,
+          "displayName": "Hackclaw - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as Hackclaw in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/f7ea1a35b7ebd64e3b89bc5d6d5a39f60b81cc63.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/55d6327d18f714b7e0c753c63de6a73143a21770.jpg"
+        },
+        {
+          "name": "30053",
+          "defaultvalue": 0,
+          "displayName": "Hackclaw - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as Hackclaw in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/52312bc9b2e3fb839924fb1abbc485dc8acdc615.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/aa10fe9dae370662072ececb459517e63e3f220c.jpg"
+        },
+        {
+          "name": "30054",
+          "defaultvalue": 0,
+          "displayName": "Sineva - Operations",
+          "hidden": 0,
+          "description": "Deal 100,000 damage as Sineva in Operations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/b1ece495c418527ac6c1cb80773dd1f438af906e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/ef9eb3b03b97a5c14eec4e3462dcd1bb23c551e9.jpg"
+        },
+        {
+          "name": "30055",
+          "defaultvalue": 0,
+          "displayName": "Sineva - Warfare",
+          "hidden": 0,
+          "description": "Deal 200,000 damage as Sineva in Warfare.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/9c1a2eed957cf9384e7bcc7d0c7e6bb2c462a760.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2507950/c0be4f8ddb1d31de87f3caab3fb6579a462dd8f9.jpg"
+        }
+      ]
+    }
+  }
+}

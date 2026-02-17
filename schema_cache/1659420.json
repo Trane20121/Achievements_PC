@@ -1,0 +1,884 @@
+{
+  "game": {
+    "gameName": "Olympic",
+    "gameVersion": "20",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "TROPHY_NAME_FINISH_EXPLORER",
+          "defaultvalue": 0,
+          "displayName": "Charted! - Explorer",
+          "hidden": 0,
+          "description": "Complete the game in explorer mode",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/24ffcfd2367b913e0e81a38ca4e9781cf8a5060a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/3761ae3819b6671f765501be2d81bc52ba606f35.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_FINISH_EASY",
+          "defaultvalue": 0,
+          "displayName": "Charted! - Light",
+          "hidden": 0,
+          "description": "Complete the game in light mode",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f9ad09b04f96e4b487da796f0d5beb07b97d249c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a36a159f97c560fb56c7f8a3aeba7f67780dfcaa.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_FINISH_NORMAL",
+          "defaultvalue": 0,
+          "displayName": "Charted! - Moderate",
+          "hidden": 0,
+          "description": "Complete the game in moderate mode",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/529b8941a5fbd020493dc07045dc894011adc3fb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/6df1aaff3537ee392ba24d023c30eac9a0267cca.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_FINISH_HARD",
+          "defaultvalue": 0,
+          "displayName": "Charted! - Hard",
+          "hidden": 0,
+          "description": "Complete the game in hard mode",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/e31fae7bcda4af86e060ca9cf514acd2ca24114f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/cd30031e8443d5a1763bca658b6d83cb6464cd05.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_FINISH_UHARD",
+          "defaultvalue": 0,
+          "displayName": "Charted! - Crushing",
+          "hidden": 0,
+          "description": "Complete the game in crushing mode",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9759a281cd898e809fca6c34d4158c65699a779f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/40be418a7e54a358b25a4c9dff2a95ad9588d947.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_FINISH_SPEEDRUN",
+          "defaultvalue": 0,
+          "displayName": "Charted! - Speedrun",
+          "hidden": 0,
+          "description": "Complete the game in 6 hours or less",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/cb43efd35f6a5171df429d629c76c3895925c2a0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f86f01e441a66dce52a93c9793346b8231c51c64.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TREASURE_1",
+          "defaultvalue": 0,
+          "displayName": "First Treasure",
+          "hidden": 0,
+          "description": "Find a Treasure",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/5b56cf8aa354a6c22692db84f6c94b2696bb5fe2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/72e33764889a7169f4614234b3d0affe4239192a.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TREASURE_50",
+          "defaultvalue": 0,
+          "displayName": "Treasure Hunter",
+          "hidden": 0,
+          "description": "Find 50 treasures",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ebb206bf1efbf442a35539551bc8dda041a5c5b6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d945cc889a0ac7fe4600918cb7b1ded64739364c.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TREASURE_ALL",
+          "defaultvalue": 0,
+          "displayName": "Treasure Master",
+          "hidden": 0,
+          "description": "Find all Treasures",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/0ecbb5fe5449799630b745155c1486d3eb41c14a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f06e08b4354936f6a04e7addee1a71ae2f457c19.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TREASURE_RELIC",
+          "defaultvalue": 0,
+          "displayName": "Relic Finder",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/81b5823e83fe27851bd176a682b643fc086b65bd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/da73c5541d4d475c79ef4a036a547eff29c4b8a9.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_JOURNAL_ENTRY_1",
+          "defaultvalue": 0,
+          "displayName": "Jot This Down",
+          "hidden": 0,
+          "description": "Find a Journal Entry",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/63934ddbb8e5b73b197961a43a12b39c76bd7f26.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/89aac935e8ee251b7b1f17926808ed395a13cdbe.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_JOURNAL_ENTRY_ALL",
+          "defaultvalue": 0,
+          "displayName": "Lost Art of Journaling",
+          "hidden": 0,
+          "description": "Find all Journal Entries",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ca3efc7bcd5b69c8078d16106e3417e694cff839.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d19a75b3a69c27d83fec1ab04f25f91d8b6b9c28.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_JOURNAL_NOTE_1",
+          "defaultvalue": 0,
+          "displayName": "Take a Note",
+          "hidden": 0,
+          "description": "Find a Journal Note",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/4591782ce087652d0453ffe006a8c4afa70bb8d4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a8517f92833d9655f5ed85bc80020c0e38068866.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_JOURNAL_NOTE_ALL",
+          "defaultvalue": 0,
+          "displayName": "Lost History",
+          "hidden": 0,
+          "description": "Find All Journal Notes",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/1b765d272a519e5f0ffc6cad27bb9a3546b71edd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/768a094f9c398a47dc0aed5a98c80b136c3c707d.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_HEADSHOT_LOW",
+          "defaultvalue": 0,
+          "displayName": "Head of the Class!",
+          "hidden": 0,
+          "description": "Defeat 20 enemies with headshots",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/6a623fa792efcca24feeda7926fb09baebf08233.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/e822bbfb842393dbe8c4adf2d1f4532c61e37f87.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_HEADSHOT_HIGH",
+          "defaultvalue": 0,
+          "displayName": "You Have a Head for this Business",
+          "hidden": 0,
+          "description": "Defeat 50 enemies with headshots",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/7a76215d6a2a499c1c1368682f0bb21958f72d31.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b063e4193fd9892c320971cf8e7729d8ba1c08f6.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_HEADSHOT_ROPE",
+          "defaultvalue": 0,
+          "displayName": "Hangman's Bullet",
+          "hidden": 0,
+          "description": "Perform 20 headshots from the rope",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/7b68028c32b45044fda8c20c6324157f3d6b033a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f543b2ffbfab1a851ce2b9d26bdbf635a30a00e7.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_STEALTH_KILL_LOW",
+          "defaultvalue": 0,
+          "displayName": "Stealth First Ask Questions Later",
+          "hidden": 0,
+          "description": "Stealth take-down 5 enemies",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b04c13978730c86fa4a3ee968e6dc40c32972eda.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d4a17d11bf44bda4ad896bfbeeeeef9cd5831b05.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_STEALTH_KILL_HIGH",
+          "defaultvalue": 0,
+          "displayName": "Shh Sleep Now",
+          "hidden": 0,
+          "description": "Stealth take-down 30 enemies",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/c6aeb8e1cffc9a8e73059813e1fc1f2a75b1bc51.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/7609872741ac8070c62f33410cc1e7a9ddc30e78.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_VERTICAL_TAKEDOWN",
+          "defaultvalue": 0,
+          "displayName": "I Thought I Heard Something",
+          "hidden": 0,
+          "description": "Perform 30 vertical stealth takedowns",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/1761b5cbe7ef11c358fdde989485524d8da3134b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9e9699875a40542f1845578ea9d24a35dd10b3e2.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_BLIND_FIRE",
+          "defaultvalue": 0,
+          "displayName": "Run-and-Gunner",
+          "hidden": 0,
+          "description": "Defeat 50 enemies from-the-hip or blind-firing",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ee350b55175d637ab26f68a3ed1dd1ad31693fb1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/5a71ee07f0b3cc1f1e15b2dab7e628edda098a96.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_LEAPFROG",
+          "defaultvalue": 0,
+          "displayName": "Leapfrog",
+          "hidden": 0,
+          "description": "Defeat 10 enemies in a row, alternating gunplay and hand-to-hand",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/da737c7ad99e7d5b5aa6aa588b3903388321c2a4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/27d4e235219d0748b1738b72def2c9d341948ed3.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_NO_DEATH_100_KILLS",
+          "defaultvalue": 0,
+          "displayName": "Unstoppable!",
+          "hidden": 0,
+          "description": "Defeat 100 enemies in a row without dying in combat",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/7c4c28f31da482ee9be8957faaa7c19157a1d4ae.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/86b6c44cf954c1db0e9b8e4be393e98093217a73.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_SHARPSHOOTER",
+          "defaultvalue": 0,
+          "displayName": "Sharpshooter",
+          "hidden": 0,
+          "description": "Complete game with 70% or higher shot accuracy",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/221bdd23b4c844b40dcf92cd85e947f6b9ad412f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/09fee343a6d137ef27609b52af8eb7d61fc5b719.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ROULETTE",
+          "defaultvalue": 0,
+          "displayName": "Rushing Roulette",
+          "hidden": 0,
+          "description": "Defeat enemies with a pistol, machine gun, and grenade, in that order, in 15 seconds",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/fc79b0b937aca1a560ebb69af773ad832e4d6c02.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/0d3810f2ea912f1ec5da0c7a8ee16aa35a06fec1.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_COMBAT_NO_KILL",
+          "defaultvalue": 0,
+          "displayName": "Ghost in the Cemetery",
+          "hidden": 0,
+          "description": "Get through Scotland cemetery combat encounter without killing or being seen",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/539876da1aadd3775f1ee5a3c6b6219e1eff1c8b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/e12c396453d094d03ab9cd1d109c9419e4e29e4b.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ENEMY_DROP_GRENADE",
+          "defaultvalue": 0,
+          "displayName": "Butterfingers",
+          "hidden": 0,
+          "description": "Make 10 enemies drop their grenades",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/8ce9b0af951efe8d166b534ee70aa79e3a313c21.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/64881605c12f9d9cbbf6f8391c5bb420a6057b0b.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_EXPLOSION_MULTI_KILL",
+          "defaultvalue": 0,
+          "displayName": "Boom County",
+          "hidden": 0,
+          "description": "Defeat 4 enemies with the same explosion (all explosive items and weapons apply)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d18e83016ebf9c9f0f5ef7a1252bf5429c26d893.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/cba45e5ed0fec3ec4e556a2873c15d6871a480de.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_CL_GRENADE_LAUNCHER",
+          "defaultvalue": 0,
+          "displayName": "Defeat 10 in 60 -- China Lake GL",
+          "hidden": 0,
+          "description": "Defeat 10 enemies in 60 seconds with the China Lake Grenade Launcher",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/0ec89c39498d4027941c2a894599a09e6f2c2b16.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/4e570b39cc0207766c5349cae9ba36088455478e.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ROPE_VEHICLE_DESTROY",
+          "defaultvalue": 0,
+          "displayName": "Hang Tough!",
+          "hidden": 0,
+          "description": "Destroy 10 vehicles while being dragged from the rope",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/2efe3768daf6ff8020ebe0f74d07bbe32ae46916.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f0db1120ead0dd090a57906026017d5bdc9847db.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_KILL_TYPE_TIMED",
+          "defaultvalue": 0,
+          "displayName": "Run the Table",
+          "hidden": 0,
+          "description": "Defeat enemies with a stealth attack, melee attack, headshot, and explosives, in that order, in 15 seconds",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a211e9b72d511fc1e452b9edfd7f60a354a87a47.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/c3334e3f15efadb8f6ccff34639e44cb73b1a53c.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ARMORED_MELEE",
+          "defaultvalue": 0,
+          "displayName": "Hitting a Brick Wall",
+          "hidden": 0,
+          "description": "Defeat 5 armored enemies with melee only",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/02b1578612e289ba178ee6af6ca3191eaba69108.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/36ccc2d94d0e13f5b5146d6bbcd1c6a289173138.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_COMBAT_NO_KILL_HARD",
+          "defaultvalue": 0,
+          "displayName": "Peaceful Resolution",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/eeaf6d5bd20630426e7530797dedcb728dc8214e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b8cb99c611c53b6502f7ec157fc0c5acb5bce8f3.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_COMBO_BUDDY_TAKEDOWN",
+          "defaultvalue": 0,
+          "displayName": "Wingman",
+          "hidden": 0,
+          "description": "Perform 10 combo buddy takedowns",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/5da8a64d1af597e980c9b3ad1558827e581ceeac.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/7f59fd2ed4d0a66a02b3a611549324951a03f7c7.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_LEDGE_PULLDOWN",
+          "defaultvalue": 0,
+          "displayName": "Cliffhanger",
+          "hidden": 0,
+          "description": "Pull 20 enemies over when hanging from a ledge",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/027970104da80d2285587e8736c95d24f4d20976.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ed03ddb76fef72c0bf35bd8854952a8d79bd2051.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_LUDONARRATIVE",
+          "defaultvalue": 0,
+          "displayName": "Ludonarrative Dissonance",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/092b2f7a385117a07ad2417754b8bc9ad2648e8d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a1367081b4051628eabf48a3974d68c5089679f0.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_LEMUR_CITY",
+          "defaultvalue": 0,
+          "displayName": "Don't Feed the Animals",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/8b62cf28c0f09a5a9ac4dd12b0528d3293860819.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/8a0b66fa4efb358f0c73af1180731ca9a0226f4c.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_EVERY_WEAPON",
+          "defaultvalue": 0,
+          "displayName": "I Accidentally All the Guns",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/56f4950d9e3eb939dbaa40f48f316f07e9ae955b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/51fb3664f409bbfacd14242926bd038fc2b5fc21.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_KNOCK_ROCKS_DOWN",
+          "defaultvalue": 0,
+          "displayName": "Not a Cairn in the World",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9f37b7adfcb654330dadcb71ab0195818788972e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/6025666d9f927211970796f1b6c59fecb5cf1eec.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TOP_CLOCKTOWER_CITY",
+          "defaultvalue": 0,
+          "displayName": "I Can See My House From Here!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d90b329a4bd83c7e4c1e87795dfa1e3edbcb36bd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/8084e4551039e5355f0658b63113d5899ed3f2c9.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_SCO_TRIAL_SOLVE",
+          "defaultvalue": 0,
+          "displayName": "Trials and Tribulations",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/2daf76bbf0d823df891a8f75669fa89978d9b5af.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/525f1516de89236489f9763e7616c988b064812d.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_BANDICOOT_HIGH_SCORE",
+          "defaultvalue": 0,
+          "displayName": "Best Score!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/0d35c72bfa3ef0fbe29a8848adf279a5473c7d2b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/418c2d17367289a1f737d3ed9dd38ccc4cbf3f35.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_OPTIONAL_DIALOG",
+          "defaultvalue": 0,
+          "displayName": "Gift of Gab",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/26f52246341ac95ca8c682bd9810836f3f5050c1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/464f691ece04659b217215795073a36383d65cac.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_MARCO_POLO",
+          "defaultvalue": 0,
+          "displayName": "Marco Polo Returns!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a2416705f21f0b0488e95ced3a7a7191a071a037.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/fe833bf70be6716957f7f84cc981fde51b95821c.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_E3_DEMO_FAIL",
+          "defaultvalue": 0,
+          "displayName": "Stage Fright",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/22361c1981199fe9ebbad0df862f34644451748a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f10e6c086ce8e5d12179ca768e60fd6a94648525.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ELENA_JEEP",
+          "defaultvalue": 0,
+          "displayName": "Just Floor It!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/732a2e9c8a44eab4faa94966ab94f78fd0a5cd13.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b8635ebc75fd0b402043d1e734a7f5ee71d5e7cb.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_DOLPHINS",
+          "defaultvalue": 0,
+          "displayName": "On Porpoise",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ca26597f86599d00d1eacbac5a2b47c34d45d364.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d4d73e77f4febfda3cd1be8d4ac480b5e11aa181.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TOY_GUN_TARGETS",
+          "defaultvalue": 0,
+          "displayName": "Still Got It!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/89b81df524563706bd5587d588c1ca95aa7edd51.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/4204f86a6338335dc3640949514c2e58d371332e.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_SULLY_PHOTO",
+          "defaultvalue": 0,
+          "displayName": "Glamour Shot",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d3047aa65006f328c5c72392e3c2adaedc08b454.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f4adefa0687b8fd7aa2b63d7abc7671004cb7304.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_SWORD_FIGHT",
+          "defaultvalue": 0,
+          "displayName": "Swordmaster",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a971780b259ef05875cc4fd7db8f8b69edda0cb0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/c6069046c16499cd707fcbbc73b6790ae93b17ec.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_BEAT_GAME",
+          "defaultvalue": 0,
+          "displayName": "Legacy Found!",
+          "hidden": 0,
+          "description": "Complete the Game",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/3865dd96a03bc51e90312f7bb9fbad0967303bb1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9ae04048941811af58e021109b0f8758087a08d4.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_BEAT_CRUSHING",
+          "defaultvalue": 0,
+          "displayName": "Progress Demands Sacrifice",
+          "hidden": 0,
+          "description": "Complete the Game in Crushing mode",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ad19da646114b053971d2f29eb27cb1a1a9b55fc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/2484dd24cadec08b7d88142483ca443fc81103e6.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TREASURE_ENTHUSIAST",
+          "defaultvalue": 0,
+          "displayName": "Casual Treasure Hunter",
+          "hidden": 0,
+          "description": "Find 5 treasures",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f3fed3107bea30fd8fb21b4621ebfc1c090cbc28.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a4d02d01f2f27d842f744401835b4ac25fc51b5b.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TREASURE_HUNTER",
+          "defaultvalue": 0,
+          "displayName": "Hardcore Treasure Hunter",
+          "hidden": 0,
+          "description": "Find 35 treasures",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/191fad563fd5d906928d44c2fd5a0904807be4db.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/4c5b3738ecdbdd266f59207dfc97c54620aca942.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TREASURE_MASTER",
+          "defaultvalue": 0,
+          "displayName": "Collector of Antiquities",
+          "hidden": 0,
+          "description": "Find all the treasures",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/c926ef098fdae4a6896ffd455b47a429737a02e7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9fa419cdd36e158d8e3e6ae6627f76266b0af438.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_RELIC_FINDER",
+          "defaultvalue": 0,
+          "displayName": "Shake For Your Fortune",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ed77be5171ef309873ffaa09d61076ac519088d1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/cddab41e2443bc3829e68c4960581486704d52fb.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_HOYSALA_TOKEN",
+          "defaultvalue": 0,
+          "displayName": "Token For Granted",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/6cb316c3b2e65001b6057ba3724f7f72735bfbaa.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/bc8438c94e58395350e9a9d46e3a9f2bb136e4f5.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TREASURE_FINDER",
+          "defaultvalue": 0,
+          "displayName": "Yas Queen",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9fa5509bad223db5faddd0bfc4dbe4b2a6341e48.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/76dd936d9e96c4d3aae7fb594f6377762a1a1447.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_PICK_LOCKS",
+          "defaultvalue": 0,
+          "displayName": "Five Finger Discount",
+          "hidden": 0,
+          "description": "Open 5 lockboxes",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/0c88ebd67fe6056b925a02ccffddfcef6dd03883.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/2cf3befa44da3f2ce6b12d85db7bf80176a1dced.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_PICK_LOCKS_ALL",
+          "defaultvalue": 0,
+          "displayName": "Picks or It Didn't Happen",
+          "hidden": 0,
+          "description": "Open every lockbox",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ff83f154115cf9c4e1593e8d364bb16c575d4747.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/3c85dbbeb16a9309d6c885e79c8e632cad813d31.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_FIRST_PICS",
+          "defaultvalue": 0,
+          "displayName": "#nofilter",
+          "hidden": 0,
+          "description": "Take a photo at 5 photo opportunities",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/7508f8edd3f391115aacd0c78e0c0127fe2b93b5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/4af6d18bc8a9f6bb632c6a42450017e5e5f08e2c.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ALL_PICS",
+          "defaultvalue": 0,
+          "displayName": "Pics or It Didn't Happen",
+          "hidden": 0,
+          "description": "Take a photo at all the photo opportunities",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9ce3b810134f7e5d59b8412df13be6c702ee3ac9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/5594d3e87cd6bc1a311420b058bd40b5f5ec1236.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_OPTIONAL_CONVO",
+          "defaultvalue": 0,
+          "displayName": "Getting to Know You",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/972530dcb56047824b7798565f803889e2dc9503.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/1d261ee730c463e5bb970c08c8c8591ad4b47db3.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ALL_WEAPONS",
+          "defaultvalue": 0,
+          "displayName": "Si Vis Pacem Para Bellum",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/8bcd8c3f05f75be732b9139661b8271d1f423b22.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/fbe058c5ac1d69218edfea34a888c1fd8a23950d.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_LAST_BULLET",
+          "defaultvalue": 0,
+          "displayName": "Were You Counting?",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/34f08b4e3f906b4edd55fba2d5eda6abfdea1f45.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/fd56bdf6c945532d0acb9b9af5cf9868b10c0603.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_HEAD_CHAIN",
+          "defaultvalue": 0,
+          "displayName": "10 Up, 10 Down",
+          "hidden": 0,
+          "description": "Defeat 10 enemies with headshots in a row",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/c5cd85599672d7ab19810569456e539cdf759147.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/af812b7974d8b23d1915e5ea622efbed250ebbae.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_SILENCE_PISTOL",
+          "defaultvalue": 0,
+          "displayName": "Frazer. Chloe Frazer.",
+          "hidden": 0,
+          "description": "Defeat 5 consecutive enemies with the silenced pistol without being detected",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/0304f367ae80007d77f282227baefc392a571bfa.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/615592a7a276d0979f3f39c4aefdcee934ac8177.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_FROM_THE_HIP",
+          "defaultvalue": 0,
+          "displayName": "Itchy Trigger Finger",
+          "hidden": 0,
+          "description": "Defeat 20 enemies firing from-the-hip",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/8f2119f3252ddf66e6b72529c1802d7e3d65c9a0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b21d83163ce7312bb3b74ab2a43a00cddfac4eb9.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_COVER_FIRE",
+          "defaultvalue": 0,
+          "displayName": "Stay and Pray",
+          "hidden": 0,
+          "description": "Defeat 20 enemies blind-firing from cover",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/4e986ea93b16ce5c91bfdd639d524ea6662373d7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/21ffd70bc1fd292114e1cdbee661a446a9dd3178.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_HELMET_STEALTH",
+          "defaultvalue": 0,
+          "displayName": "Tip of the Hat",
+          "hidden": 0,
+          "description": "Stealth take-down 10 armored enemies with melee by first removing their helmets without being detected",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ebd2c283f3d2daf3552750d4e8f8cd6fb0d1afcb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b656e9b5240df2a51278ddb2132b28d9580146a4.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_C4_KILLS",
+          "defaultvalue": 0,
+          "displayName": "Royal Demolitionist",
+          "hidden": 0,
+          "description": "Defeat 20 enemies with C4",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/adc30bedc6e0ce96e5bc701ab2aafeb521181b54.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d0ff70698dced3566e8edabe72c5a268c269880a.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_MARK_ENEMIES",
+          "defaultvalue": 0,
+          "displayName": "On the Grid",
+          "hidden": 0,
+          "description": "Mark 30 enemies",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a85c68521de4b2524ec964945ddc72786d5b86c8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/e30cecd18f23474448f778ce2290c3f62301af11.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_PICK_LOCK_DANGER",
+          "defaultvalue": 0,
+          "displayName": "I Was Never Here",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/4f0d88b37d6874f3b5132af2054f05dcbcfac681.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/6e24c19d7186c5cd0759ea3052160dd837bdc421.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_C4_MULTI",
+          "defaultvalue": 0,
+          "displayName": "C-Phoria",
+          "hidden": 0,
+          "description": "Defeat 4 enemies with one C4 detonation",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/733b791f2c261f4ffc4a9b5f1b2f1c78f73f4c11.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a5255ab3afa1b431175d2597e7fdb8208f9b87ba.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_STEALTH_CHAIN",
+          "defaultvalue": 0,
+          "displayName": "Just the Wind",
+          "hidden": 0,
+          "description": "Stealth take-down 15 enemies in a row",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d149bed0c8a7544f0eeccbf60db6ec5d06cf874c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/22c8a6f2fec2205cc443f11eb8bcf1463c67a5b8.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_REENTER_STEALTH",
+          "defaultvalue": 0,
+          "displayName": "Now You See Me...",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/dc9aaeb3ff043870a71a3a5848139780b807e52a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b29dc1af4a98161d103bdfdef8ee8f612bbd7301.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_BUDDY_MELEE",
+          "defaultvalue": 0,
+          "displayName": "Wingwoman",
+          "hidden": 0,
+          "description": "Perform 10 combo partner takedowns",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/c9e9b8006e798116a758e87e83867a2df40717e5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b8ce14d64371da97a196680c56f978f4f7ad6c4e.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_MELEE_ONLY",
+          "defaultvalue": 0,
+          "displayName": "The Way of the Warrior",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/08398683c0beecaf89afa2a76b786791b3361180.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a125bb9c34c98d90545074d530d66d3d523b736f.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_DAMAGE_VARIETY",
+          "defaultvalue": 0,
+          "displayName": "The Sampler",
+          "hidden": 0,
+          "description": "Defeat 5 enemies, each one taking damage from a handgun, long-gun, and melee",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/2f34ea0ae8fc0f7c40aa171b70b84f4f49ed1972.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/27dc31e6d21858d7eedb0d47db4d521c1bddd7df.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_JEEP_COMBO",
+          "defaultvalue": 0,
+          "displayName": "Make an Entrance",
+          "hidden": 0,
+          "description": "Defeat enemies with the vehicle, long-gun, melee, and grenade, in that order, in 20 seconds",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9cd9286d64c060efecae0834b90d846a362355e5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/eecee18f37710afd2f9e79f4453b341535dfab67.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_GOLD_WEAPONS",
+          "defaultvalue": 0,
+          "displayName": "Bring in the Big Guns",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/c7ea72743aae313d16965ff70e110768e9bcd96e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/77ad9fd132c8a2cb3da7d5227e3f450d7a1242d1.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_JEEP_QUICK_KILL",
+          "defaultvalue": 0,
+          "displayName": "4x4x4",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/1eaf6aeda8586a0eebaa9e798efae113990680fd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/7af136bd8609132d618c687c53c16e472b05218d.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ZIPLINES",
+          "defaultvalue": 0,
+          "displayName": "Drop Me a Line",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/1adee914d9956d0fe264f1d08497d495e2650f04.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/4e5fd129fb6efcd1ed8ef6e4ed6fbcaf8a312d65.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TOWER_YOGA",
+          "defaultvalue": 0,
+          "displayName": "Your Prize",
+          "hidden": 0,
+          "description": "Appreciate the view at the top of the Hoysala Empire",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/90c542e1dbca83f77aa730d65ad5da1b4f51caf1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/018c301482db50da80ca382e0493034c8b2d9f17.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_HUB_SPEED",
+          "defaultvalue": 0,
+          "displayName": "Best Driver in the Business",
+          "hidden": 0,
+          "description": "Drive from the Ganesh mountain carving to the top of the waterfall at the Trident Fort and back in under 3 minutes",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/32e5338f924fe7354e63e6c8495d3b5bf35a931c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a259fb7bf6323eec18b4bc7d9bcc93dec2b89293.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_PUZZLE_NO_DAMAGE",
+          "defaultvalue": 0,
+          "displayName": "Flawless Gauntlet",
+          "hidden": 0,
+          "description": "Get through all 3 Axe Fort trials without resetting any boards",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/919d337e1a7115ffcc8803a81429cc392ade544a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/627664581689f9744d9d4c1ef63c61001ca3dd06.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_STEALTH_COMBAT_SHRINE",
+          "defaultvalue": 0,
+          "displayName": "Quiet as a Mouse",
+          "hidden": 0,
+          "description": "After entering the Trident Fort, reach the door without being seen",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/1b2932c5d6ba36d6b601d05e1e8d455f21389174.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9739fd5fd820f4fe3db81723a49c0b6bf0e3faab.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_ROPE_SWING_CHAIN",
+          "defaultvalue": 0,
+          "displayName": "Jungle Gym",
+          "hidden": 0,
+          "description": "Perform 5 grapple swings in a row without touching the ground",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/5439a06e0025d9749bb5589ac195c1fb70a946fd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/564682a5a083ac4bc8584ca733c63040f0528e7c.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_JEEP_JUMP_TIME",
+          "defaultvalue": 0,
+          "displayName": "Stunt It!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/1d0cbb746043b2000cf1e1a63cd2637de525e43b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/159819d10d605124df3a5f8445b071f35386e9d5.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_SHADOW_PUZZLE_FAST",
+          "defaultvalue": 0,
+          "displayName": "Shadow Theater",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/512c787327419d71eb1727c27df09a079ae94818.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/fa91f2215f8b479e0b54c909dee5f714bde1d2f9.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_MARCO_AQUEDUCT",
+          "defaultvalue": 0,
+          "displayName": "Marco Po-No",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/838dde91f3ad12e11195d268180062ae8050ee54.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b148c4938a66fed0634203df3624d436b0d89323.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_FAST_LOCKPICK",
+          "defaultvalue": 0,
+          "displayName": "Fingersmith",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/f0b72a8d0039144e090ea3bf8e9ab7e96f2bc5a6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/81714899fb72fe521eb92afe0a4863457824cde9.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_C4_APC_EXPLOSIONS",
+          "defaultvalue": 0,
+          "displayName": "Overkill",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/35ced7d4bca5611e930125c36b14520aa12cd5b3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d6cc957f6d98fa76be98975505b0e52f8403fe67.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_CLIFF_DIVE",
+          "defaultvalue": 0,
+          "displayName": "Cannonball!",
+          "hidden": 0,
+          "description": "Perform an impressive dive from the cliff near the old railroad tracks",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/907dfc0184d5a8fba8c9e7f03143d1f549543436.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b5742e2080bc564c218f935a0b5232aa7617a053.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_NO_KILL_CHOPPER",
+          "defaultvalue": 0,
+          "displayName": "Right Under Your Nose",
+          "hidden": 0,
+          "description": "Destroy the helicopter without defeating any other enemies",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/ab8ce642628025158d830b8523721da8531be4b4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/dc657abee461cf4f225336008cc3a1244f1fc227.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_RAM_MOTORCYCLES",
+          "defaultvalue": 0,
+          "displayName": "Combat Racing",
+          "hidden": 0,
+          "description": "Ram 10 motorcycles",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/b39904f1eb436be579c059e9e157ed66e3b5aa56.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/40e3cab5eb269661240f088dd11c3d6da5ac9cea.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_MELEE_DRIVER",
+          "defaultvalue": 0,
+          "displayName": "Backseat Driver",
+          "hidden": 0,
+          "description": "Commandeer 6 vehicles by jumping on them and kicking out the driver",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/84e7b857084ce1f1aaedb29062f46e301eb2566c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/1790299fca8ffe341775879e19fdcd1292cbf698.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_GRENADE_VEHICLE",
+          "defaultvalue": 0,
+          "displayName": "Here, Catch!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/9f319a58dad6aeb05ac0ec3de822cfec56e31653.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/8c7beda9550977f60835eba6284b93cfa59f3ccc.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_JEEP_SUICIDE",
+          "defaultvalue": 0,
+          "displayName": "Let's Not Get Caught",
+          "hidden": 0,
+          "description": "Drive over the edge in the Western Ghats",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/d34654f519054292b0d3332277135fd8a40da85c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/a278e25f9222f77934806cfc9a13a82928cec75d.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_PLATINUM_SP",
+          "defaultvalue": 0,
+          "displayName": "A Thief's Legacy",
+          "hidden": 0,
+          "description": "Collect all the achievements",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/aa996b4366c006d083894cb3836f537fed55928d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/0bdfae00fd1f1c318fdf4ac1800b1a7ad11b51f7.jpg"
+        },
+        {
+          "name": "TROPHY_NAME_TLL_PLATINUM",
+          "defaultvalue": 0,
+          "displayName": "Don't Ruin The Moment",
+          "hidden": 0,
+          "description": "Collect all the achievements in Uncharted™: The Lost Legacy",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/e740deda96282a1510ed5b3ab462b781bdd6efa2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1659420/e7da213d281d40855c8f1daf9daebea48a92b4e4.jpg"
+        }
+      ]
+    }
+  }
+}

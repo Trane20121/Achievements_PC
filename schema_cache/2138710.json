@@ -1,0 +1,583 @@
+{
+  "game": {
+    "gameName": "Sifu",
+    "gameVersion": "7",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "SifuPlatinum",
+          "defaultvalue": 0,
+          "displayName": "Fist of the Immortal",
+          "hidden": 0,
+          "description": "All achievements unlocked! Thank you for playing.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/eaad2a846643f50c37fe50bf9ff40c8f166d8c8b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Prologue",
+          "defaultvalue": 0,
+          "displayName": "The Old Grandmaster",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/7ba28c776de1066c89cde64874d8747b23908e2d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Vengeance_H1",
+          "defaultvalue": 0,
+          "displayName": "The Assault",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/4dc56b51eab675b1ada9aec03517d80077e18ce6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Vengeance_H2",
+          "defaultvalue": 0,
+          "displayName": "The Hateful Pole Fighter",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/a5b6aa6c5d625ccee52b58c784a81bd70bde6f57.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Vengeance_H3",
+          "defaultvalue": 0,
+          "displayName": "A Lady's Blood in the Snow",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/44390fd4f8b43ef092a612fb1c628c53dcedd82b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Vengeance_H4",
+          "defaultvalue": 0,
+          "displayName": "Lady Wing Chun",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/262d2e0c3e3a7098d9c95a869bf4096b696b4532.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Vengeance_H5",
+          "defaultvalue": 0,
+          "displayName": "Furious Fists",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/2ac1eacce0e37861ceb6fd052226c2dad48e2ac7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Wude_H1",
+          "defaultvalue": 0,
+          "displayName": "Muk Yan Master",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/f0f0efb6ba4ebb950ec60c6fce15e526059034c9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Wude_H2",
+          "defaultvalue": 0,
+          "displayName": "Tiger on Fire",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/84edf689d433c65ef849183a91dc8676d710e61b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Wude_H3",
+          "defaultvalue": 0,
+          "displayName": "Source of Flying Daggers",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/1e5228531e6bcc586e8b9721260c5b9d9838e9d0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Wude_H4",
+          "defaultvalue": 0,
+          "displayName": "Iron Money",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/36442a9995dbb52f0238cfe305ca33c08f96a5e7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Wude_H5",
+          "defaultvalue": 0,
+          "displayName": "Legendary Talismans of Wuxing",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/2e1a292d532f1420b0896fd8675ea44c0c476d5c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "MidAge",
+          "defaultvalue": 0,
+          "displayName": "Scareless",
+          "hidden": 0,
+          "description": "Beat the game while being 50 years old or less.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/66885a74dfb781b62e7a8c9b87c5c7b0c6231c96.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "LowAge",
+          "defaultvalue": 0,
+          "displayName": "Prodigal Child",
+          "hidden": 0,
+          "description": "Beat the game while being 25 years old or less.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/fa04fbe302b8d0ffab3121027dfc034b49416dc0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "DeathlessBoss_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Kill Nil",
+          "hidden": 0,
+          "description": "Beat any boss without dying.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/0a1084cbf6b7d305f269f3f801d8523aabd1b6e0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Detective_H1",
+          "defaultvalue": 0,
+          "displayName": "Detective Story",
+          "hidden": 0,
+          "description": "Complete the Squats' detective board.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/feae2791fe39a6c7b804d18f8b95602118b76e99.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Detective_H2",
+          "defaultvalue": 0,
+          "displayName": "Drunken Fighter",
+          "hidden": 0,
+          "description": "Complete the Club's detective board.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/a6b590a5b1ec5b7b5f31303973b68dc8f28c051d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Detective_H3",
+          "defaultvalue": 0,
+          "displayName": "Martial Artist",
+          "hidden": 0,
+          "description": "Complete the Museum's detective board.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/e4f83331c3d4e4cbbca05950a2411df984ffb093.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Detective_H4",
+          "defaultvalue": 0,
+          "displayName": "Knowledge Greed",
+          "hidden": 0,
+          "description": "Complete the Tower's detective board.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/5887b38245da4a29d9d82bfc8c3b49ca13239173.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Detective_H5",
+          "defaultvalue": 0,
+          "displayName": "Healing Memory",
+          "hidden": 0,
+          "description": "Complete the Sanctuary's detective board.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/05c088760f4e0a7e03a8c532bb9c057183f7340a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Traversal_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Stuntmaster",
+          "hidden": 0,
+          "description": "Climbing and going across the environment allows you to control the flow of the fight.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/8be2166c6915f5c522229a62dabcf6abad9518fb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "ThrowAI_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Dance of the Praying Mantis",
+          "hidden": 0,
+          "description": "Throwing enemies around makes handling big groups easier. (Ignored in training mode.)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/019782edeb330ed4c2c76d39471434f89ce07975.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "ThrowEE_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Street Fighting",
+          "hidden": 0,
+          "description": "Anything can be a weapon, so keep using your environment to your advantage. All is fair in such fights! (Ignored in training mode.)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/9e6397265bf4d2493b0bff33837a77cd9529d9ea.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "AnySkill_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Life is your teacher",
+          "hidden": 0,
+          "description": "Unlock your first skill.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/e3af2ef5cfb59a051ca5af8b8ede2a6fa6213a60.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "PermaSkill_Trophy",
+          "defaultvalue": 0,
+          "displayName": "State of constant learning",
+          "hidden": 0,
+          "description": "Permanently unlock a skill for the first time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/c327c1db2ec0eb3be7b2723031e1956850031aeb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "ShrineMind",
+          "defaultvalue": 0,
+          "displayName": "Qi Gong: Mind",
+          "hidden": 0,
+          "description": "Receive the highest XP-based shrine reward for the first time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/0a420c31f0482820529e9b848d86eced9d121980.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "ShrineSpirit",
+          "defaultvalue": 0,
+          "displayName": "Qi Gong: Breath",
+          "hidden": 0,
+          "description": "Receive the highest score-based shrine reward for the first time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/467eeedde2b014f397f0074b3bb4e4037aff64e8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "ShrineBody",
+          "defaultvalue": 0,
+          "displayName": "Qi Gong: Essence",
+          "hidden": 0,
+          "description": "Receive the highest age-based shrine reward for the first time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/d329c27f95747a07753a47bf5b8fb0aa1d10d478.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Takedown_Trophy",
+          "defaultvalue": 0,
+          "displayName": "The 36th Chamber of Kung-Fu",
+          "hidden": 0,
+          "description": "Bare handed or with a weapon, standing up, against a wall, a ledge, or on the ground... Perform each takedown type at least once.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/90753e410a7750afbb5e5cfb336ce9c9f3afc5da.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "FocusAttack_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Master of the Phoenix Eye Fist",
+          "hidden": 0,
+          "description": "Use each Focus Attack at least once. (Ignored in introduction level.)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/7b106f739af1a2a2be4619f32e0cb0ceebd2f42d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "ComboMid",
+          "defaultvalue": 0,
+          "displayName": "I know Kung-Fu",
+          "hidden": 0,
+          "description": "Reach a level score of 10 000.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/b80e4497addd5d861efb45eb9c1efb0f41c824dc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "ComboHigh",
+          "defaultvalue": 0,
+          "displayName": "Ferocity, speed, strength, accuracy",
+          "hidden": 0,
+          "description": "Reach a level score of 20 000.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/7eb576dd02037a715f4fdc7fe59d4654c9c65944.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "ReachMaxAge",
+          "defaultvalue": 0,
+          "displayName": "Old Child",
+          "hidden": 0,
+          "description": "Reach your oldest appearance. Will you still have enough strength left to reach your goal?",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/7c50e622742c9c329e4a92446f4e24d2b1400904.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "BladeOneShot",
+          "defaultvalue": 0,
+          "displayName": "Sword Stained With Blood",
+          "hidden": 0,
+          "description": "Successfully use a blade weapon's one-shot attack on an enemy. (Ignored in training mode.)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ba7a4e5605e92c152792360fa99aaeead5bc9cb1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "TimedTakedown",
+          "defaultvalue": 0,
+          "displayName": "Lightning Hands",
+          "hidden": 0,
+          "description": "Perform 3 takedowns within 12 seconds. (Ignored in introduction level.)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/033c0c5d13b82c164cd6d574bf5f7d05e11a78c8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "WideStrike",
+          "defaultvalue": 0,
+          "displayName": "Kung-Fu Tussle",
+          "hidden": 0,
+          "description": "Hit 3 enemies in a single strike. (Ignored in introduction level.)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/45d413c99c24526dcad43aa4402996fc909369a4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Calbot_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Path of the Prospect",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/5a135b813b6718c338a734a743986b0f115a3916.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "CustomTrophy_H1",
+          "defaultvalue": 0,
+          "displayName": "Rumble in the Hangar",
+          "hidden": 0,
+          "description": "In the Squats, clear the hangar in less than 1 minute 20 seconds after being detected by the main group.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/761d48700714a1c73b93c91e7e334c8c8b1fb8ae.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "CustomTrophy_H2",
+          "defaultvalue": 0,
+          "displayName": "The Pit Protector",
+          "hidden": 0,
+          "description": "In the Club's pit, beat the Juggernaut before any other enemy is beaten.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/26857945aa609f2b839cc71a59f83a490f80df8b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "CustomTrophy_H3",
+          "defaultvalue": 0,
+          "displayName": "Be like water my friend",
+          "hidden": 0,
+          "description": "In the Museum, throw an enemy into the fountain from a higher floor.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/129d84aef092d13a6d8a4098f1fe2312754a2b90.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "CustomTrophy_H4",
+          "defaultvalue": 0,
+          "displayName": "Take damage to save time",
+          "hidden": 0,
+          "description": "In the Tower's caves, drop from a high point to get deeper faster.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/c990a1b68be48e9bbeace77fae2267209b17b9e8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "CustomTrophy_H5",
+          "defaultvalue": 0,
+          "displayName": "Warriors from the Mountain",
+          "hidden": 0,
+          "description": "In the Sanctuary, throw an enemy into the mountains.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/8e74af1595f924d160d3114876729f686ce52ccd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "PhotoMode_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Come Snap With Me",
+          "hidden": 0,
+          "description": "Give the Photo Mode a shot!",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/fa543d129665b85ccd41c0e9f551b980379301e6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/071a2c8f44fda9b4c0dbbee76e764ede98c2eaa7.jpg"
+        },
+        {
+          "name": "Arena_UnlockPack",
+          "defaultvalue": 0,
+          "displayName": "Project Arena",
+          "hidden": 0,
+          "description": "Unlock a new arena pack.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/2e038ab1dfd95891506e690c213bd83617113fe3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6ef9a501eb54c2840a0051a9afeeb78347ec743a.jpg"
+        },
+        {
+          "name": "Arena_3Stamps",
+          "defaultvalue": 0,
+          "displayName": "Diligence as a goal",
+          "hidden": 0,
+          "description": "Get 3 stamps in any arena challenge.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/d55eb690d1a72f947c1a76e323888a44efb9f1b7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6ef9a501eb54c2840a0051a9afeeb78347ec743a.jpg"
+        },
+        {
+          "name": "Arena_25Challenges",
+          "defaultvalue": 0,
+          "displayName": "Bloody Sport",
+          "hidden": 0,
+          "description": "Clear 25 different arena challenges.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/9b04e621a2e15252f952052562e9c6427d30ad27.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6ef9a501eb54c2840a0051a9afeeb78347ec743a.jpg"
+        },
+        {
+          "name": "Arena_45Challenges",
+          "defaultvalue": 0,
+          "displayName": "Martial Hub",
+          "hidden": 0,
+          "description": "Clear 45 different arena challenges.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/fabc9860208c78e34aff065c1a61e0db7d0ee9cc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6ef9a501eb54c2840a0051a9afeeb78347ec743a.jpg"
+        },
+        {
+          "name": "Arena_GoldManhunt",
+          "defaultvalue": 0,
+          "displayName": "Deadly Venom",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/1ccfee41b50e1fac80d1c516f36d9f5869bb5801.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6ef9a501eb54c2840a0051a9afeeb78347ec743a.jpg"
+        },
+        {
+          "name": "Arena_GoldCapture",
+          "defaultvalue": 0,
+          "displayName": "Secure, Protect, Leave",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/0ad7f998836e819d3828213698174de52e8ee449.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6ef9a501eb54c2840a0051a9afeeb78347ec743a.jpg"
+        },
+        {
+          "name": "Arena_GoldSurvival",
+          "defaultvalue": 0,
+          "displayName": "The best strikes are the ones we avoid",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/e9c2e10da9807cdaff9e9420cb50eac485d20ced.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6ef9a501eb54c2840a0051a9afeeb78347ec743a.jpg"
+        },
+        {
+          "name": "Arena_GoldTimePerf",
+          "defaultvalue": 0,
+          "displayName": "A Touch of Acumen",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6f734ffc30607a3cccad4a1e9a0186c3b129dcdf.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6ef9a501eb54c2840a0051a9afeeb78347ec743a.jpg"
+        },
+        {
+          "name": "Arena_TigerAll",
+          "defaultvalue": 0,
+          "displayName": "Crouching Tiger",
+          "hidden": 0,
+          "description": "Clear all tiger arena challenges.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/aab79bc7f9cc3a0f8d00b4b27f941183f29e1c51.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_DragonAll",
+          "defaultvalue": 0,
+          "displayName": "Hidden Dragon",
+          "hidden": 0,
+          "description": "Clear all dragon arena challenges.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/c9d7ee4341603cb94632f4622592f1aed0868dc5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_HighStamps",
+          "defaultvalue": 0,
+          "displayName": "Skill and an even stronger will",
+          "hidden": 0,
+          "description": "Collect 240 stamps in arenas.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/034b7608b88e1f6a22be2ffb06218ceb1f9eb2d3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_HeliportAllOut",
+          "defaultvalue": 0,
+          "displayName": "Master of the Flying Assassins",
+          "hidden": 0,
+          "description": "Clear any challenge of the Heliport arena by throwing all enemies out.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/c3f448f49eacfaf3dbde69056858f1ee37ff52a3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_SnowballKill",
+          "defaultvalue": 0,
+          "displayName": "Here Cometh the Iceman",
+          "hidden": 0,
+          "description": "Finish the target with a snowball in the \"Cyclone\" arena challenge.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/9db6e3e67a56ed49db9493eb18b4c57627f77caf.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_LakeKill",
+          "defaultvalue": 0,
+          "displayName": "Fighter in the Pond",
+          "hidden": 0,
+          "description": "Throw the Disciple in the lake in the \"Bellowing Mountains\" arena challenge.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/a7f95266d1fefe2081757c01d2b8112689461531.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_Car",
+          "defaultvalue": 0,
+          "displayName": "Bonus Stage",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/5a0ea6095d7dfa165318fb15f67f99ef33fac053.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_Music",
+          "defaultvalue": 0,
+          "displayName": "Beatmaker",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/6fd7256007b0d95ea044418c0c2824f7b986f562.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_CustomMode",
+          "defaultvalue": 0,
+          "displayName": "Fight the way you practice",
+          "hidden": 0,
+          "description": "Clear an arena challenge with the Custom Mode enabled.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/7b650bd8b4324ed57eb6df670274d8ab295ef695.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        },
+        {
+          "name": "Arena_Randomizer",
+          "defaultvalue": 0,
+          "displayName": "A Bit Of Everything, Simultaneously",
+          "hidden": 0,
+          "description": "Attempt to clear any level with the Modifiers Randomizer enabled.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/fbd3f92ed3a611002ba656afb9fdb1d0cfb1170f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2138710/ec60ebe27cf881bdda95c5aac2df8dc346a53767.jpg"
+        }
+      ],
+      "stats": [
+        {
+          "name": "Traversal_Trophy_Traversal_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Progress"
+        },
+        {
+          "name": "ThrowAI_Trophy_ThrowAI_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Progress"
+        },
+        {
+          "name": "ThrowEE_Trophy_ThrowEE_Trophy",
+          "defaultvalue": 0,
+          "displayName": "Progress"
+        },
+        {
+          "name": "Arena_25Challenges_Arena_25Challenges",
+          "defaultvalue": 0,
+          "displayName": "Progress"
+        },
+        {
+          "name": "Arena_45Challenges_Arena_45Challenges",
+          "defaultvalue": 0,
+          "displayName": "Progress"
+        },
+        {
+          "name": "Arena_TigerAll_Arena_TigerAll",
+          "defaultvalue": 0,
+          "displayName": "Progress"
+        },
+        {
+          "name": "Arena_DragonAll_Arena_DragonAll",
+          "defaultvalue": 0,
+          "displayName": "Progress"
+        },
+        {
+          "name": "Arena_HighStamps_Arena_HighStamps",
+          "defaultvalue": 0,
+          "displayName": "Progress"
+        }
+      ]
+    }
+  }
+}

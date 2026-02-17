@@ -1,0 +1,626 @@
+{
+  "game": {
+    "gameName": "Half-Life 2",
+    "gameVersion": "17",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "HL2_HIT_CANCOP_WITHCAN",
+          "defaultvalue": 0,
+          "displayName": "Defiant",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_hit_cancop_withcan.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_hit_cancop_withcan_bw.jpg"
+        },
+        {
+          "name": "HL2_PUT_CANINTRASH",
+          "defaultvalue": 0,
+          "displayName": "Submissive",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_put_canintrash.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_put_canintrash_bw.jpg"
+        },
+        {
+          "name": "HL2_ESCAPE_APARTMENTRAID",
+          "defaultvalue": 0,
+          "displayName": "Malcontent",
+          "hidden": 0,
+          "description": "Escape the apartment block raid.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_escape_apartmentraid.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_escape_apartmentraid_bw.jpg"
+        },
+        {
+          "name": "HL2_BREAK_MINITELEPORTER",
+          "defaultvalue": 0,
+          "displayName": "What cat?",
+          "hidden": 0,
+          "description": "Break the mini-teleporter in Kleiner's lab.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_break_miniteleporter.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_break_miniteleporter_bw.jpg"
+        },
+        {
+          "name": "HL2_GET_CROWBAR",
+          "defaultvalue": 0,
+          "displayName": "Trusty Hardware",
+          "hidden": 0,
+          "description": "Get the crowbar.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_get_crowbar.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_get_crowbar_bw.jpg"
+        },
+        {
+          "name": "HL2_KILL_BARNACLESWITHBARREL",
+          "defaultvalue": 0,
+          "displayName": "Barnacle Bowling",
+          "hidden": 0,
+          "description": "Kill five barnacles with one barrel.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_barnacleswithbarrel.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_barnacleswithbarrel_bw.jpg"
+        },
+        {
+          "name": "HL2_GET_AIRBOAT",
+          "defaultvalue": 0,
+          "displayName": "Anchor's Aweigh!",
+          "hidden": 0,
+          "description": "Get the airboat.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_get_airboat.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_get_airboat_bw.jpg"
+        },
+        {
+          "name": "HL2_GET_AIRBOATGUN",
+          "defaultvalue": 0,
+          "displayName": "Heavy Weapons",
+          "hidden": 0,
+          "description": "Get the airboat's mounted gun.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_get_airboatgun.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_get_airboatgun_bw.jpg"
+        },
+        {
+          "name": "HL2_FIND_VORTIGAUNTCAVE",
+          "defaultvalue": 0,
+          "displayName": "Vorticough",
+          "hidden": 0,
+          "description": "Discover the hidden singing vortigaunt cave in chapter Water Hazard.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_find_vortigauntcave.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_find_vortigauntcave_bw.jpg"
+        },
+        {
+          "name": "HL2_KILL_CHOPPER",
+          "defaultvalue": 0,
+          "displayName": "Revenge!",
+          "hidden": 0,
+          "description": "Destroy the hunter-chopper in Half-Life 2.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_chopper.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_chopper_bw.jpg"
+        },
+        {
+          "name": "HL2_FIND_HEVFACEPLATE",
+          "defaultvalue": 0,
+          "displayName": "Blast from the Past",
+          "hidden": 0,
+          "description": "Find the HEV Suit Charger faceplate in Eli's scrapyard.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_find_hevfaceplate.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_find_hevfaceplate_bw.jpg"
+        },
+        {
+          "name": "HL2_GET_GRAVITYGUN",
+          "defaultvalue": 0,
+          "displayName": "Zero-Point Energy",
+          "hidden": 0,
+          "description": "Get the Gravity Gun in Black Mesa East.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_get_gravitygun.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_get_gravitygun_bw.jpg"
+        },
+        {
+          "name": "HL2_MAKEABASKET",
+          "defaultvalue": 0,
+          "displayName": "Two Points",
+          "hidden": 0,
+          "description": "Use DOG's ball to make a basket in Eli's scrapyard.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_makeabasket.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_makeabasket_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_RAVENHOLM_NOWEAPONS",
+          "defaultvalue": 0,
+          "displayName": "Zombie Chopper",
+          "hidden": 0,
+          "description": "Play through Ravenholm using only the Gravity Gun.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_ravenholm_noweapons.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_ravenholm_noweapons_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_CEMETERY",
+          "defaultvalue": 0,
+          "displayName": "Hallowed Ground",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_cemetery.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_cemetery_bw.jpg"
+        },
+        {
+          "name": "HL2_KILL_ENEMIES_WITHCRANE",
+          "defaultvalue": 0,
+          "displayName": "OSHA Violation",
+          "hidden": 0,
+          "description": "Kill 3 enemies using the crane.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_enemies_withcrane.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_enemies_withcrane_bw.jpg"
+        },
+        {
+          "name": "HL2_PIN_SOLDIER_TOBILLBOARD",
+          "defaultvalue": 0,
+          "displayName": "Targetted Advertising",
+          "hidden": 0,
+          "description": "Pin a soldier to the billboard in chapter Highway 17.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_pin_soldier_tobillboard.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_pin_soldier_tobillboard_bw.jpg"
+        },
+        {
+          "name": "HL2_KILL_ODESSAGUNSHIP",
+          "defaultvalue": 0,
+          "displayName": "Where Cubbage Fears to Tread",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_odessagunship.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_odessagunship_bw.jpg"
+        },
+        {
+          "name": "HL2_KILL_THREEGUNSHIPS",
+          "defaultvalue": 0,
+          "displayName": "One Man Army",
+          "hidden": 0,
+          "description": "Destroy six gunships in Half-Life 2.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_threegunships.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_threegunships_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_DONTTOUCHSAND",
+          "defaultvalue": 0,
+          "displayName": "Keep Off the Sand!",
+          "hidden": 0,
+          "description": "Cross the antlion beach in chapter Sandtraps without touching the sand.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_donttouchsand.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_donttouchsand_bw.jpg"
+        },
+        {
+          "name": "HL2_KILL_ENEMIES_WITHANTLIONS",
+          "defaultvalue": 0,
+          "displayName": "Bug Hunt",
+          "hidden": 0,
+          "description": "Use the antlions to kill 50 enemies.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_enemies_withantlions.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_enemies_withantlions_bw.jpg"
+        },
+        {
+          "name": "HL2_KILL_ENEMY_WITHTOILET",
+          "defaultvalue": 0,
+          "displayName": "Flushed",
+          "hidden": 0,
+          "description": "Kill an enemy with a toilet.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_enemy_withtoilet.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_enemy_withtoilet_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_TURRETSTANDOFF2",
+          "defaultvalue": 0,
+          "displayName": "Warden Freeman",
+          "hidden": 0,
+          "description": "Survive the second turret standoff in Nova Prospekt.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_turretstandoff2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_turretstandoff2_bw.jpg"
+        },
+        {
+          "name": "HL2_FOLLOWFREEMAN",
+          "defaultvalue": 0,
+          "displayName": "Follow Freeman",
+          "hidden": 0,
+          "description": "Gain command of a squad of rebels in the uprising.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_followfreeman.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_followfreeman_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_TOXICTUNNEL",
+          "defaultvalue": 0,
+          "displayName": "Radiation Levels Detected",
+          "hidden": 0,
+          "description": "Get through the toxic tunnel under City 17 in Half-Life 2.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_toxictunnel.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_toxictunnel_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_PLAZASTANDOFF",
+          "defaultvalue": 0,
+          "displayName": "Plaza Defender",
+          "hidden": 0,
+          "description": "Survive the generator plaza standoff in chapter Anticitizen One.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_plazastandoff.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_plazastandoff_bw.jpg"
+        },
+        {
+          "name": "HL2_KILL_ALLC1709SNIPERS",
+          "defaultvalue": 0,
+          "displayName": "Counter-Sniper",
+          "hidden": 0,
+          "description": "Kill all of the snipers in City 17.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_allc1709snipers.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_kill_allc1709snipers_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_SUPRESSIONDEVICE",
+          "defaultvalue": 0,
+          "displayName": "Fight the Power",
+          "hidden": 0,
+          "description": "Shut down the supression device by disabling its generators.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_supressiondevice.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_supressiondevice_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_C1713STRIDERSTANDOFF",
+          "defaultvalue": 0,
+          "displayName": "Giant Killer",
+          "hidden": 0,
+          "description": "Survive the rooftop strider battle in the ruins of City 17.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_c1713striderstandoff.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_c1713striderstandoff_bw.jpg"
+        },
+        {
+          "name": "HL2_DISINTEGRATE_SOLDIERSINFIELD",
+          "defaultvalue": 0,
+          "displayName": "Atomizer",
+          "hidden": 0,
+          "description": "Disintegrate 15 soldiers by throwing them into a Combine ball field.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_disintegrate_soldiersinfield.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_disintegrate_soldiersinfield_bw.jpg"
+        },
+        {
+          "name": "HL2_BEAT_GAME",
+          "defaultvalue": 0,
+          "displayName": "Singularity Collapse",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_game.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_beat_game_bw.jpg"
+        },
+        {
+          "name": "HL2_FIND_ALLLAMBDAS",
+          "defaultvalue": 0,
+          "displayName": "Lambda Locator",
+          "hidden": 0,
+          "description": "Find all lambda caches in Half-Life 2.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_find_alllambdas.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hl2_find_alllambdas_bw.jpg"
+        },
+        {
+          "name": "HLX_KILL_ENEMIES_WITHMANHACK",
+          "defaultvalue": 0,
+          "displayName": "Hack Attack!",
+          "hidden": 0,
+          "description": "Kill five enemies with a Manhack.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hlx_kill_enemies_withmanhack.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/hlx_kill_enemies_withmanhack_bw.jpg"
+        },
+        {
+          "name": "EP1_BEAT_MAINELEVATOR",
+          "defaultvalue": 0,
+          "displayName": "Watch Your Head!",
+          "hidden": 0,
+          "description": "Make it to the bottom of the Citadel's main elevator shaft in one piece.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/b5786dcef701a726353a3d1542dbe11a31309103.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/bda52258ef6bcb0f2091883f54b3906624131a8b.jpg"
+        },
+        {
+          "name": "EP1_BEAT_CITADELCORE",
+          "defaultvalue": 0,
+          "displayName": "Containment",
+          "hidden": 0,
+          "description": "Contain the Citadel core.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/5aa2be2857d0a705e84be8f58bc5eeb38d283d2f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/6c1683b45b359452289eff5cb0999dc72994f857.jpg"
+        },
+        {
+          "name": "EP1_BEAT_CITADELCORE_NOSTALKERKILLS",
+          "defaultvalue": 0,
+          "displayName": "Pacifist",
+          "hidden": 0,
+          "description": "Contain the Citadel core without killing any stalkers.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/a49ce5a88f488c14fba00af4a901da07e57f3d70.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/920fa18323d05aca4f13eb5a62f6d6c980ff59c8.jpg"
+        },
+        {
+          "name": "EP1_KILL_ANTLIONS_WITHCARS",
+          "defaultvalue": 0,
+          "displayName": "Car Crusher",
+          "hidden": 0,
+          "description": "Use the cars to squash 15 antlions in Episode One.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/7c7010a25e9bec7bd13c6dc45ba2160cd13647bd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/4b35e5abf69061c53fea9013ae59419b5551953a.jpg"
+        },
+        {
+          "name": "EP1_BEAT_GARAGEELEVATORSTANDOFF",
+          "defaultvalue": 0,
+          "displayName": "Elevator Action",
+          "hidden": 0,
+          "description": "Survive long enough to get on the parking garage elevator.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/b591626a047d338b255a256fa6e124b982004116.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/1c47665288829f494e06ab9127d0bb995260d7fe.jpg"
+        },
+        {
+          "name": "EP1_KILL_ENEMIES_WITHSNIPERALYX",
+          "defaultvalue": 0,
+          "displayName": "Live Bait",
+          "hidden": 0,
+          "description": "Help Alyx snipe 30 enemies in Episode One.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/5b27579b0d7f52c7b1a58b77e54d66eda3966421.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/4ab80703e9347376a1902cfb831a89675e09a403.jpg"
+        },
+        {
+          "name": "EP1_BEAT_HOSPITALATTICGUNSHIP",
+          "defaultvalue": 0,
+          "displayName": "Attica!",
+          "hidden": 0,
+          "description": "Destroy the gunship in the hospital attic.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/eec14c6852c0ba82e6e8f02904daae08c4a72b03.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/9b1348aaadd2f0062f96c582b9df7f79cd8e7ca4.jpg"
+        },
+        {
+          "name": "EP1_BEAT_CITIZENESCORT_NOCITIZENDEATHS",
+          "defaultvalue": 0,
+          "displayName": "Citizen Escort",
+          "hidden": 0,
+          "description": "Don't let any citizens die when escorting them to the escape train.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/e0041f3934c7b4aba49069e80b31f97594118cea.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/0aa353716fa07197ac4d0f62a9128033d5a23133.jpg"
+        },
+        {
+          "name": "EP1_BEAT_GAME",
+          "defaultvalue": 0,
+          "displayName": "Escape From City 17",
+          "hidden": 0,
+          "description": "Escape City 17 with Alyx.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/7cd51b19caac5973c270c8a973eb336f77ce8a17.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/ba230588dc2f8d17a436951fe391c6cb9fdbd8ae.jpg"
+        },
+        {
+          "name": "EP1_BEAT_GAME_ONEBULLET",
+          "defaultvalue": 0,
+          "displayName": "The One Free Bullet",
+          "hidden": 0,
+          "description": "Finish the game firing exactly one bullet. Grenade, crowbar, rocket, and Gravity Gun kills are okay!",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/6f5de49512acc710c983d680cb26c687d1f17ada.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/a5122d6c7890cadbc8a9b7c545bf229963a6cbd5.jpg"
+        },
+        {
+          "name": "HLX_KILL_ENEMIES_WITHONEENERGYBALL",
+          "defaultvalue": 0,
+          "displayName": "Conservationist",
+          "hidden": 0,
+          "description": "Kill five enemies with the same energy ball.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/bb34de17a6f76b92461171edf395af71e7767c68.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/8d23133d2dce3132189e3848fe2ef8106ec2ae88.jpg"
+        },
+        {
+          "name": "HLX_KILL_ELITESOLDIER_WITHHISENERGYBALL",
+          "defaultvalue": 0,
+          "displayName": "Think Fast!",
+          "hidden": 0,
+          "description": "Kill an Elite Soldier with his own energy ball.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/fcc403cc16e2243a087df75ef33da5aa72833d20.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/22e716b1daff0637d8027ed8c0b04e8fbd4ed439.jpg"
+        },
+        {
+          "name": "EPX_KILL_ZOMBIES_WITHFLARES",
+          "defaultvalue": 0,
+          "displayName": "Zombie-que",
+          "hidden": 0,
+          "description": "Use flares to light 15 zombies on fire.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/472e07e91d367edbe247655b3a0b6c5a552470cc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/112cf79a607fbe313ecc23e13775a7cb36511f5e.jpg"
+        },
+        {
+          "name": "EP2_KILL_POISONANTLION",
+          "defaultvalue": 0,
+          "displayName": "Acid Reflex",
+          "hidden": 0,
+          "description": "Kill an acid antlion worker.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/19efab31ef27421aecc003c3e68ccbe849b0078a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/9598fc8e2322aa3f1a5994246d09af3473423716.jpg"
+        },
+        {
+          "name": "EP2_KILL_ALLGRUBS",
+          "defaultvalue": 0,
+          "displayName": "Get Some Grub",
+          "hidden": 0,
+          "description": "Squish every antlion grub in Episode Two.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/99c812348e2408ca97bf4d4e1c687bbbfc817bdb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/4bb926c17439412c764f09c675f523ef41774791.jpg"
+        },
+        {
+          "name": "EP2_BREAK_ALLWEBS",
+          "defaultvalue": 0,
+          "displayName": "Piñata Party",
+          "hidden": 0,
+          "description": "Find and break every web cache in Episode Two.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/1babdcccc7154e5fae81e25a720b8fd5ad62ec55.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/2c1b2eee4e7d4794cbd1e2a94390e2f07084cd84.jpg"
+        },
+        {
+          "name": "EP2_BEAT_ANTLIONINVASION",
+          "defaultvalue": 0,
+          "displayName": "Into the Breach",
+          "hidden": 0,
+          "description": "Help Griggs and Sheckley hold off the antlion invasion inside the mine shaft.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/a6c7103e69528132bc238e4c90767e19c3dedf26.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/dd7798c47712ebd6dc3434bf2af6359703bd0091.jpg"
+        },
+        {
+          "name": "EP2_BEAT_ANTLIONGUARDS",
+          "defaultvalue": 0,
+          "displayName": "Twofer",
+          "hidden": 0,
+          "description": "Defeat both antlion guards outside the White Forest.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/f6ba8d9723d0350e2d9059e1d08349e8a44b608c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/85f9d90d098a923d32fad8bf07332a069a640cec.jpg"
+        },
+        {
+          "name": "EP2_KILL_ENEMIES_WITHCAR",
+          "defaultvalue": 0,
+          "displayName": "Hit and Run",
+          "hidden": 0,
+          "description": "Run over 20 enemies with the car in Episode Two.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/76cf8aa11a43364c05927dd0cd644a805bb222b8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/284b7fde0ec0c688361b39d89c059b33019c9451.jpg"
+        },
+        {
+          "name": "EP2_BEAT_HUNTERAMBUSH",
+          "defaultvalue": 0,
+          "displayName": "Meet the Hunters",
+          "hidden": 0,
+          "description": "Survive the Hunter ambush with Alyx.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/bd5662c83d2099b72457df923e5a382bdfc78dc2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/3e918f40a10ed0725b487f2c4a2c5168f20f6355.jpg"
+        },
+        {
+          "name": "EP2_KILL_CHOPPER_NOMISSES",
+          "defaultvalue": 0,
+          "displayName": "Puttin' On a Clinic",
+          "hidden": 0,
+          "description": "Defeat the chopper in Episode Two without any misses.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/21a15e44ab17055e405b0c53c13863e98ba1d413.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/ef4bdb3a80b4f240211371a96e9d842f5bc72734.jpg"
+        },
+        {
+          "name": "EP2_KILL_COMBINECANNON",
+          "defaultvalue": 0,
+          "displayName": "Gunishment!",
+          "hidden": 0,
+          "description": "Destroy the Combine Autogun in the junkyard.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/3611af4ebc3d446cc3573f183671db806d60f7f2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/aaf98d64fa5ef097dfc2cdeaacb0410ee503ff22.jpg"
+        },
+        {
+          "name": "EP2_FIND_ALLRADARCACHES",
+          "defaultvalue": 0,
+          "displayName": "Cache Checker",
+          "hidden": 0,
+          "description": "Find every radar cache in chapter Under The Radar.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/84526da0cb2e994ce0bec25de100a6fe8cd864c6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/372991e899ccccbb9bd68640861306fad59552f1.jpg"
+        },
+        {
+          "name": "EP2_BEAT_RACEWITHDOG",
+          "defaultvalue": 0,
+          "displayName": "Pedal to the Metal",
+          "hidden": 0,
+          "description": "Beat DOG in a race to the White Forest base.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/950d583edb9f09f821b89f671c69ac6ab9ddbb6b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/2eed225e1bb5d800acdf61514ab9073077b7c771.jpg"
+        },
+        {
+          "name": "EP2_BEAT_ROCKETCACHEPUZZLE",
+          "defaultvalue": 0,
+          "displayName": "Gordon Propelled Rocket",
+          "hidden": 0,
+          "description": "Unlock the rocket launcher lambda cache in chapter Under The Radar.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/04778d781b2198ad9b8c2e994fc77094de91cff3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/c77110e7119bc9a3a351309af2ff4dd6246929f4.jpg"
+        },
+        {
+          "name": "EP2_BEAT_WHITEFORESTINN",
+          "defaultvalue": 0,
+          "displayName": "Quiet Mountain Getaway",
+          "hidden": 0,
+          "description": "Survive the ambush at White Forest Inn.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/99fc33703c71215755dbaac329fdf2c2b813b1b1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/bb14f48200c3bde417fe449bd8d0523e89033940.jpg"
+        },
+        {
+          "name": "EP2_PUT_ITEMINROCKET",
+          "defaultvalue": 0,
+          "displayName": "Little Rocket Man",
+          "hidden": 0,
+          "description": "Send the garden gnome into space.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/a9aabef15bba2cef12559c0e04c0252e113acf30.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/ae9b60f48891e0daed6c49210e6cc44ad089cce7.jpg"
+        },
+        {
+          "name": "EP2_BEAT_MISSILESILO2",
+          "defaultvalue": 0,
+          "displayName": "Secondary Silo Secured",
+          "hidden": 0,
+          "description": "Secure the launch doors on missile silo 2.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/0a71eebe1d859072660a0da2a4a5c1fcece63297.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/ed9c4cd2cb3bc16af5b5c425fc75e86c9ef18070.jpg"
+        },
+        {
+          "name": "EP2_BEAT_OUTLAND12_NOBUILDINGSDESTROYED",
+          "defaultvalue": 0,
+          "displayName": "Neighborhood Watch",
+          "hidden": 0,
+          "description": "Save all buildings outside the missile silo from destruction.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/d30795a4b3545cdf66e0be32abd1f43e955de002.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/30699b6d1b469261be7a253a0926cdc210e2fc38.jpg"
+        },
+        {
+          "name": "EP2_BEAT_GAME",
+          "defaultvalue": 0,
+          "displayName": "Defense of the Armament",
+          "hidden": 0,
+          "description": "Save the missile silo from the Combine offensive.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/919747d3db02b9a1c23c57fe1c513bc9c8453436.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/64d7e82fe67b67c3fe0d6329d28aac93df8fb87c.jpg"
+        },
+        {
+          "name": "EP2_KILL_HUNTER_WITHFLECHETTES",
+          "defaultvalue": 0,
+          "displayName": "Payback",
+          "hidden": 0,
+          "description": "Kill a Hunter with its own flechettes.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/eb14352bc2f43ca6e42024eab1ac64ef14129cb4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/0244763da0703f9e02e9322772768e311c84891c.jpg"
+        },
+        {
+          "name": "HLX_KILL_ENEMIES_WITHPHYSICS",
+          "defaultvalue": 0,
+          "displayName": "Bone Breaker",
+          "hidden": 0,
+          "description": "Kill 30 enemies with thrown physics objects.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/70a1493f00e8d976ddbcb85476bb07bbb3a8fe43.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/7bf8eedb85b66dcece9b6f1ebcb63c816d0dbd92.jpg"
+        },
+        {
+          "name": "HLX_KILL_ENEMY_WITHHOPPERMINE",
+          "defaultvalue": 0,
+          "displayName": "Deadly Harvest",
+          "hidden": 0,
+          "description": "Kill an enemy by planting a hopper mine.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/f074dd3ca2e72955d73be7ef9967b8475394ade4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/9eceae7dcafe6e05fb0abddbcf252c7666a3857c.jpg"
+        },
+        {
+          "name": "HLX_KILL_SOLDIER_WITHHISGRENADE",
+          "defaultvalue": 0,
+          "displayName": "Hot Potat0wned",
+          "hidden": 0,
+          "description": "Kill a Combine soldier with his own grenade.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/9fa2ca7ce8a19f3138d2f47647116e1e75623170.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/19a68379214ed767e04c30d96cbc32861fe12570.jpg"
+        },
+        {
+          "name": "EPX_GET_ZOMBINEGRENADE",
+          "defaultvalue": 0,
+          "displayName": "Grave Robber",
+          "hidden": 0,
+          "description": "Steal a Zombine's grenade.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/d2168ee16304007917a17dcd9fa7f31258a95b8a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/4d65ed8ead53c25ef572fd4e6559ee5d6ae5ed2f.jpg"
+        },
+        {
+          "name": "GLOBAL_GNOME_ALONE",
+          "defaultvalue": 0,
+          "displayName": "Gnome Alone",
+          "hidden": 0,
+          "description": "If you are reading this achievement, Gabe Newell has successfully launched Gnome Chompski into space. If you did not also receive the achievement 'Manufacturing Ascent', Newell has abandoned his plans to shoot Noam Chomsky into space.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/d955037625d44c6c21031ff93d8913ec987b0895.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/220/3d2b19ac0abc89126587ea77db595d3539c24601.jpg"
+        }
+      ]
+    }
+  }
+}

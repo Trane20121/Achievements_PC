@@ -1,0 +1,462 @@
+{
+  "game": {
+    "gameName": "Lies Of P",
+    "gameVersion": "19",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "LOP_102",
+          "defaultvalue": 0,
+          "displayName": "Real boy : They all lived happily ever after",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/cd7f8727982c85c7e101ff802eda5c4e75cc1742.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/492687aed53ea01cfe9f6d2e71b11d6a5652aa72.jpg"
+        },
+        {
+          "name": "LOP_103",
+          "defaultvalue": 0,
+          "displayName": "Free from the puppet string",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8172e06c0923d848398ae0802f43692a491a7c31.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/492687aed53ea01cfe9f6d2e71b11d6a5652aa72.jpg"
+        },
+        {
+          "name": "LOP_104",
+          "defaultvalue": 0,
+          "displayName": "Rise of P",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/cfddf5a5ae3b7f0d1050ace45245af746ff39225.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/492687aed53ea01cfe9f6d2e71b11d6a5652aa72.jpg"
+        },
+        {
+          "name": "LOP_105",
+          "defaultvalue": 0,
+          "displayName": "The First Puppet",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/af6cbbbed22213d1e59bee376650f213d0d055ba.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_106",
+          "defaultvalue": 0,
+          "displayName": "Strongest Normal Weapon",
+          "hidden": 0,
+          "description": "Strengthen a normal weapon to its max level.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/d4891d8642a90f399a711625d04bf7e24e6ab684.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_107",
+          "defaultvalue": 0,
+          "displayName": "Strongest Special Weapon",
+          "hidden": 0,
+          "description": "Strengthen a special weapon to its max level.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/3d8a4d8884b44bd57287ef20528c3944072612ec.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_108",
+          "defaultvalue": 0,
+          "displayName": "Strongest Legion Arm",
+          "hidden": 0,
+          "description": "Modify a Legion Arm to its max level.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8dc4a03156738b820dacfeff7f025f3908b4e85b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_109",
+          "defaultvalue": 0,
+          "displayName": "Extreme Potential",
+          "hidden": 0,
+          "description": "Activate P-Organ to Phase 5.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/a9ea6a11b6f4d99951e6c5a3326f62feab3683e0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_110",
+          "defaultvalue": 0,
+          "displayName": "Pianist of Krat",
+          "hidden": 0,
+          "description": "Play a perfect tune on the piano at Hotel Krat.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/7d699e23e3196cf4bc2bcfa4347476e160b841f5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_111",
+          "defaultvalue": 0,
+          "displayName": "Legion Arm Collector",
+          "hidden": 0,
+          "description": "Collect all Legion Arms.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/dd1fab12005858c4f6f9002d9f539b273de933f6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_112",
+          "defaultvalue": 0,
+          "displayName": "Special Weapon Collector",
+          "hidden": 0,
+          "description": "Collect all special weapons.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/7adc0733dcb7a2c3c330f059eee7dc1101ed2844.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_113",
+          "defaultvalue": 0,
+          "displayName": "Normal Weapon Collector",
+          "hidden": 0,
+          "description": "Collect all normal weapons.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/44406ff758af335041f7837d7f02ce0e946677f1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_114",
+          "defaultvalue": 0,
+          "displayName": "Golden Melody",
+          "hidden": 0,
+          "description": "Collect and play all records.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/00766cad48180f3281174ef7284b86e18b8261f6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_115",
+          "defaultvalue": 0,
+          "displayName": "Learning about Emotions",
+          "hidden": 0,
+          "description": "Learn all gestures.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/dfc5b03de8383826bf2df2f02567fd8da391a551.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_116",
+          "defaultvalue": 0,
+          "displayName": "Veteran Explorer",
+          "hidden": 0,
+          "description": "Decipher all cryptic vessels and claim the rewards.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/be60912b432216a789f1790884a02a4a94c0eeb9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_117",
+          "defaultvalue": 0,
+          "displayName": "End of Riddles",
+          "hidden": 0,
+          "description": "Discover all Trinity Sanctums.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/0c21d7a92bc45e8ceaff660f7ad15176a257453b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_118",
+          "defaultvalue": 0,
+          "displayName": "First Lie",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8ef6e6adaef4fb36d09f4c7b86a98b8573b41ce7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_119",
+          "defaultvalue": 0,
+          "displayName": "Stargazer’s Guide",
+          "hidden": 0,
+          "description": "Repair a Stargazer.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/aeca6faa0ac1c7fd9390bbceca7ba5e589ef463a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_120",
+          "defaultvalue": 0,
+          "displayName": "Exploring Possibilities",
+          "hidden": 0,
+          "description": "Try to assemble a weapon.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/ff343db9c747eaf71a82eeeeca34c64041edfb44.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_121",
+          "defaultvalue": 0,
+          "displayName": "The Ultimate Defense Technique",
+          "hidden": 0,
+          "description": "Destroy an enemy’s weapon with a perfect guard.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/cc4d99a1d8a40e325fb965ab3f81d1f0d184719b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_122",
+          "defaultvalue": 0,
+          "displayName": "Fatal Blow",
+          "hidden": 0,
+          "description": "Deliver a successful Fatal Attack.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/861a49e43a6b3138b387586c7ce4fb088a5f1402.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_123",
+          "defaultvalue": 0,
+          "displayName": "The Bastards and the Sweepers",
+          "hidden": 0,
+          "description": "Kill a Stalker.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8cc063a0b3fe916286a4689047cf0bee15c5d8f4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_124",
+          "defaultvalue": 0,
+          "displayName": "Parade Master",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/c7203addcfc32f3494c4be9b1b10d89544ed2fea.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_125",
+          "defaultvalue": 0,
+          "displayName": "Scrapped Watchman",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/68eb0908c0a53667cd6ba8266d4dae118dda3331.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_126",
+          "defaultvalue": 0,
+          "displayName": "King's Flame",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/c8b924da784b045180d28e076dd2627ecd7af79f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_127",
+          "defaultvalue": 0,
+          "displayName": "Fallen Archbishop",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/b30d29dd1431bf85e93eff0cb392946bcbd4e747.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_128",
+          "defaultvalue": 0,
+          "displayName": "The Delayed Match",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/c3c9d92c566b2cd9ca0328f2d859cd2293cda3b7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_129",
+          "defaultvalue": 0,
+          "displayName": "King of Puppets",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/46a71edaa61a33aef3808d20c58c859a79209a4e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_130",
+          "defaultvalue": 0,
+          "displayName": "The Champion of Evolution",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/1579aec5ced2de6f8b8c0d9988d8bd325679b048.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_131",
+          "defaultvalue": 0,
+          "displayName": "Puppet-Devouring Green Monster",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/b05953f12c089c9569e437280e13f8e7152c5966.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_132",
+          "defaultvalue": 0,
+          "displayName": "Corrupted Parade Master",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/ac19424293594469fec500f552dddd4c8bb7c906.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_133",
+          "defaultvalue": 0,
+          "displayName": "Revenge of Black",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/3f74ddfe528b69b6df10c76cfeed7687b030c243.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_134",
+          "defaultvalue": 0,
+          "displayName": "The Complete One",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/51a293e81f837a55358e622892f3a7e5008068fd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_135",
+          "defaultvalue": 0,
+          "displayName": "The Awakened God",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6bc0a6b06da86123f5a43e4e79c350856ce770fb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_136",
+          "defaultvalue": 0,
+          "displayName": "Bear Gold Coin Fruit",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/ddb2ef37f57e0ccbca892498b2242d23cc5adbfc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_137",
+          "defaultvalue": 0,
+          "displayName": "From Across the Rift",
+          "hidden": 0,
+          "description": "Kill all types of Dimensional Butterflies.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/47a41d211e3f17c1a97c42368f68f582a27ccd14.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_138",
+          "defaultvalue": 0,
+          "displayName": "The Story of the Prince",
+          "hidden": 0,
+          "description": "Find out about the last story of Venigni.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/0dc3f66dbb6ab901b5e05399c12b9234ea396036.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_139",
+          "defaultvalue": 0,
+          "displayName": "The Story of the Refined Old Lady",
+          "hidden": 0,
+          "description": "Find out about the last story of Antonia.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/ed15427796bc6539021abb82617070a26df687f0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_140",
+          "defaultvalue": 0,
+          "displayName": "The Story of the One Who Dreamed",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/a8729d226a7f05c79a83ce400c9b60a90c7f1480.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_141",
+          "defaultvalue": 0,
+          "displayName": "The Story of One Father",
+          "hidden": 0,
+          "description": "Find out about the last story of Geppetto.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/c1de01f6812455e26a88b026265fe76ef14db288.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_142",
+          "defaultvalue": 0,
+          "displayName": "The Story of a Stranger Girl",
+          "hidden": 0,
+          "description": "Find out about the last story of Eugénie.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/b4fc4063e8e75c2f4e05f502682c528803876da3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_143",
+          "defaultvalue": 0,
+          "displayName": "The Story of the Blue Butterfly",
+          "hidden": 0,
+          "description": "Find out about the last story of Sophia.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/059be932c20fa1264ff9d00b68ba30f6cafc9dbc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_144",
+          "defaultvalue": 0,
+          "displayName": "The Rose's Memory",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/cbf211002c4d463af0a3cf3ce7690bb6ac33e63c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_145",
+          "defaultvalue": 0,
+          "displayName": "Enduring Resolve",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/cebab10844a39608bb2a857f2437f4d1fd4803bb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6f2c4f6b43304ba5934a36494b82bc9a4392a162.jpg"
+        },
+        {
+          "name": "LOP_146",
+          "defaultvalue": 0,
+          "displayName": "True Combat Gear Collector",
+          "hidden": 0,
+          "description": "Collect all weapons and Legion Arms in the Forgotten Time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/240ec35bdcbda64c27a75bf69272446e2e707c5a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_147",
+          "defaultvalue": 0,
+          "displayName": "Beyond Limitless Potential",
+          "hidden": 0,
+          "description": "Further upgrade the abilities of the P-Organ.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/d83523c6ab1e2e47f819d159b4025f26aafa044e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_148",
+          "defaultvalue": 0,
+          "displayName": "Memory's Melody",
+          "hidden": 0,
+          "description": "Collect and listen to all records from the Forgotten Time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/434f02c44b6955dc8a1e3fa3b97bc1f4bbc03898.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_149",
+          "defaultvalue": 0,
+          "displayName": "To Be Human",
+          "hidden": 0,
+          "description": "Learn all gestures from the Forgotten Time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/45acadbd2599ac140e620a1959e06133d5b2e55b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_150",
+          "defaultvalue": 0,
+          "displayName": "Tracker of Dark Secrets",
+          "hidden": 0,
+          "description": "Decrypt all clues hidden inside the cipher machines and claim the rewards.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/6cf9301f2329efb08407bd5354b807215c9d8cb9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_151",
+          "defaultvalue": 0,
+          "displayName": "Puppeteer of Death",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/c8468c0178f471a9db757c54c97f9960ab192b88.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_152",
+          "defaultvalue": 0,
+          "displayName": "Anguished Guardian",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/2b2ee507888c6e62719b2e4f5339ba2a2216ff9f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_153",
+          "defaultvalue": 0,
+          "displayName": "The Blood Artist",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/5253c68e3249bf534b7e44f9dd42a180e790baa5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        },
+        {
+          "name": "LOP_154",
+          "defaultvalue": 0,
+          "displayName": "Honor and Revenge",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/a6697f96d11e941ee1e7b9a405c8c72a16d81d81.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1627720/8c617bdb98c6ccd7d07a89c17a814d9a23998c88.jpg"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "game": {
+    "gameName": "Tres",
+    "gameVersion": "8",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "ACH_01",
+          "defaultvalue": 0,
+          "displayName": "A New Journey",
+          "hidden": 0,
+          "description": "Begin your brand new adventure.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/930acc971730f415ea3243b17433886d09b9422d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/e61b2e2ed47cfa93abf969a0c5d94b1cae346879.jpg"
+        },
+        {
+          "name": "ACH_02",
+          "defaultvalue": 0,
+          "displayName": "Clash of the Gods",
+          "hidden": 0,
+          "description": "Adventure through Olympus and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/cd07bb132a9bb2ba799e0c457dff273e07f49681.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/7ee8d9e3c7fca368cecde8bc2485739afefec56c.jpg"
+        },
+        {
+          "name": "ACH_03",
+          "defaultvalue": 0,
+          "displayName": "A Wish at Twilight",
+          "hidden": 0,
+          "description": "Adventure through Twilight Town and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/15a58cd443daa9905c57bfe77197d55bf71be731.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/114715fb125153d4607cd5c98fdbd2c4c5a32c41.jpg"
+        },
+        {
+          "name": "ACH_04",
+          "defaultvalue": 0,
+          "displayName": "Inseparable Friends",
+          "hidden": 0,
+          "description": "Adventure through Toy Box and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/d1e721d500c61859ebf981e8e0631ca89a4d5fbf.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/c666516f0172a8286851341b12fd1924ab9bb95a.jpg"
+        },
+        {
+          "name": "ACH_05",
+          "defaultvalue": 0,
+          "displayName": "Happily Ever After",
+          "hidden": 0,
+          "description": "Adventure through the Kingdom of Corona and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/bd2211a9e5a86d0926daa1f9a7cd915530829870.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/b362409c4d4a9d32af915733d1e2df05d44d1c46.jpg"
+        },
+        {
+          "name": "ACH_06",
+          "defaultvalue": 0,
+          "displayName": "The Power of Laughter",
+          "hidden": 0,
+          "description": "Adventure through Monstropolis and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/e50107302bfc8908d1c810a81e8edfc733708b9e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/9893d829d2c22802d6bfd372b7485996a84a2890.jpg"
+        },
+        {
+          "name": "ACH_07",
+          "defaultvalue": 0,
+          "displayName": "An Act of True Love",
+          "hidden": 0,
+          "description": "Adventure through Arendelle and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/676bab9dffd7ef10632692fadf60f8bbf14cd0cc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/45c6765371f3c87a2365c60b394f63e055f9eb0b.jpg"
+        },
+        {
+          "name": "ACH_08",
+          "defaultvalue": 0,
+          "displayName": "Way of the Pirate",
+          "hidden": 0,
+          "description": "Adventure through The Caribbean and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/ade9062ffdb3c4d9f3eda8afa57d2de6d621d7a4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/4fd868cf1f4bb6ae3e9c7d0ea06a3e5dfc7ebda1.jpg"
+        },
+        {
+          "name": "ACH_09",
+          "defaultvalue": 0,
+          "displayName": "Making a Difference",
+          "hidden": 0,
+          "description": "Adventure through San Fransokyo and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/e1f87d467ee6502dd2aa45cbb3de2bae4869f3dd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/8ebbfadb032628bb6b6df8600cf0d6ea38c087ab.jpg"
+        },
+        {
+          "name": "ACH_10",
+          "defaultvalue": 0,
+          "displayName": "Home Again",
+          "hidden": 0,
+          "description": "Adventure through the Hundred Acre Wood and complete the story.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/c4be10448ade10984bbec01f4ee65185b26e9bb1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/8a92f8a6b442a1b04a80210efe35275ce0ca3166.jpg"
+        },
+        {
+          "name": "ACH_11",
+          "defaultvalue": 0,
+          "displayName": "The Hearts Joined to His",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/aa6a32d9a29ca8dc702bf49ba50634b0d4a06c7a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/3bb868ce5046b3288be5ef2a89bd466131850f9e.jpg"
+        },
+        {
+          "name": "ACH_12",
+          "defaultvalue": 0,
+          "displayName": "No Matter What",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/9cacdadab51aa05a787efb3707581a9b13b2d2ce.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/59f95545498c8de364c2409ab8993e3e5ae9361c.jpg"
+        },
+        {
+          "name": "ACH_13",
+          "defaultvalue": 0,
+          "displayName": "The Battle to End All",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/721348731059f06d4229405126d48cd7174105cb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/f97736d11e7b0f3044890879ac65ec41a26bcf8c.jpg"
+        },
+        {
+          "name": "ACH_14",
+          "defaultvalue": 0,
+          "displayName": "Another Chapter Closed",
+          "hidden": 0,
+          "description": "Finish the game and view the ending.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/89600fbaad0599878245b853b3a6b30103be8cb4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/9bcd05b7fb1d0fc02de7091800b14021e3812447.jpg"
+        },
+        {
+          "name": "ACH_15",
+          "defaultvalue": 0,
+          "displayName": "Hidden Kings",
+          "hidden": 0,
+          "description": "Complete the Lucky Emblems section of the Gummiphone.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/ee2cbcb1611c3f97032683d00acf145990cf0eb8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/30021e410dd3f5a89d37366ff3db3a1955e7ca14.jpg"
+        },
+        {
+          "name": "ACH_16",
+          "defaultvalue": 0,
+          "displayName": "Know Thine Enemy",
+          "hidden": 0,
+          "description": "Complete the Adversaries section of the Gummiphone.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/d6351eaab9867044cb5162822aaa5407f03e4082.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/b6283e532bb8f88da1d48a126357345f85b965a0.jpg"
+        },
+        {
+          "name": "ACH_17",
+          "defaultvalue": 0,
+          "displayName": "No Stone Unturned",
+          "hidden": 0,
+          "description": "Complete the Treasures section of the Gummiphone.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/a13256983e0c2f982c0d83f2065981a513ee2d82.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/aaa5106d2d86389a51855165c3c8ab2650e5d63a.jpg"
+        },
+        {
+          "name": "ACH_18",
+          "defaultvalue": 0,
+          "displayName": "Synthesist",
+          "hidden": 0,
+          "description": "Complete the Synthesis section of the Gummiphone.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/668ac217941233f58a86cc08920b28854a47c61d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/e308708a2b052d3e2656699c147f76b8a669a84f.jpg"
+        },
+        {
+          "name": "ACH_19",
+          "defaultvalue": 0,
+          "displayName": "One for the Books",
+          "hidden": 0,
+          "description": "Complete the Game Records section of the Gummiphone.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/cf0a8e8a43a8ce3dfdce88831906c67965c4d547.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/dd206702d73b876c152be078947b540b4a431ea6.jpg"
+        },
+        {
+          "name": "ACH_20",
+          "defaultvalue": 0,
+          "displayName": "Tall Enough to Ride",
+          "hidden": 0,
+          "description": "Use an attraction to defeat enemies for the first time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/313390ba4519fb68528255f59e0f40c024f5ec1c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/389315c88dca4a6a58c3d4baeb7b6f88464daeab.jpg"
+        },
+        {
+          "name": "ACH_21",
+          "defaultvalue": 0,
+          "displayName": "Heartbound",
+          "hidden": 0,
+          "description": "Use a link to defeat enemies for the first time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/118f3e079b41ce9f709ce28d89b5f1ff0ae7b751.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/b75d92beab98d3963fe37f3ed4d212ce21377349.jpg"
+        },
+        {
+          "name": "ACH_22",
+          "defaultvalue": 0,
+          "displayName": "Grand Mage",
+          "hidden": 0,
+          "description": "Cast grand magic for the first time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/b21ba25d85f00a42971ca138b06a67ed40e8a140.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/1298f60b6f2658b651bc13979b6060ce972e25bd.jpg"
+        },
+        {
+          "name": "ACH_23",
+          "defaultvalue": 0,
+          "displayName": "Knight",
+          "hidden": 0,
+          "description": "Defeat 1,000 enemies.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/5f483e6de6b8a08966da836a60856de9a379c0f3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/8b72ae9a58519b07f37b329a9721bf5dfe293625.jpg"
+        },
+        {
+          "name": "ACH_24",
+          "defaultvalue": 0,
+          "displayName": "Bishop",
+          "hidden": 0,
+          "description": "Defeat 3,000 enemies.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/9267d2ec94d7dd5f0db98a26f0edac56bbdddc72.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/fe93126c49b90f58bcebc5a14953edccc693b679.jpg"
+        },
+        {
+          "name": "ACH_25",
+          "defaultvalue": 0,
+          "displayName": "Rook",
+          "hidden": 0,
+          "description": "Defeat 5,000 enemies.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/339612ce910502c867fbefb96562431f7f75784a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/3c2364e3cb0e7db3d682641901a4845c213f510f.jpg"
+        },
+        {
+          "name": "ACH_26",
+          "defaultvalue": 0,
+          "displayName": "Flanmeister",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/e4b860c569b23c3f12ec590f58be7329aa4144bb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/00f01d1a7db7be3c7a949ef2380ee68d4cb0d2aa.jpg"
+        },
+        {
+          "name": "ACH_27",
+          "defaultvalue": 0,
+          "displayName": "Salvager",
+          "hidden": 0,
+          "description": "Use the gummi ship to obtain 20 unique treasures.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/7f19eb0bb7114f14ede79bb350db7a9fd0b12233.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/55a20e548fa2851f35f1a4d9c0788b0d897db323.jpg"
+        },
+        {
+          "name": "ACH_28",
+          "defaultvalue": 0,
+          "displayName": "Stargazer",
+          "hidden": 0,
+          "description": "Use the gummi ship to find and photograph all the constellations.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/258e42ee3afba520ff6f347978495109378ccd65.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/322ad64443c1eeee513ce4c28714aa72c50c67b9.jpg"
+        },
+        {
+          "name": "ACH_29",
+          "defaultvalue": 0,
+          "displayName": "Thermosphere",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/4c83e9a65381775d4fe9014d3b89a340b43fb842.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/3c743960347645636c25bbd12470bbc14f631f19.jpg"
+        },
+        {
+          "name": "ACH_30",
+          "defaultvalue": 0,
+          "displayName": "Centurion",
+          "hidden": 0,
+          "description": "Score at least 12,000,000 pts. in Verum Rex: Beat of Lead.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/5ebe570fdfc6b406b1911f1e8c4b160690ea18fd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/2885e100809681bd369020c85dbded24986dfdab.jpg"
+        },
+        {
+          "name": "ACH_31",
+          "defaultvalue": 0,
+          "displayName": "Festive Dancer",
+          "hidden": 0,
+          "description": "Score at least 70,000 pts. in the Festival Dance.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/607ed261712b7199b4d1dbb16a32ab1f86e4ee2b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/0277f485b2ea000c0b5eb3044be805e0d0bfff0d.jpg"
+        },
+        {
+          "name": "ACH_32",
+          "defaultvalue": 0,
+          "displayName": "Shield Shredder",
+          "hidden": 0,
+          "description": "Score at least 600,000 pts. in Frozen Slider.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/cde9e1ce1d648f0c9492b298eefe11b56e948aa6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/43a1da7b4cebb55be0bb90ae2b8cc6021694c38a.jpg"
+        },
+        {
+          "name": "ACH_33",
+          "defaultvalue": 0,
+          "displayName": "Datascraper",
+          "hidden": 0,
+          "description": "Get an A rank on both Flash Tracer courses.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/26d9605474d82f6f2a0b88ca74c7cb1703081635.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/243a544380d6d0df75c0fa2fd92dcf58704e69e3.jpg"
+        },
+        {
+          "name": "ACH_34",
+          "defaultvalue": 0,
+          "displayName": "Dreadnought",
+          "hidden": 0,
+          "description": "Fully power up the Leviathan.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/75b1f4f4545305be34f9e3030f72fb49f8db0a82.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/f9329dcc4a649565425972f87a21d3e451721321.jpg"
+        },
+        {
+          "name": "ACH_35",
+          "defaultvalue": 0,
+          "displayName": "True Captain",
+          "hidden": 0,
+          "description": "Sink 200 enemy ships in The Caribbean.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/94d0ca8982f9f166ff79205d1a0237f64f142103.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/2593bc35f82635071094d310c51674f15b23847f.jpg"
+        },
+        {
+          "name": "ACH_36",
+          "defaultvalue": 0,
+          "displayName": "Say Cheese!",
+          "hidden": 0,
+          "description": "Snap your first photo.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/07c7d78bde140bb382631ea7fd7763c32a3a049f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/bd815505c62b8514cd5184c9b15cb615db30806a.jpg"
+        },
+        {
+          "name": "ACH_37",
+          "defaultvalue": 0,
+          "displayName": "Lasting Memories",
+          "hidden": 0,
+          "description": "Hold on to 50 photos.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/b7e32bc17433b71514e64587863d5c5ac873ea26.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/c4f5948b31b8bfd982a234c84ed0ed560d33b884.jpg"
+        },
+        {
+          "name": "ACH_38",
+          "defaultvalue": 0,
+          "displayName": "Cornucopia",
+          "hidden": 0,
+          "description": "Collect every type of ingredient.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/8d1187b729cf52cdbbe226f25c4220b13f1a9c38.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/fbbf0e611047b47f304d29809f7b7458a94f0401.jpg"
+        },
+        {
+          "name": "ACH_39",
+          "defaultvalue": 0,
+          "displayName": "Full Course",
+          "hidden": 0,
+          "description": "Earn your first \"Excellent\" while preparing cuisine.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/0ef561e0d146626c1bf301722d391b1415a1e498.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/c746a4c8874f1b8e0593e558fdaa92860f7782eb.jpg"
+        },
+        {
+          "name": "ACH_40",
+          "defaultvalue": 0,
+          "displayName": "Master Chef",
+          "hidden": 0,
+          "description": "Earn an \"Excellent\" while preparing every type of cuisine.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/aa8c11f957bfee1d7aa7d975fcf20c4528230490.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/178b4d31a88221b5bfa030562d34caf2e03a2cab.jpg"
+        },
+        {
+          "name": "ACH_41",
+          "defaultvalue": 0,
+          "displayName": "Muscle Memory",
+          "hidden": 0,
+          "description": "Get a new high score in one of the Classic Kingdom games.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/a2c116a36aefa30cc9bae9eff5a0f2a03f36eed6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/c73ebe1b594516ff6f65de9674d8853d574bdc67.jpg"
+        },
+        {
+          "name": "ACH_42",
+          "defaultvalue": 0,
+          "displayName": "Classically Trained",
+          "hidden": 0,
+          "description": "Get a new high score in every Classic Kingdom game.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/9981760f14719412fd95acd04b3cc02bcd863568.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/5ea97cb8f95d325c34c7baf9c136860ee6e70624.jpg"
+        },
+        {
+          "name": "ACH_43",
+          "defaultvalue": 0,
+          "displayName": "Blademaster",
+          "hidden": 0,
+          "description": "Obtain a Keyblade that is fully powered up.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/1533382759c18f719c79da219c0797663425541b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/09f145067e544bf5079b16fab4cc4f1f3f78ba93.jpg"
+        },
+        {
+          "name": "ACH_44",
+          "defaultvalue": 0,
+          "displayName": "Ultima Weapon",
+          "hidden": 0,
+          "description": "Synthesize the Ultima Weapon.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/86f3028ec3a97571b2a9fabdf00687ee4ba47c04.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/2b2c6f04e866ffa522e22627cf705aab635c49d0.jpg"
+        },
+        {
+          "name": "ACH_45",
+          "defaultvalue": 0,
+          "displayName": "Leveled Out",
+          "hidden": 0,
+          "description": "Raise Sora to LV 99.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/62cc86a6331def87369af2fce38c7db1609461b3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/e7d8e5f26f2e4f83a558d39ffd6bc2e2a7a510ed.jpg"
+        },
+        {
+          "name": "ACH_46",
+          "defaultvalue": 0,
+          "displayName": "All-rounder",
+          "hidden": 0,
+          "description": "Earn all EZ Code merits.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/db7744b48c8a46684cabfd4dddd95d9e0b228584.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/14e939f306a155a3807cd9a60f084bb98cd94d74.jpg"
+        },
+        {
+          "name": "ACH_47",
+          "defaultvalue": 0,
+          "displayName": "Risk-taker",
+          "hidden": 0,
+          "description": "Reach the highest PRO Code merit rank.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/24adae11f7eabf91f91280abb8b204651bcf622e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/df38ae9d1a592cc3179a7791875f6a1197a1c838.jpg"
+        },
+        {
+          "name": "ACH_48",
+          "defaultvalue": 0,
+          "displayName": "Behind the Curtain",
+          "hidden": 0,
+          "description": "Clear KINGDOM HEARTS Ⅲ Re Mind.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/5ccf24544cc5007dac7360719a9128bd677430c8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/fc10cc03d473a3225d5ccb47501531a020261cde.jpg"
+        },
+        {
+          "name": "ACH_49",
+          "defaultvalue": 0,
+          "displayName": "Start Analysis",
+          "hidden": 0,
+          "description": "Eliminate One Darkness in the datascape.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/1904117c7f2c13710bdc6d144b63df139cd248ae.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/245caf69052604c46ab1ab385004293c822f15fe.jpg"
+        },
+        {
+          "name": "ACH_50",
+          "defaultvalue": 0,
+          "displayName": "Analysis Complete",
+          "hidden": 0,
+          "description": "Eliminate Thirteen Darknesses in the datascape.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/c8eca5ef1dde45cbe953eecb5503e74f9ae5ad65.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/8f1cf405d48ef4c37dcc5f188afd334c6583fabc.jpg"
+        },
+        {
+          "name": "ACH_51",
+          "defaultvalue": 0,
+          "displayName": "Beyond the Curtain",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/d7e6e50660b52c48a54c124229d701edaef1bcb3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2552450/c43043bc08bbad6bf6cb5f71e4303dbbb330db17.jpg"
+        }
+      ]
+    }
+  }
+}

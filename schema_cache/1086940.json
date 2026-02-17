@@ -1,0 +1,509 @@
+{
+  "game": {
+    "gameName": "Baldur's Gate 3",
+    "gameVersion": "13",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "BG3_Quest01",
+          "defaultvalue": 0,
+          "displayName": "Descent From Avernus",
+          "hidden": 0,
+          "description": "Take control of the nautiloid and escape the Hells.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/0cb31fd9ec036550a374aa702a37464a98da3bfa.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/0950821dd57b97eb5ce309530dd61f0e3f2e3a6d.jpg"
+        },
+        {
+          "name": "BG3_Quest02",
+          "defaultvalue": 0,
+          "displayName": "The Plot Thickens",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/628cdbbfd2e731735e4817252ce6633bf3bcd8ed.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/4127925c4aeb79134a98de629e7918ceb776b4fb.jpg"
+        },
+        {
+          "name": "BG3_Quest03",
+          "defaultvalue": 0,
+          "displayName": "The City Awaits",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/3c6d05ff648b66925238963a658ee307e31ff870.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/092cc30e865fbb0158afe43fb343d6362e9292fa.jpg"
+        },
+        {
+          "name": "BG3_Quest04",
+          "defaultvalue": 0,
+          "displayName": "All's Well That Ends Well",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/ecd435323119579216ebcffebae690ae2e5c13eb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/c4307d65a1d8c9776f71e73494248b546e4135d8.jpg"
+        },
+        {
+          "name": "BG3_Quest05",
+          "defaultvalue": 0,
+          "displayName": "Absolute Power Corrupts",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/265327d387174ee2160946bcde392352ce635b88.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/749d41e10cac54dbeb2b377d8bc69b2afdfbae62.jpg"
+        },
+        {
+          "name": "BG3_Quest06",
+          "defaultvalue": 0,
+          "displayName": "Hero of the Forgotten Realms",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/7648f980938af51c9f1378ec1171673fc8d8d0b4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/2cb77366c957e8fa3c5eff4fdd7c59ddc5d3c3e4.jpg"
+        },
+        {
+          "name": "BG3_Quest07",
+          "defaultvalue": 0,
+          "displayName": "Sins of the Father",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/8a149aacb554742ac673bf2531955ce27f4e234c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/99ab472e0b521c17d3988f54c687635f05bfcabb.jpg"
+        },
+        {
+          "name": "BG3_Quest08",
+          "defaultvalue": 0,
+          "displayName": "Ceremorphosis",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/25eb31d566013ab216bb033cdbea1851d43db6fb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/a1cb2cc9657751c204666c9e81f74eaabf48d6ee.jpg"
+        },
+        {
+          "name": "BG3_Quest09",
+          "defaultvalue": 0,
+          "displayName": "Roleplayer",
+          "hidden": 0,
+          "description": "Complete ten background goals in a single playthrough - you are one with your character.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/9c1231f530788d9aa21e1a858fbb9e85e0cb64f8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/6b55d2fb4ef8fbf7fe7605b561b95a762ea74ded.jpg"
+        },
+        {
+          "name": "BG3_Quest10",
+          "defaultvalue": 0,
+          "displayName": "Bedrolls and Breakfast",
+          "hidden": 0,
+          "description": "Take four full Long Rests in a single playthrough - adventuring's tiring work.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/47daa8cf213809978d0f2ba9b514942c864ce452.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/042a397825694c4147bf6fc9bd580890b71573e7.jpg"
+        },
+        {
+          "name": "BG3_Quest11",
+          "defaultvalue": 0,
+          "displayName": "Expand Your Mind",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/279a9b7a2d50b65b6b30a939bbceffd556bb10ff.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/e7a5d4f01f2cb3a85931c5eb62fc22e4c06dc7e6.jpg"
+        },
+        {
+          "name": "BG3_Quest12",
+          "defaultvalue": 0,
+          "displayName": "Dig for Victory",
+          "hidden": 0,
+          "description": "Dig up five buried chests in a single playthrough - treasure! ",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/0dfd51a7ae1c5e122d1b46051d23234f5c5f681d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/6ed09414918b95892c3c26558c800de7e79de03c.jpg"
+        },
+        {
+          "name": "BG3_Quest13",
+          "defaultvalue": 0,
+          "displayName": "No Penny Required",
+          "hidden": 0,
+          "description": "Successfully use Detect Thoughts to pry into someone's thoughts. ",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/c77588e8a25741098ac71ae64f4b08d84e357310.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/b2c45774e06a96ac4c091aa6525d1f3b389c499c.jpg"
+        },
+        {
+          "name": "BG3_Quest14",
+          "defaultvalue": 0,
+          "displayName": "Escapologist",
+          "hidden": 0,
+          "description": "Break out of prison after being arrested - aren't you daring?",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/c182dd661aaf764f1eb3c008c9c9d8720540c19e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/59291415e026f667b59aabca48692c6c94846021.jpg"
+        },
+        {
+          "name": "BG3_Quest15",
+          "defaultvalue": 0,
+          "displayName": "Outsourcing",
+          "hidden": 0,
+          "description": "Recruit a hireling. You can befriend them or use them as cannon-fodder - we won't judge.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/72946052dfb7db04018e90e43fa239a1f1855e67.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/03158bd6dfa768f111c3666c46b39f77b2d3ca61.jpg"
+        },
+        {
+          "name": "BG3_Quest16",
+          "defaultvalue": 0,
+          "displayName": "Jack-of-all-Trades",
+          "hidden": 0,
+          "description": "Multiclass into every class in one playthrough without asking Withers to change your character.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/5f62e2f146d67732fe8a8dc02a322cf1f3a2c600.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/6ebc28450f801a7ef77ba241f98d01c2a2951696.jpg"
+        },
+        {
+          "name": "BG3_Quest17",
+          "defaultvalue": 0,
+          "displayName": "Homebrewer",
+          "hidden": 0,
+          "description": "Create three unique alchemical solutions in a single playthrough - bottoms up! ",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/6d417ad8e5789c17018533c40471d29a73d2228b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/164437109bd5008a106201a03e166702e5e00fcd.jpg"
+        },
+        {
+          "name": "BG3_Quest18",
+          "defaultvalue": 0,
+          "displayName": "You Have Two Hands for a Reason",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/8418d590e2386af37de617f855acce42c1b9d1bc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/eb31bf50dd62c7c0a6d0092bee088559e47c61fd.jpg"
+        },
+        {
+          "name": "BG3_Quest19",
+          "defaultvalue": 0,
+          "displayName": "Rude, Crude, and Full of Attitude",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/9a4fe5d73069cbde1bc75bfaf9d296591de13701.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/15c53648c4aa9f05bef567e84a3fa0d8e5d5f2a1.jpg"
+        },
+        {
+          "name": "BG3_Quest20",
+          "defaultvalue": 0,
+          "displayName": "Forged in Blood and Fire",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/a00e6ad2d3d84c4649654ce74a82cc2fa96cf3cf.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/0db20ed8095106be54f7ced1c60f3540c77b8941.jpg"
+        },
+        {
+          "name": "BG3_Quest21",
+          "defaultvalue": 0,
+          "displayName": "Under Lock and Key",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/fa32d7bc3e9a30744f2a9b66c2fed4d9246b68a0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/68b09cd38809a0ac26bf7f9eac5e35e7fbd92e92.jpg"
+        },
+        {
+          "name": "BG3_Quest22",
+          "defaultvalue": 0,
+          "displayName": "She Cannot Be Caged!",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f533118fcd650c20ef740d6440ed4b766c36352c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/938724ca2cca38728e1243a024091fdaf8346c1c.jpg"
+        },
+        {
+          "name": "BG3_Quest23",
+          "defaultvalue": 0,
+          "displayName": "Taking Blood",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/cc1a63fce03ab5580530c8efcef4a86a46708a39.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f3231abe1436a3b8211233dfb2e1e116e8e79fd5.jpg"
+        },
+        {
+          "name": "BG3_Quest24",
+          "defaultvalue": 0,
+          "displayName": "Leave No One Behind",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/cca40bc98c6fb9c7a84e10256866157d5157e060.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/5a90e4f09835d714c8da82374a450d116b3d272f.jpg"
+        },
+        {
+          "name": "BG3_Quest25",
+          "defaultvalue": 0,
+          "displayName": "Murder in Baldur's Gate",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f700d8870a67e86b69c9fa66e02b805735e18e36.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/d367f18a90c4ebd5f5ba852042be6a01adab68ab.jpg"
+        },
+        {
+          "name": "BG3_Quest26",
+          "defaultvalue": 0,
+          "displayName": "Mind Blown",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/815c476427127cf4fed9cfb4bf7a0b0290e01733.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f87a62accfa59fb5f968cceacf189eee7497f7fd.jpg"
+        },
+        {
+          "name": "BG3_Quest27",
+          "defaultvalue": 0,
+          "displayName": "Kill Two Birds With One Gnome",
+          "hidden": 0,
+          "description": "Use one enemy as an improvised weapon against another. ",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/4d651ac095d988353bb73662b37b4c9f049a8ea2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f0124a5113d5c20c48e80a4deb5994d2be348966.jpg"
+        },
+        {
+          "name": "BG3_Quest28",
+          "defaultvalue": 0,
+          "displayName": "Busker",
+          "hidden": 0,
+          "description": "Earn a hundred gold from playing sweet, sweet music in a single playthrough. ",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/edfa43e6937d245c903c51d91826fa1ce6f7bcd6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/dffac3c431ff07d705ae86cfad147f1a490b39be.jpg"
+        },
+        {
+          "name": "BG3_Quest29",
+          "defaultvalue": 0,
+          "displayName": "Action Surge",
+          "hidden": 0,
+          "description": "Perform five attacks in one turn. Your enemies won't know what hit them (literally).",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/701e6a0e4e6cdc8c1b246963bf81d51b05f08974.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/3a9cc6e18cfd7ebf7d4d94d7d1091d27329bcfb4.jpg"
+        },
+        {
+          "name": "BG3_Quest30",
+          "defaultvalue": 0,
+          "displayName": "Fists of Fury",
+          "hidden": 0,
+          "description": "Kill a character with an Unarmed Strike.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/1b5f21f0b5669fe05af00532d548e203a8cddd92.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/5d6a1f80a5e816ee90bab4d96656219e30903fb5.jpg"
+        },
+        {
+          "name": "BG3_Quest31",
+          "defaultvalue": 0,
+          "displayName": "Devil's in the Details ",
+          "hidden": 0,
+          "description": "Defeat Commander Zhalk on the nautiloid.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/bbceefbcd994db5b4f7367e3fcb46fe0facd4ffb.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/26156176d423eafd2e71feebda09c85a842d84d5.jpg"
+        },
+        {
+          "name": "BG3_Quest32",
+          "defaultvalue": 0,
+          "displayName": "Pest Control",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f9353502a5d66c5160f1474c50c86c521e0481fa.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/94cf2cb0837eec87af76d5e6a0833f6f6746145a.jpg"
+        },
+        {
+          "name": "BG3_Quest33",
+          "defaultvalue": 0,
+          "displayName": "A Grym Fate",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/9566097d88eea8346c15e9287b6747738966b71b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f457149dde2aae87e15e32bcbf06e5b25b20184b.jpg"
+        },
+        {
+          "name": "BG3_Quest34",
+          "defaultvalue": 0,
+          "displayName": "Non-Invasive Procedure",
+          "hidden": 0,
+          "description": "Kill the Surgeon before he performs surgery on you in combat.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/1b13d21263e349b19a82788b63fed05e5b3c5877.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/30544be3da4df4a803371dfee3bf211abae8f5a5.jpg"
+        },
+        {
+          "name": "BG3_Quest35",
+          "defaultvalue": 0,
+          "displayName": "Penny Pincher",
+          "hidden": 0,
+          "description": "Defeat the Toll Collector without her using gold against you - excellent budgeting. ",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/969cc50dcb65bc3993966fba3b732227db209472.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/486641391fb2de3cdfa41598c1e90fc3bf621200.jpg"
+        },
+        {
+          "name": "BG3_Quest36",
+          "defaultvalue": 0,
+          "displayName": "No Free Lunches",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/dadbc866606e4b4464fcdbf6684e3f2ec207ad73.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/fc9dba1e459a3b8596ab348856ccd2d7ce1c3ed7.jpg"
+        },
+        {
+          "name": "BG3_Quest37",
+          "defaultvalue": 0,
+          "displayName": "Fancy Footwork",
+          "hidden": 0,
+          "description": "Defeat Gortash in Wyrm's Rock without activating any traps.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/ae3adaf3d6f530e91b33975acdd30e7f7031437a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/c5549e2df862671ed14db87d3650f9f91907438e.jpg"
+        },
+        {
+          "name": "BG3_Quest38",
+          "defaultvalue": 0,
+          "displayName": "First Blood",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/bd574766f04f7d47c4bc0639344ef0561e0cc310.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/8cf23079ac8380b485509a0b9be4a8192739b7c1.jpg"
+        },
+        {
+          "name": "BG3_Quest39",
+          "defaultvalue": 0,
+          "displayName": "Interfectorem Draconis",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/3d7168b924848191b7914dfef2116d96e249bbf0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/4276fdf528e2b315c7569f174dfde3ce27dbfabf.jpg"
+        },
+        {
+          "name": "BG3_Quest40",
+          "defaultvalue": 0,
+          "displayName": "Crash Landing",
+          "hidden": 0,
+          "description": "In the Wyrmway, wait until the dragon is mid-flight, then knock it out of the sky - KAPOW.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/92eff966f9b0d8eb71b9529a0b74e6c075bff2f9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/2b0e8ab079a7685f97242ad57017ea366e72a53a.jpg"
+        },
+        {
+          "name": "BG3_Quest41",
+          "defaultvalue": 0,
+          "displayName": "Bottoms Up",
+          "hidden": 0,
+          "description": "Long Rest using only alcohol - a time-honoured dwarven tradition. ",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/a9ee13ee9d602b4f3b3957546e3df09117050eae.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/6036bb70d5b47b414c6412bdb4f893ccfa5238a4.jpg"
+        },
+        {
+          "name": "BG3_Quest42",
+          "defaultvalue": 0,
+          "displayName": "Shove Off",
+          "hidden": 0,
+          "description": "Kill a creature with falling damage.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/fc95da156e92c9d6f0955236d77bbe07e36f06e9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/80d10c6bd718fa0222d5c149ca25511dca67798d.jpg"
+        },
+        {
+          "name": "BG3_Quest43",
+          "defaultvalue": 0,
+          "displayName": "Bookworm",
+          "hidden": 0,
+          "description": "Read 100 different books in a single playthrough. Adventuring isn't just daring quests, you know.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/b668429392fd2600ae86857e11eef003b78c411f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/44a9e19248d43300515c3575f0c5bd0a9813ee97.jpg"
+        },
+        {
+          "name": "BG3_Quest44",
+          "defaultvalue": 0,
+          "displayName": "Punch Drunk",
+          "hidden": 0,
+          "description": "Defeat twenty opponents while drunk - down them.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/9910e006d713e405320082f4a9f576cabdc7e6c0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/72d53386ef52ab6412d935ec89de7c1565474924.jpg"
+        },
+        {
+          "name": "BG3_Quest45",
+          "defaultvalue": 0,
+          "displayName": "Fetch Quest",
+          "hidden": 0,
+          "description": "Play fetch with Scratch - the best boy in the Realms.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/86a026938f983aa2e170f106e5b7d9eee3b7b3e7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/0128504fc4ae9e6c812338ce0569c0c3330f61cb.jpg"
+        },
+        {
+          "name": "BG3_Quest46",
+          "defaultvalue": 0,
+          "displayName": "Repairing the Weave",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f202f039116ecee22d8aaacee24370a55f1983dd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/b1dd3bd0aefbcab6e7c7de016bbed582ca6ec91f.jpg"
+        },
+        {
+          "name": "BG3_Quest47",
+          "defaultvalue": 0,
+          "displayName": "The Lich-Queen's Wrath",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/7944771c84a4ee57b9332b25dfeb9a7c0dea1cb8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/9de27a7ba09b51e6e167626e76d66c98a3a7b33a.jpg"
+        },
+        {
+          "name": "BG3_Quest48",
+          "defaultvalue": 0,
+          "displayName": "To Bloom in Darkest Night",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/f074708db163ec1cf253953b7fe4cc32e929657c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/2f32c004f552e9bc735ddb7d11b477e01152ab5a.jpg"
+        },
+        {
+          "name": "BG3_Quest49",
+          "defaultvalue": 0,
+          "displayName": "Hot Date",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/821fec5fcfe5336a83f02d966ae5fded0a66af3a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/156eb6ece98b877ab0bbe8fb72a84022ba3b9b90.jpg"
+        },
+        {
+          "name": "BG3_Quest50",
+          "defaultvalue": 0,
+          "displayName": "Just a Nibble",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/884c0f57453132979551b5053fd3f03bb8176038.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/730ac43eb4f804a75356884351ad5dbe1f22fca0.jpg"
+        },
+        {
+          "name": "BG3_Quest51",
+          "defaultvalue": 0,
+          "displayName": "Loophole",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/70972fff002e080bdd5b86295f0241448bfe2481.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/44deee9d0a5a22a45be261cff52fa97b140d33c9.jpg"
+        },
+        {
+          "name": "BG3_Quest52",
+          "defaultvalue": 0,
+          "displayName": "Embrace Your Urge",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/db2318b9069c2c5210b8a5e7e9b9bfb1d4772133.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/e4c865a4a82aa1b049a782e349009664f4634d65.jpg"
+        },
+        {
+          "name": "BG3_Quest53",
+          "defaultvalue": 0,
+          "displayName": "Critical Hit",
+          "hidden": 0,
+          "description": "Complete the game in Tactician mode.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/12f42b79f0e7e7c534f2aafe360a3247f4bd8df4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/d92b5372fbf62e667c33d109edc0a28a6aa12383.jpg"
+        },
+        {
+          "name": "BG3_Quest54",
+          "defaultvalue": 0,
+          "displayName": "Foehammer",
+          "hidden": 0,
+          "description": "Complete the game in Honour mode.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/cfa3488b4ac501d846b14948b801c93c361a98fe.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1086940/0812cb6a6b9da0a844295409c1baaef2e0a69c4d.jpg"
+        }
+      ],
+      "stats": [
+        {
+          "name": "BG3_Quest09_STAT",
+          "defaultvalue": 0,
+          "displayName": "BG3_Quest09_STAT"
+        },
+        {
+          "name": "BG3_Quest10_STAT",
+          "defaultvalue": 0,
+          "displayName": "BG3_Quest10_STAT"
+        },
+        {
+          "name": "BG3_Quest12_STAT",
+          "defaultvalue": 0,
+          "displayName": "BG3_Quest12_STAT"
+        },
+        {
+          "name": "BG3_Quest17_STAT",
+          "defaultvalue": 0,
+          "displayName": "BG3_Quest17_STAT"
+        },
+        {
+          "name": "BG3_Quest28_STAT",
+          "defaultvalue": 0,
+          "displayName": "BG3_Quest28_STAT"
+        },
+        {
+          "name": "BG3_Quest29_STAT",
+          "defaultvalue": 0,
+          "displayName": "BG3_Quest29_STAT"
+        },
+        {
+          "name": "BG3_Quest43_STAT",
+          "defaultvalue": 0,
+          "displayName": "BG3_Quest43_STAT"
+        },
+        {
+          "name": "BG3_Quest44_STAT",
+          "defaultvalue": 0,
+          "displayName": "BG3_Quest44_STAT"
+        }
+      ]
+    }
+  }
+}

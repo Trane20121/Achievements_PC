@@ -1,0 +1,163 @@
+{
+  "game": {
+    "gameName": "Fast Food Simulator",
+    "gameVersion": "3",
+    "availableGameStats": {
+      "stats": [
+        {
+          "name": "Make_a_burger",
+          "defaultvalue": 0,
+          "displayName": "Make A Burger"
+        },
+        {
+          "name": "Make_an_icecream",
+          "defaultvalue": 0,
+          "displayName": "Make An Icecream"
+        },
+        {
+          "name": "Throw_away_thrash",
+          "defaultvalue": 0,
+          "displayName": "Throw away some trash"
+        },
+        {
+          "name": "Spend_thousand_dollars",
+          "defaultvalue": 0,
+          "displayName": "Spend $1000 at once in the Market application"
+        },
+        {
+          "name": "Business_growing",
+          "defaultvalue": 0,
+          "displayName": "Reach a total of $5000 in your wallet"
+        },
+        {
+          "name": "Happy_customers",
+          "defaultvalue": 0,
+          "displayName": "Have every single customer who visits your restaurant leave satisfied"
+        },
+        {
+          "name": "You_are_fired",
+          "defaultvalue": 0,
+          "displayName": "Terminate an employee's contract and show them the door"
+        },
+        {
+          "name": "Famous_and_fabulous",
+          "defaultvalue": 0,
+          "displayName": "Your restaurant's popularity is at its peak – you're the hottest spot in town"
+        },
+        {
+          "name": "Drink_roulette",
+          "defaultvalue": 0,
+          "displayName": "Serve a mixed drink instead of the customer's requested beverage"
+        },
+        {
+          "name": "Frostbite",
+          "defaultvalue": 0,
+          "displayName": "Get locked in the freezer and feel the cold take over"
+        },
+        {
+          "name": "Lactose_intolerant",
+          "defaultvalue": 0,
+          "displayName": "Serve a full cup of milk instead of coffee"
+        }
+      ],
+      "achievements": [
+        {
+          "name": "MAKE_A_BURGER",
+          "defaultvalue": 0,
+          "displayName": "First Burger",
+          "hidden": 0,
+          "description": "Make your first burger.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/33551cfb1f6822f556fbc852f07b59ed7a2e13c1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/84655dc47d7c2cf73621cd0ed16a14f057df1e92.jpg"
+        },
+        {
+          "name": "MAKE_AN_ICECREAM",
+          "defaultvalue": 0,
+          "displayName": "Ice Cream Machine",
+          "hidden": 0,
+          "description": "Use the ice cream machine.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/18e1c197338f03e377294a6b47f2f2338fd6c2cc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/5e0515f36c43d91003516661d706613b3c7dcb1e.jpg"
+        },
+        {
+          "name": "THROW_AWAY_TRASH",
+          "defaultvalue": 0,
+          "displayName": "Clean Restaurant",
+          "hidden": 0,
+          "description": "Throw away the trash.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/88edc3029d471318c244ee7acbdb5efb8d14eac3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/970467ac83a1181eacbf303710bc04c786a43487.jpg"
+        },
+        {
+          "name": "SPEND_THOUSAND_DOLLARS",
+          "defaultvalue": 0,
+          "displayName": "Hoarder",
+          "hidden": 0,
+          "description": "Spend $1000 at once in the Market.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/e7af65339bf8f89aa03729e831376437430c589b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/e0cbcbc6ad4ff54779b219a60d0d69c1bf2787b6.jpg"
+        },
+        {
+          "name": "BUSINESS_GROWING",
+          "defaultvalue": 0,
+          "displayName": "Business Growing",
+          "hidden": 0,
+          "description": "Reach a total of $5000 in your wallet.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/be55a8dfe7c8735a4415f8fdf6d3b659fafdf591.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/6c753cc72af0e9e72ce891005a7d2d6c1c369ed5.jpg"
+        },
+        {
+          "name": "HAPPY_CUSTOMERS",
+          "defaultvalue": 0,
+          "displayName": "Happy Customers",
+          "hidden": 0,
+          "description": "Have every single customer who visits your restaurant leave satisfied.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/59db2e32d58e95d244c2be354803ec199ef9fc67.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/6bd246d13f739c0de0335a24497687913b5ddbe3.jpg"
+        },
+        {
+          "name": "YOU_ARE_FIRED",
+          "defaultvalue": 0,
+          "displayName": "You Are Fired!",
+          "hidden": 0,
+          "description": "Terminate an employee's contract and show them the door.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/e30c1386345877bd520bc08d32f1a4ed83b435a1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/0c87a5e342570dbd095e00eb051888399ccc4216.jpg"
+        },
+        {
+          "name": "FAMOUS_AND_FABULOUS",
+          "defaultvalue": 0,
+          "displayName": "Famous & Fabulous",
+          "hidden": 0,
+          "description": "Your restaurant's popularity is at its peak – you're the hottest spot in town!",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/48dab142124783440edd1fd68db09cc351246b6a.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/5c6f26d7927b7b6aa73b496b5b471b5092cdbaa8.jpg"
+        },
+        {
+          "name": "DRINK_ROULETTE",
+          "defaultvalue": 0,
+          "displayName": "Drink Roulette",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/d88ac8a1ccd9e6148ee98a61add7643f85230bc2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/a9dabc604bdd7444cfeeef6d1889df882aa8eacc.jpg"
+        },
+        {
+          "name": "FROSTBITE",
+          "defaultvalue": 0,
+          "displayName": "Frostbite",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/18d347b0abf49b19da72a00d05426bc0a6800dce.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/196302556b50064020f137d8be0c0f05c0880132.jpg"
+        },
+        {
+          "name": "LACTOSE_INTOLERANT",
+          "defaultvalue": 0,
+          "displayName": "Lactose Intolerant",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/7d7c95ada350fdef5f5044a1ba78fc0499384a6d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2916430/94a4f35c822e6d20aff3591075b56b6935cd5917.jpg"
+        }
+      ]
+    }
+  }
+}

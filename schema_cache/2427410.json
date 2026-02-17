@@ -1,0 +1,419 @@
+{
+  "game": {
+    "gameName": "S.T.A.L.K.E.R.: Shadow of Chernobyl",
+    "gameVersion": "8",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "explorer_of_the_zone",
+          "defaultvalue": 0,
+          "displayName": "Explorer of the Zone",
+          "hidden": 0,
+          "description": "This is how it ends.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/474a9771a36f6be0407a1de5fa3b7d5f31135396.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/78a9ec58526e8c94cee07b534fa9cfc01da962f0.jpg"
+        },
+        {
+          "name": "sidorovichs_apprentice",
+          "defaultvalue": 0,
+          "displayName": "Sidorovich's apprentice",
+          "hidden": 0,
+          "description": "Finish the game on Novice difficulty.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/5ed70b78ac0fcb2ed55a57b678bfe50eed7e0d9e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/ba176f704257c145481f07a056726c83aceb99e0.jpg"
+        },
+        {
+          "name": "in_the_zone",
+          "defaultvalue": 0,
+          "displayName": "In the Zone!",
+          "hidden": 0,
+          "description": "Finish the game on Stalker difficulty.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/d6890eea7207280a37963145b7de64fce024043b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/bcb56522c2ac0709e9621f98128996c6be5d8204.jpg"
+        },
+        {
+          "name": "survived",
+          "defaultvalue": 0,
+          "displayName": "S.U.R.V.I.V.E.D.",
+          "hidden": 0,
+          "description": "Finish the game on Veteran or Master difficulty.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a447638f32757ae0768ed9e616efcd354b02ccb1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/6e94127a1fbe21c35e9b27974b0786a5ec42864f.jpg"
+        },
+        {
+          "name": "the_wish_granter",
+          "defaultvalue": 0,
+          "displayName": "The Wish Granter",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/ad938c51a18b6a3f541d27b4137deeaa4fefc73b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "too_good_to_be_true",
+          "defaultvalue": 0,
+          "displayName": "Too good to be true",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/aeb6142e8b43de7ae8ee888311327e7d3934abf0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "youre_finally_awake",
+          "defaultvalue": 0,
+          "displayName": "You're finally awake...",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/c32033c848fd3f40974e2bfc8a347b74f1091bfd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "no_loner_stands_alone",
+          "defaultvalue": 0,
+          "displayName": "No Loner stands alone",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/5fc499c401a355156b21333e2abc58bfe0c10368.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "the_man_cave",
+          "defaultvalue": 0,
+          "displayName": "The Man cave",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/81bea71c41bfd279db5128c540ab710363df2f07.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "explore_and_protect",
+          "defaultvalue": 0,
+          "displayName": "Explore and protect",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/4f7885388e6db8b3b7d0b3462d811822a8fc4de4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "lab_rat",
+          "defaultvalue": 0,
+          "displayName": "Lab Rat",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/96d96672e7b9d37299f8435da16238ff007c584c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "legendary_armor",
+          "defaultvalue": 0,
+          "displayName": "Legendary armor",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/aad4df0a348b3cabcd21b5ea88a52a944c64c154.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "get_out_of_here_stalker",
+          "defaultvalue": 0,
+          "displayName": "Get out of here, Stalker",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/5ef11091d467b4de05abf2d5cf9a53d15611ce4e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "follow_your_steps",
+          "defaultvalue": 0,
+          "displayName": "Follow your steps",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/2cbf720e8e4cc73d51ddd6d51bc67651f61c1386.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "stoic",
+          "defaultvalue": 0,
+          "displayName": "Stoic",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/fea5c867b7c617b0f038dfa584c51388da7c6dbf.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "im_all_but_certain_it_was",
+          "defaultvalue": 0,
+          "displayName": "I'm all but certain it was...",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/edbad6b632558c3de2c992a8b6699099f020effc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "knock_knock",
+          "defaultvalue": 0,
+          "displayName": "Knock-Knock",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/0ff4a4a6077b653d8338f9b95453c4e10a9d588f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "freedom_vs_duty",
+          "defaultvalue": 0,
+          "displayName": "Freedom vs. Duty",
+          "hidden": 0,
+          "description": "Choose your side in this conflict.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/6d1b71fe4530d457761d2ab9ab808e9597f5eacf.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/378bff26551089d55e2fcf0efe4bd44fe2b2ad38.jpg"
+        },
+        {
+          "name": "sentry",
+          "defaultvalue": 0,
+          "displayName": "Sentry",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/9ec807bc5e220236a55852e96ee1a1bd83cd6bed.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "the_worst_stalker_in_the_zone",
+          "defaultvalue": 0,
+          "displayName": "The worst stalker in the Zone",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/1b6d3322c73a17635cc42b9bfdcf37fe44c1990d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "a_decent_start",
+          "defaultvalue": 0,
+          "displayName": "A decent start",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/37710287941ca2046ba1c223b66613b1204cace4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "headhunter",
+          "defaultvalue": 0,
+          "displayName": "Headhunter",
+          "hidden": 0,
+          "description": "Even the Zone remembers deserters.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/f5641d060aec27d88a3fbcb3bd2dc64d8501d9c8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/e55ed8178c9897087edaa428ce6112a8d127c92f.jpg"
+        },
+        {
+          "name": "gladiator",
+          "defaultvalue": 0,
+          "displayName": "Gladiator",
+          "hidden": 0,
+          "description": "The champion of the Arena.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/bfc905e7f4f7c57045183a7f546b4d2c5b7c9f3b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a414ca87373f2519018e7199075a77d828bc2555.jpg"
+        },
+        {
+          "name": "law_and_order",
+          "defaultvalue": 0,
+          "displayName": "Law and Order",
+          "hidden": 0,
+          "description": "You've saved Yurik and proven that the Zone is not a place where the strongest rule.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/c9677fb3a959ef2bb61b8e71df332bede390f8c9.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/c2b94c70e163a4593241ea8309c1b4035488072b.jpg"
+        },
+        {
+          "name": "the_door_vinci_code",
+          "defaultvalue": 0,
+          "displayName": "The Door Vinci Code",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/0811adb5b462b44a16e5e731c2868c9af6bfe0b1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "weapon_of_the_future",
+          "defaultvalue": 0,
+          "displayName": "Weapon of the future",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/d66af1c02eacce48a230faff4f7989ee930b2ccc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "stalker_legend",
+          "defaultvalue": 0,
+          "displayName": "Stalker legend",
+          "hidden": 0,
+          "description": "Find each common and rare artifact in the Zone.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/2f8abd62ef6446c0ce12ccc30b3aa5fa34a4efb6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/7babcbbcb488853074cc62d6849854be14dfc96e.jpg"
+        },
+        {
+          "name": "hiker",
+          "defaultvalue": 0,
+          "displayName": "Hiker",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/fc027a25cdef906b81b395447adaf0934c63d8c2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "fanged_armor",
+          "defaultvalue": 0,
+          "displayName": "Fanged armor",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/7be00c5bc7f1f5df324a842a7ec39eaaed851ed4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "moles_weapon",
+          "defaultvalue": 0,
+          "displayName": "Mole's weapon",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/b3c4ec57702d1ffc6eebd3831fedd639265f0074.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "terminator",
+          "defaultvalue": 0,
+          "displayName": "Terminator",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/6c4c19261a2c3380aa901d635b8a0b861f66ea27.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "the_smile_of_martha",
+          "defaultvalue": 0,
+          "displayName": "The smile of Martha",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/29d2d74e9b5f198b5a2d5a994e74aea721d21ca0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "zone_safari",
+          "defaultvalue": 0,
+          "displayName": "Chornobyl safari",
+          "hidden": 0,
+          "description": "Kill each mutant at least once.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/63b1983413abc48b686252303954cb061da94803.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/93adf56c1876d846e5618108c4f43cd69aa51e31.jpg"
+        },
+        {
+          "name": "hunting_season",
+          "defaultvalue": 0,
+          "displayName": "Hunting season",
+          "hidden": 0,
+          "description": "Kill 250 mutants.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/f7aba8d0b07888bf10a1a3349d4b346e4e7a2fc3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/ae616eaa30c799b473be2972f7333f750691ffc6.jpg"
+        },
+        {
+          "name": "killer",
+          "defaultvalue": 0,
+          "displayName": "Killer",
+          "hidden": 0,
+          "description": "Kill 500 stalkers.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/faf28d5a20d428dcdd5cd961081673e06ac18b77.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a3d101cea54c52e13670b4edfc76f3468a7b3988.jpg"
+        },
+        {
+          "name": "garland",
+          "defaultvalue": 0,
+          "displayName": "Garland",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a03a8b179a9c82ff1b03cf3f74960061ed2c1811.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "im_done_with_drinking_for_good",
+          "defaultvalue": 0,
+          "displayName": "I'm done with drinking for good",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/4577a29537f5596eccad63b36c3756f08addbe0b.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "bread_expert",
+          "defaultvalue": 0,
+          "displayName": "Bread-expert",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a5fde713e37c3b863ac908cb93ce6467b94f21b8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "boltman",
+          "defaultvalue": 0,
+          "displayName": "Boltman",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/70813b909603a549bd25a317980708c228250df0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "the_last_mammoth_in_the_zone",
+          "defaultvalue": 0,
+          "displayName": "The last mammoth in the Zone",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/1ea2c95d2589e53fd4e115a89dc61f3f447800f0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "meet_the_creator",
+          "defaultvalue": 0,
+          "displayName": "Meet the creator",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/7652be25a648c0366e7ee7bffc2fca307c0612bf.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/a4c5e5193903e82f0d7373e6af02cc4197ccdedc.jpg"
+        },
+        {
+          "name": "your_dogstiny",
+          "defaultvalue": 0,
+          "displayName": "Your dogstiny",
+          "hidden": 0,
+          "description": "You have sold 20 dog tails.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/206d758aee059b76a7f6d41e6d06ee55194d6d33.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/01a3ab04cb7036b31fa3b4c686c37351b1b512b3.jpg"
+        },
+        {
+          "name": "maximum_endurance",
+          "defaultvalue": 0,
+          "displayName": "Maximum endurance",
+          "hidden": 0,
+          "description": "Equip all endurance artifacts.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/335a7ee4bd7e3a4c97510a6084e4cd663b7baa5e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/dfa9915cbddf48470552a34f7935ddba35728af5.jpg"
+        },
+        {
+          "name": "party_on_the_beach",
+          "defaultvalue": 0,
+          "displayName": "Party on the beach",
+          "hidden": 0,
+          "description": "Equip all beach-themed artifacts. And do not forget the lights!",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/cdde226ece51f0dbe69a742163b95ba39c474b68.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2427410/4254eecd74af0286a8cc4fc4ebe79d9bd922a7b7.jpg"
+        }
+      ],
+      "stats": [
+        {
+          "name": "stat_stalker_legend",
+          "defaultvalue": 0,
+          "displayName": "Stalker legend"
+        },
+        {
+          "name": "stat_zone_safari",
+          "defaultvalue": 0,
+          "displayName": "Zone safari"
+        },
+        {
+          "name": "stat_hunting_season",
+          "defaultvalue": 0,
+          "displayName": "Hunting season"
+        },
+        {
+          "name": "stat_killer",
+          "defaultvalue": 0,
+          "displayName": "Killer"
+        },
+        {
+          "name": "stat_im_done_with_drinking_for_good",
+          "defaultvalue": 0,
+          "displayName": "I'm done with drinking for good"
+        },
+        {
+          "name": "stat_bread_expert",
+          "defaultvalue": 0,
+          "displayName": "Bread-expert"
+        },
+        {
+          "name": "stat_boltman",
+          "defaultvalue": 0,
+          "displayName": "Boltman"
+        },
+        {
+          "name": "stat_your_dogstiny",
+          "defaultvalue": 0,
+          "displayName": "Your dogstiny"
+        }
+      ]
+    }
+  }
+}

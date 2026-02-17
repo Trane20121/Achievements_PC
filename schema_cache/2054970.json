@@ -1,0 +1,489 @@
+{
+  "game": {
+    "gameName": "Dragon's Dogma 2",
+    "gameVersion": "10",
+    "availableGameStats": {
+      "achievements": [
+        {
+          "name": "1",
+          "defaultvalue": 0,
+          "displayName": "First Taste of Freedom",
+          "hidden": 0,
+          "description": "Escaped the bonds of slavery.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/d8b6bfbea2c502f4b595b41d3cabb835c1df7394.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "2",
+          "defaultvalue": 0,
+          "displayName": "Arisen",
+          "hidden": 0,
+          "description": "Regained your memories of receiving the Arisen's charge.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/67532ad63f9e665fb005a9e94d26ba8786959b0c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "3",
+          "defaultvalue": 0,
+          "displayName": "Seat of the Proxy",
+          "hidden": 0,
+          "description": "Arrived in Vernworth.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/fce6124f01dd857c5e1a8cb77170fcd17dee545d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "4",
+          "defaultvalue": 0,
+          "displayName": "Across the Border",
+          "hidden": 0,
+          "description": "Passed through the gate at the border.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/e0e2aab300eb80f65166c61afc14b344b6dbab33.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "5",
+          "defaultvalue": 0,
+          "displayName": "Dragon's Dogma 2",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/0af56eabd0de206b85fceb830c1a994ffef1a75c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "6",
+          "defaultvalue": 0,
+          "displayName": "Peace",
+          "hidden": 0,
+          "description": "Became Sovran of Vernworth.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/670924457b37f8a6806df0756a18a0bcd9574186.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "7",
+          "defaultvalue": 0,
+          "displayName": "I, Talos",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/815f085ca4059eb54899b91bca60d5404e5b0551.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "8",
+          "defaultvalue": 0,
+          "displayName": "Closure",
+          "hidden": 0,
+          "description": "Experienced the end of the cycle. (Not available in Casual Mode)",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/de4b7c10ff88e7fa5327156c4c4ce5d7c8a841c7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/8b2f049196091c2f18e59e553073ee110a41e8bd.jpg"
+        },
+        {
+          "name": "9",
+          "defaultvalue": 0,
+          "displayName": "Versatile",
+          "hidden": 0,
+          "description": "Changed your vocation.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/3fd772818b6ff2e5402f24116b61e6054f3c72af.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "10",
+          "defaultvalue": 0,
+          "displayName": "Duo Destinies",
+          "hidden": 0,
+          "description": "Changed your vocation to mystic spearhand.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/831a4e1e28bbf38ca0475f722b271d3ce7e2d2b6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "11",
+          "defaultvalue": 0,
+          "displayName": "Trickster of the Trade",
+          "hidden": 0,
+          "description": "Changed your vocation to trickster.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/fe621bf3ab2dc643ffa68e129636c5d752c147c3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "12",
+          "defaultvalue": 0,
+          "displayName": "Arrows and Incantations",
+          "hidden": 0,
+          "description": "Changed your vocation to magick archer.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/4911de91fbb1e628a60b3964cdf6b00bcbe10cc6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "13",
+          "defaultvalue": 0,
+          "displayName": "Jack of All Trades, Master of...All Trades",
+          "hidden": 0,
+          "description": "Changed your vocation to warfarer.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/57518c39c6acb0a164e7237831a58ede104cc2c4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "14",
+          "defaultvalue": 0,
+          "displayName": "An In-Tents Adventure",
+          "hidden": 0,
+          "description": "Went camping.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/eea8e5ef36237d943b969bce539f5a6a8b0ba8c8.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "15",
+          "defaultvalue": 0,
+          "displayName": "A House? In This Economy?",
+          "hidden": 0,
+          "description": "Purchased a dwelling of your own.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/301624b7e7dfea44e7bf84354f12ca54a898ffaa.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "16",
+          "defaultvalue": 0,
+          "displayName": "One Speed Only",
+          "hidden": 0,
+          "description": "Boarded an oxcart.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/cc49ad577eacc109391c660ed58ceb9f1158a240.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "17",
+          "defaultvalue": 0,
+          "displayName": "The Savior",
+          "hidden": 0,
+          "description": "Used a Wakestone to restore the dead to life.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/cea826b9a4c8c3ec354d22e570284dbdecfebcea.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "18",
+          "defaultvalue": 0,
+          "displayName": "Just a Stone's Throw Away",
+          "hidden": 0,
+          "description": "Used a Ferrystone.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/74db14c48390d3ae2c32805acf81affd70b750ec.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "19",
+          "defaultvalue": 0,
+          "displayName": "A Badge of Honor",
+          "hidden": 0,
+          "description": "Acquired a pawn badge.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/f6e090c3a6a02cda519f0f2a4d8721f1a78a97c2.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "20",
+          "defaultvalue": 0,
+          "displayName": "Gigantus, I Hardly Knew Ye",
+          "hidden": 0,
+          "description": "Defeated the gigantus in a short span of time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/37ca1039d5c0f50beb3fb75665ed98a0daa806f6.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/9c54790e3f2460a854f69b24baaec834a9ee066e.jpg"
+        },
+        {
+          "name": "21",
+          "defaultvalue": 0,
+          "displayName": "Full Marks",
+          "hidden": 0,
+          "description": "Found a solution to every conundrum posed by the goddess of riddles.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/49604ea8d56fbe2ce564e771efc006fbc0ed2b34.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/c243bf4dafb67ca742fa5964487c641b36aff88d.jpg"
+        },
+        {
+          "name": "22",
+          "defaultvalue": 0,
+          "displayName": "Off with Its Head!",
+          "hidden": 0,
+          "description": "Decapitated a medusa.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/63caf516121513f946c03d12d9a38fb36bf94e76.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/9c54790e3f2460a854f69b24baaec834a9ee066e.jpg"
+        },
+        {
+          "name": "23",
+          "defaultvalue": 0,
+          "displayName": "Master of the Maisters",
+          "hidden": 0,
+          "description": "Acquired every maister's teaching.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/f81a6e88d17343787f4bc35578909f5ee612c080.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/c243bf4dafb67ca742fa5964487c641b36aff88d.jpg"
+        },
+        {
+          "name": "24",
+          "defaultvalue": 0,
+          "displayName": "The Specialist",
+          "hidden": 0,
+          "description": "Reached the maximum rank in a vocation.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/7897657f4723760988cfe0b347a1ca6dce202306.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "25",
+          "defaultvalue": 0,
+          "displayName": "A Pawn of Many Talents",
+          "hidden": 0,
+          "description": "Taught your pawn a specialization.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/70dfdb5ea086a82bfeaab3b7ba1066c5ccaaf49f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "26",
+          "defaultvalue": 0,
+          "displayName": "Wish upon the Rift",
+          "hidden": 0,
+          "description": "Set a pawn quest.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/ca5bb6477abecd02b97be8eb1585f2259c871412.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "27",
+          "defaultvalue": 0,
+          "displayName": "Myrmecoleon Delights",
+          "hidden": 0,
+          "description": "Entered the rose chateau.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/179831dabbbc836240d879c3e0f0577579bb6892.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "28",
+          "defaultvalue": 0,
+          "displayName": "The Collector",
+          "hidden": 0,
+          "description": "Collected 80 Seeker's Tokens.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/4783867055108df85989ad91438ffc384ad1cbc0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/9c54790e3f2460a854f69b24baaec834a9ee066e.jpg"
+        },
+        {
+          "name": "29",
+          "defaultvalue": 0,
+          "displayName": "The Philanthropist",
+          "hidden": 0,
+          "description": "Earned the affections of 50 people.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/19605037186a177c4a10a3e98f89ffd31b656f42.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "30",
+          "defaultvalue": 0,
+          "displayName": "Affinity and Beyond",
+          "hidden": 0,
+          "description": "Raised a person's affinity to the maximum.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/9f0a5693684798ee5615ff6666e7102adbac7355.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "31",
+          "defaultvalue": 0,
+          "displayName": "Dragon Forged",
+          "hidden": 0,
+          "description": "Strengthened a weapon in wyrmfire.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/6446a625d81c55fdfa8c03ffd699df5559cc2ecc.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "32",
+          "defaultvalue": 0,
+          "displayName": "The Guardian",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/2d568e4f10da9e8132afcf004f1ef0c9106d01c0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/8b2f049196091c2f18e59e553073ee110a41e8bd.jpg"
+        },
+        {
+          "name": "33",
+          "defaultvalue": 0,
+          "displayName": "The Hero",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/961eb12f26c65977f49bc3339ad924c0553093b4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/8b2f049196091c2f18e59e553073ee110a41e8bd.jpg"
+        },
+        {
+          "name": "34",
+          "defaultvalue": 0,
+          "displayName": "This'll Cure What Ails Ye",
+          "hidden": 0,
+          "description": "Soaked in the hot spring.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/1f1092ccb581ac3b0537fc4cdda49f1e150a4aa3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "35",
+          "defaultvalue": 0,
+          "displayName": "Cyclops Abridged",
+          "hidden": 0,
+          "description": "Crossed a cyclopean bridge.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/4368f57d54ee0bb6b8eaf26f4025c04c538ecfd3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/9c54790e3f2460a854f69b24baaec834a9ee066e.jpg"
+        },
+        {
+          "name": "36",
+          "defaultvalue": 0,
+          "displayName": "Harpy Joyride",
+          "hidden": 0,
+          "description": "Summoned a harpy, grabbed hold, and took flight.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/c8195be7d2bb4face6c7ed45f0bc5b73d56aaad1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "37",
+          "defaultvalue": 0,
+          "displayName": "Quit Playing Dead",
+          "hidden": 0,
+          "description": "Revived two pawns simultaneously.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/b70fb90b77958c7e37d8461e1f25c54a5654bc67.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "38",
+          "defaultvalue": 0,
+          "displayName": "Dragon's Dogma",
+          "hidden": 0,
+          "description": "Obtained Dragon's Dogma.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/1563812616b88f6ad88e23e1802880ff04845e76.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "39",
+          "defaultvalue": 0,
+          "displayName": "An Eye for an Eye",
+          "hidden": 0,
+          "description": "Petrified a medusa.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/4d8411af17f7f00742d9595cbf0d725346ad5b7f.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/8b2f049196091c2f18e59e553073ee110a41e8bd.jpg"
+        },
+        {
+          "name": "40",
+          "defaultvalue": 0,
+          "displayName": "Getting a Head",
+          "hidden": 0,
+          "description": "Acquired a preserved medusa head.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/326953b76883beef91e4c3a252469829e467866d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/8b2f049196091c2f18e59e553073ee110a41e8bd.jpg"
+        },
+        {
+          "name": "41",
+          "defaultvalue": 0,
+          "displayName": "The Barbecue-Maister",
+          "hidden": 0,
+          "description": "Grilled every type of meat during the night and day.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/cfc9260c1278c9ae0df1319f82980ead6b86cf9c.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "42",
+          "defaultvalue": 0,
+          "displayName": "Nobles' Night Out",
+          "hidden": 0,
+          "description": "Attended a palace masquerade in formal raiment.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/a217af141dfbed605e58d8e6d7488d3e6e6bb1dd.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "43",
+          "defaultvalue": 0,
+          "displayName": "Thought I'd Lost You",
+          "hidden": 0,
+          "description": "Restored the dead to life at a morgue or charnel house.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/72e34e01494c86653b5fb359cf4a8bcd31061788.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "44",
+          "defaultvalue": 0,
+          "displayName": "Reaper's Scorn",
+          "hidden": 0,
+          "description": "Accomplished a miracle for several people all at once.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/4fa9771d1dfc35d6d384e4b5b24a0571ce8413a1.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/8b2f049196091c2f18e59e553073ee110a41e8bd.jpg"
+        },
+        {
+          "name": "45",
+          "defaultvalue": 0,
+          "displayName": "Before Dawn Breaks",
+          "hidden": 0,
+          "description": "Defeated the headless horseman.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/737f80232be7050eda583b2bc34867a09f00ed3e.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/9c54790e3f2460a854f69b24baaec834a9ee066e.jpg"
+        },
+        {
+          "name": "46",
+          "defaultvalue": 0,
+          "displayName": "The Tourist",
+          "hidden": 0,
+          "description": "Discovered 50 dungeons.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/1e0dc75a1e0aa030b537291f15bcc5925eba1c2d.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "47",
+          "defaultvalue": 0,
+          "displayName": "Are We There Yet?",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/f298893741bd5f1ac1eab6159ff96ab27163def3.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "48",
+          "defaultvalue": 0,
+          "displayName": "The Regriffining",
+          "hidden": 0,
+          "description": "Took flight on griffin wing a second time.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/30f99e22f59c37b338cada930d5b936fd0661ea4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "49",
+          "defaultvalue": 0,
+          "displayName": "Back Where It All Began",
+          "hidden": 0,
+          "description": "Returned to Agamen Volcanic Island.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/2d52e9c2c8a6e1cd9e12e0a6487320dc23d8a9d7.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "50",
+          "defaultvalue": 0,
+          "displayName": "Plenty Arisen to Go Round",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/01833715162035fd6aecdc9e9a5b88dcff744369.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "51",
+          "defaultvalue": 0,
+          "displayName": "Roost of the Dragon",
+          "hidden": 0,
+          "description": "Reached Dragonsbreath Tower.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/b15db869aa7a6b221322dd894cd779df2a967fb4.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "52",
+          "defaultvalue": 0,
+          "displayName": "Hope You Brought a Lantern",
+          "hidden": 0,
+          "description": "Reached Drabnir's Grotto.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/1b950e20b12df90137acc4d857542d9916c30ce0.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "53",
+          "defaultvalue": 0,
+          "displayName": "To the Victor Go the Spoils",
+          "hidden": 0,
+          "description": "Reclaimed your items from the scavenger who stole them from you.",
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/4c92468f5df2eee212671acd466e034bccb8d1c5.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/db690ee2c185d7a20bdcb7a79081bc6e5bad0fd6.jpg"
+        },
+        {
+          "name": "54",
+          "defaultvalue": 0,
+          "displayName": "I'm In",
+          "hidden": 1,
+          "icon": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/5c5c3d9a43d1c77492b6a9f8f7adc128ce046efe.jpg",
+          "icongray": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2054970/9c54790e3f2460a854f69b24baaec834a9ee066e.jpg"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Steam Mastery Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --steam-blue: #66c0f4;
+            --bg-dark: #1b2838;
+            --card-bg: #171a21;
+            --text-main: #c7d5e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            padding: 25px;
+            margin: 0;
+        }
+
+        .top-nav {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        input,
+        select,
+        button {
+            background: #101822;
+            border: 1px solid #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            outline: none;
+            height: 38px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: var(--steam-blue);
+        }
+
+        .btn-save {
+            background: #4caf50;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-load {
+            background: var(--steam-blue);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            min-width: 150px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--steam-blue);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card img {
+            width: 100%;
+            height: 115px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            color: white;
+            display: block;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            font-size: 0.85em;
+            color: #8f98a0;
+        }
+
+        .stat-row b {
+            color: #fff;
+        }
+
+        .progress-container {
+            background: #3d4450;
+            height: 5px;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: var(--steam-blue);
+            height: 100%;
+            transition: width 0.5s;
+        }
+
+        #details-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1b2838;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--steam-blue);
+            width: 350px;
+            z-index: 1000;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.9);
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(3px);
+            z-index: 999;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .loading {
+            animation: pulse 1.5s infinite;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-nav">
+        <input id="apiKey" type="password" placeholder="API Key" style="width: 180px;">
+        <input id="steamId" type="text" placeholder="SteamID64" style="width: 160px;">
+        <button class="btn-save" onclick="saveConfig()">Salva</button>
+        <div style="width: 1px; height: 25px; background: #444;"></div>
+        <button id="loadBtn" class="btn-load" onclick="loadGames()">Aggiorna Libreria</button>
+        <input type="text" id="search" placeholder="Cerca gioco..." oninput="render()" style="flex-grow: 1;">
+        <select id="sort" onchange="render()">
+            <option value="playtime">Più giocati</option>
+            <option value="name">Nome A-Z</option>
+            <option value="completion">Completamento %</option>
+        </select>
+        <label style="font-size: 0.8em;"><input type="checkbox" id="hideFinished" onchange="render()"> Nascondi
+            100%</label>
+    </div>
+
+    <div id="list" class="card-grid"></div>
+
+    <div id="overlay" class="overlay" onclick="closeDetails()"></div>
+    <div id="details-panel">
+        <h3 id="det-title" style="color: var(--steam-blue); margin: 0 0 15px 0; text-align: center;"></h3>
+        <div style="width: 100%; margin-bottom: 20px;"><canvas id="det-chart"></canvas></div>
+        <div id="det-stats"></div>
+        <button onclick="closeDetails()"
+            style="width: 100%; margin-top: 20px; background: #444; color: white; border: none; cursor: pointer;">Chiudi</button>
+    </div>
+
+    <script>
+        const API = "http://localhost:5000/api";
+        let allGames = [];
+        let chartInstance = null;
+
+        async function saveConfig() {
+            const body = { steam_key: document.getElementById('apiKey').value, steam_id: document.getElementById('steamId').value };
+            await fetch(`${API}/config`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+            alert("Configurazione salvata!");
+        }
+
+        async function loadGames() {
+            const btn = document.getElementById('loadBtn');
+            btn.classList.add('loading');
+            btn.innerText = "Caricamento...";
+            try {
+                const res = await fetch(`${API}/steam/games_with_achievements`);
+                const data = await res.json();
+                allGames = data.games;
+                render();
+            } catch (e) { alert("Errore caricamento."); }
+            btn.classList.remove('loading');
+            btn.innerText = "Aggiorna Libreria";
+        }
+
+        function render() {
+            const term = document.getElementById('search').value.toLowerCase();
+            const sortType = document.getElementById('sort').value;
+            const hideFinished = document.getElementById('hideFinished').checked;
+
+            let filtered = allGames.filter(g => g.name.toLowerCase().includes(term));
+            if (hideFinished) filtered = filtered.filter(g => g.unlocked_ach < g.total_ach || g.total_ach === 0);
+
+            filtered.sort((a, b) => {
+                if (sortType === 'name') return a.name.localeCompare(b.name);
+                if (sortType === 'completion') return (b.unlocked_ach / b.total_ach || 0) - (a.unlocked_ach / a.total_ach || 0);
+                return b.playtime - a.playtime;
+            });
+
+            document.getElementById('list').innerHTML = filtered.map(g => {
+                const perc = Math.round((g.unlocked_ach / g.total_ach * 100)) || 0;
+                return `
+            <div class="card" onclick="openDetails(${JSON.stringify(g).replace(/"/g, '&quot;')})">
+                <img src="${g.img}" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="card-title">${g.name}</span>
+                    <div class="stat-row"><span>Tempo:</span> <b>${Math.round(g.playtime / 60)}h</b></div>
+                    <div class="stat-row"><span>Trofei:</span> <b>${g.unlocked_ach} / ${g.total_ach}</b></div>
+                    <div class="progress-container"><div class="progress-bar" style="width: ${perc}%"></div></div>
+                </div>
+            </div>
+        `}).join('');
+        }
+
+        async function openDetails(g) {
+            document.getElementById('det-title').innerText = g.name;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('details-panel').style.display = 'block';
+
+            document.getElementById('det-stats').innerHTML = `
+            <div class="stat-row"><span>Ore totali:</span> <b>${Math.round(g.playtime / 60)}h</b></div>
+            <div class="stat-row"><span>Trofei:</span> <b>${g.unlocked_ach} / ${g.total_ach}</b></div>
+            <div class="stat-row" id="dlc-loading"><span>DLC:</span> <b>Caricamento...</b></div>
+        `;
+
+            // Disegna grafico trofei
+            const ctx = document.getElementById('det-chart').getContext('2d');
+            if (chartInstance) chartInstance.destroy();
+            chartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Sbloccati', 'Mancanti'],
+                    datasets: [{ data: [g.unlocked_ach, g.total_ach - g.unlocked_ach], backgroundColor: ['#66c0f4', '#101822'], borderWidth: 0 }]
+                },
+                options: { cutout: '80%', plugins: { legend: { display: false } } }
+            });
+
+            // Carica DLC in background
+            try {
+                const res = await fetch(`${API}/steam/game_details/${g.appid}`);
+                const data = await res.json();
+                document.getElementById('dlc-loading').innerHTML = `<span>DLC Posseduti:</span> <b>${data.owned_dlc} / ${data.total_dlc}</b>`;
+            } catch (e) {
+                document.getElementById('dlc-loading').innerHTML = `<span>DLC:</span> <b>Errore</b>`;
+            }
+        }
+
+        function closeDetails() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('details-panel').style.display = 'none';
+        }
+
+        window.onload = async () => {
+            const res = await fetch(`${API}/data`);
+            const data = await res.json();
+            document.getElementById('apiKey').value = data.steam_key || "";
+            document.getElementById('steamId').value = data.steam_id || "";
+        };
+    </script>
+</body>
+
+</html>
