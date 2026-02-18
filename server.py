@@ -114,30 +114,33 @@ def fetch_appdetails_cached(appid):
         pass
     return {}
 
-def fetch_schema_cached(appid):
-    cache = _load_json(SCHEMA_CACHE_FILE)
-    now = int(time.time())
-    entry = cache.get(appid)
-    if entry and (entry.get('ts', 0) + SCHEMA_TTL) > now:
-        return entry.get('data', [])
-    try:
-        url = f"https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key={STEAM_API_KEY}&appid={appid}"
-        r = requests.get(url, timeout=10)
-        j = r.json()
-        achs = j.get('game', {}).get('availableGameStats', {}).get('achievements', []) or []
-        normalized = []
-        for a in achs:
-            normalized.append({
-                'name': a.get('name'),
-                'displayName': a.get('displayName') or a.get('name'),
-                'description': a.get('description') or '',
-                'icon': a.get('icon') or '',
-                'icongray': a.get('icongray') or ''
-            })
-        cache[appid] = {'ts': now, 'data': normalized}
-        _save_json(SCHEMA_CACHE_FILE, cache)
-        return normalized
-    except:
+def fetch_schema_cached(appid, lang='italian'):  
+    cache = _load_json(SCHEMA_CACHE_FILE)  
+    now = int(time.time())  
+    cache_key = f"{appid}:{lang}"  
+    entry = cache.get(cache_key)  
+    if entry and (entry.get('ts', 0) + SCHEMA_TTL) > now:  
+        return entry.get('data', [])  
+  
+    try:  
+        # Usa la variabile STEAM_API_KEY corretta e passa il parametro l=lang  
+        url = f"https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key={STEAM_API_KEY}&appid={appid}&l={lang}"  
+        r = requests.get(url, timeout=10)  
+        j = r.json()  
+        achs = j.get('game', {}).get('availableGameStats', {}).get('achievements', []) or []  
+        normalized = []  
+        for a in achs:  
+            normalized.append({  
+                'name': a.get('name'),  
+                'displayName': a.get('displayName') or a.get('name'),  
+                'description': a.get('description') or '',  
+                'icon': a.get('icon') or '',  
+                'icongray': a.get('icongray') or ''  
+            })  
+        cache[cache_key] = {'ts': now, 'data': normalized}  
+        _save_json(SCHEMA_CACHE_FILE, cache)  
+        return normalized  
+    except Exception:  
         return []
 
 def fetch_player_achievements(key, sid, appid):
@@ -309,9 +312,23 @@ def game_details(appid):
     owned_count = sum(1 for d in dlc_list if str(d) in owned_set)
     return jsonify({"total_dlc": len(dlc_list), "owned_dlc": owned_count, "source": "steam"})
 
-@app.route('/api/steam/schema/<appid>', methods=['GET'])
-def api_schema(appid):
-    data = fetch_schema_cached(appid)
+@app.route('/api/steam/schema/<appid>', methods=['GET'])  
+def api_schema(appid):  
+    # Codici lato client come 'it'/'en' -> mappa ai nomi Steam aspettati  
+    lang_param = request.args.get('l', 'en')  
+    lang_map = {  
+        'en': 'english',  
+        'it': 'italian',  
+        'fr': 'french',  
+        'de': 'german',  
+        'es': 'spanish',  
+        'pt': 'portuguese',  
+        'ru': 'russian',  
+        'zh': 'schinese',
+        'jp': 'japanese',
+    }  
+    steam_lang = lang_map.get(lang_param.lower(), lang_param)  
+    data = fetch_schema_cached(appid, steam_lang)  
     return jsonify({'achievements': data})
 
 @app.route('/api/steam/player_achievements/<appid>', methods=['GET'])
@@ -329,6 +346,14 @@ def api_logout():
     db['steam_id'] = ""
     _save_json(DB_FILE, db)
     return jsonify({'status': 'ok'})
+
+@app.route('/api/steam/schema/<appid>')  
+def get_schema(appid):  
+    lang = request.args.get('l', 'en')  # Prende il parametro 'l' o default 'en'  
+    # Chiamata all'API Steam con parametro lingua  
+    steam_url = f"https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?appid={appid}&l={lang}&key=YOUR_STEAM_KEY"  
+    response = requests.get(steam_url)  
+    return jsonify(response.json())
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)

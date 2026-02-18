@@ -8,6 +8,7 @@ let allGames = [];
 let currentPage = 0;
 let translations = {};
 let currentLang = 'it';
+let fetchController = null;
 
 function showLogin() { document.getElementById('loginOverlay').style.display = 'flex'; }
 function hideLogin() { document.getElementById('loginOverlay').style.display = 'none'; }
@@ -164,76 +165,90 @@ function render() {
     const term = (document.getElementById('search').value || '').toLowerCase();
     const filtered = allGames.filter(g => g.name.toLowerCase().includes(term));
     const totalPages = Math.ceil(filtered.length / pageSize) || 1;
+
     if (currentPage >= totalPages) currentPage = totalPages - 1;
     window.pageInfoData = { current: currentPage + 1, total: totalPages };
 
     const slice = filtered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
 
-    document.getElementById('list').innerHTML = slice.map((g, index) => `  
-        <div class="card" id="card-${g.appid}" onclick="openPop('${g.appid}')" style="animation-delay: ${index * 0.03}s">  
-            <div class="img-container">  
-                <div class="badge-completed" data-i18n="completed_badge">${translations[currentLang]?.completed_badge || 'COMPLETATO'}</div>  
-                <img src="${g.img}" loading="lazy" alt="${g.name}">  
-            </div>  
-            <div class="card-info">  
-                <div class="title" id="title-${g.appid}">${g.name}</div>  
-                <div class="meta">  
-                    <span id="ach-${g.appid}">  
-                        <span class="skeleton-inline" style="width:60px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span>  
-                    </span>  
-                    <span id="dlc-${g.appid}">📦 <span class="skeleton-inline" style="width:36px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span></span>  
-                </div>  
-                <div class="prog-bg"><div id="bar-${g.appid}" class="prog-fill"></div></div>  
-            </div>  
-        </div>  
+    // 1. Annulliamo eventuali fetch in corso della pagina precedente  
+    if (fetchController) fetchController.abort();
+    fetchController = new AbortController();
+
+    document.getElementById('list').innerHTML = slice.map((g, index) => `    
+        <div class="card" id="card-${g.appid}" onclick="openPop('${g.appid}')" style="animation-delay: ${index * 0.03}s">    
+            <div class="img-container">    
+                <div class="badge-completed" data-i18n="completed_badge">${translations[currentLang]?.completed_badge || 'COMPLETATO'}</div>    
+                <img src="${g.img}" loading="lazy" alt="${g.name}">    
+            </div>    
+            <div class="card-info">    
+                <div class="title" id="title-${g.appid}">${g.name}</div>    
+                <div class="meta">    
+                    <span id="ach-${g.appid}">    
+                        <span class="skeleton-inline" style="width:60px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span>    
+                    </span>    
+                    <span id="dlc-${g.appid}">📦 <span class="skeleton-inline" style="width:36px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span></span>    
+                </div>    
+                <div class="prog-bg"><div id="bar-${g.appid}" class="prog-fill"></div></div>    
+            </div>    
+        </div>    
     `).join('');
 
-    // Applichiamo le traduzioni subito dopo il render per i badge appena creati
     applyTranslations();
-    fetchDetails(slice);
+
+    fetchDetails(slice, fetchController.signal);
 }
-
-async function fetchDetails(games) {
+async function fetchDetails(games, signal) {
     const appids = games.map(g => g.appid);
-    const res = await fetch(`${API}/steam/achievements_bulk`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ appids })
-    });
-    const achs = await res.json();
+    try {
+        const res = await fetch(`${API}/steam/achievements_bulk`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ appids }),
+            signal: signal // Se l'utente cambia pagina, questa fetch si ferma  
+        });
+        const achs = await res.json();
 
-    appids.forEach(async id => {
-        const a = achs[id];
-        const card = document.getElementById(`card-${id}`);
-        const title = document.getElementById(`title-${id}`);
-        const bar = document.getElementById(`bar-${id}`);
-        const achText = document.getElementById(`ach-${id}`);
-        const dlcEl = document.getElementById(`dlc-${id}`);
+        for (const id of appids) {
+            // Se nel frattempo il segnale è stato annullato, usciamo dal loop  
+            if (signal.aborted) return;
 
-        if (a && a.t > 0) {
-            const trophy = (a.u === a.t) ? ' <span style="color:var(--gold)">🏆</span>' : '';
-            achText.innerHTML = `<b>${a.u}</b>/${a.t}${trophy}`;
-            bar.style.width = (a.u / a.t * 100) + '%';
-            if (a.u === a.t) {
-                card.classList.add('completed');
+            const a = achs[id];
+            const card = document.getElementById(`card-${id}`);
+            const achText = document.getElementById(`ach-${id}`);
+            const bar = document.getElementById(`bar-${id}`);
+            const dlcEl = document.getElementById(`dlc-${id}`);
+
+            // Controllo silenzioso: se l'elemento non c'è più, ignoriamo e basta  
+            if (!card || !achText) continue;
+
+            if (a && a.t > 0) {
+                const trophy = (a.u === a.t) ? ' <span style="color:var(--gold)">🏆</span>' : '';
+                achText.innerHTML = `<b>${a.u}</b>/${a.t}${trophy}`;
+                bar.style.width = (a.u / a.t * 100) + '%';
+                if (a.u === a.t) card.classList.add('completed');
+                else card.classList.remove('completed');
             } else {
-                card.classList.remove('completed');
+                achText.innerHTML = `<span style="font-size:0.8em; color:var(--muted);">${translations[currentLang]?.no_achievements || '---'}</span>`;
+                bar.style.width = '100%';
+                card.classList.add('no-achievements');
             }
-        } else {
-            achText.innerHTML = `<span style="font-size:0.8em; color:var(--muted);">${translations[currentLang]?.no_achievements || 'Nessun obiettivo'}</span>`;
-            bar.style.width = '100%';
-            card.classList.add('no-achievements');
-            card.classList.remove('completed');
-        }
 
-        try {
-            const dRes = await fetch(`${API}/steam/game_details/${id}`);
-            const d = await dRes.json();
-            if (dlcEl) {
-                if (typeof d.owned_dlc === 'number' && typeof d.total_dlc === 'number') dlcEl.innerHTML = `📦 ${d.owned_dlc}/${d.total_dlc}`;
-                else if (d.total_dlc === 0) dlcEl.innerHTML = '📦 0/0';
-                else dlcEl.innerHTML = '📦 —';
-            }
-        } catch (err) { if (dlcEl) dlcEl.innerHTML = '📦 —'; }
-    });
+            // Fetch dettagli DLC (opzionale: puoi aggiungere il signal anche qui)  
+            fetch(`${API}/steam/game_details/${id}`, { signal })
+                .then(r => r.json())
+                .then(d => {
+                    const el = document.getElementById(`dlc-${id}`);
+                    if (!el) return;
+                    if (typeof d.owned_dlc === 'number') el.innerHTML = `📦 ${d.owned_dlc}/${d.total_dlc}`;
+                    else el.innerHTML = '📦 0/0';
+                })
+                .catch(() => { /* Silenzioso se annullato */ });
+        }
+    } catch (err) {
+        if (err.name === 'AbortError') return; // Normale amministrazione  
+        console.error("Fetch error:", err);
+    }
 }
 
 function setAverageCompletion(percent, count) {
@@ -325,19 +340,28 @@ async function openPop(appid) {
     document.getElementById('popup-content').innerHTML = translations[currentLang]?.loading || '...';
 
     const [schemaRes, playerRes] = await Promise.all([
-        fetch(`${API}/steam/schema/${appid}`),
+        fetch(`${API}/steam/schema/${appid}?l=${currentLang}`),
         fetch(`${API}/steam/player_achievements/${appid}`)
     ]);
     const schema = (await schemaRes.json()).achievements || [];
     const playerMap = (await playerRes.json()).achievements || {};
 
     let html = `<h3 style="color:var(--blue);margin-top:0;margin-bottom:15px;border-bottom:1px solid #e6e6e6;padding-bottom:10px;">${g.name}</h3>`;
-    if (schema.length === 0) html += `<p>${translations[currentLang]?.no_achievements || "Nessun obiettivo."}</p>`;
-    else {
+    if (schema.length === 0) {
+        html += `<p>${translations[currentLang]?.no_achievements || "Nessun obiettivo."}</p>`;
+    } else {
         schema.forEach(a => {
             const p = playerMap[a.name] || playerMap[a.displayName] || { achieved: 0 };
             const unlocked = p.achieved === 1;
-            html += `<div class="ach-item" style="${unlocked ? '' : 'opacity:0.6'}"><img src="${unlocked ? a.icon : a.icongray}"><div class="ach-text"><div class="ach-name" style="color:var(--text)">${a.displayName} ${unlocked ? '✅' : ''}</div><div class="ach-desc">${a.description || ''}</div></div></div>`;
+            html += `<div class="ach-item" style="${unlocked ? '' : 'opacity:0.6'}">  
+                        <img src="${unlocked ? a.icon : a.icongray}">  
+                        <div class="ach-text">  
+                            <div class="ach-name" style="color:var(--text)">  
+                                ${a.displayName} ${unlocked ? '✅' : ''}  
+                            </div>  
+                            <div class="ach-desc">${a.description || ''}</div>  
+                        </div>  
+                     </div>`;
         });
     }
     document.getElementById('popup-content').innerHTML = html;
