@@ -1,3 +1,9 @@
+# Copyright (c) 2026 Trane2012
+# 
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+# server.py (revisione: usa cartella "static" per assets)
 import os
 import json
 import time
@@ -14,7 +20,8 @@ STEAM_API_KEY = "32191D6A0AA3C7AE0C4DE2EE70B8E2C9"
 
 requests_cache.install_cache('steam_cache', backend='sqlite', expire_after=3600)
 
-app = Flask(__name__, static_folder='.', static_url_path='')
+# CONFIGURAZIONE CARTELLA STATIC
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 CORS(app)
 
 DB_FILE = 'database.json'
@@ -52,6 +59,8 @@ def load_db():
     if not db:
         db = {"steam_id": "", "tsa_profile_url": "", "ubisoft_games": []}
     return db
+
+# --- FUNZIONI HELPER (Invariate) ---
 
 def get_owned_games_list_cached(steamid):
     cache = _load_json(OWNED_LIST_CACHE_FILE)
@@ -166,12 +175,20 @@ def fetch_player_achievements_cached(key, sid, appid):
     except:
         return {'u': 0, 't': 0}
 
-# Serve index.html (and other static assets in same folder)
+# --- ROUTE PER I FILE STATICI ---
+
 @app.route('/')
 def index():
-    return send_from_directory('.', 'index.html')
+    # Serve index.html dalla cartella static
+    return send_from_directory('static', 'index.html')
 
-# OpenID: start login (redirect to Steam)
+@app.route('/<path:path>')
+def serve_static(path):
+    # Serve altri file (css, js) dalla cartella static
+    return send_from_directory('static', path)
+
+# --- API ROUTES ---
+
 @app.route('/api/steam/login', methods=['GET'])
 def steam_login():
     return_to = url_for('steam_return', _external=True)
@@ -187,7 +204,6 @@ def steam_login():
     steam_openid = 'https://steamcommunity.com/openid/login?' + urlencode(params)
     return redirect(steam_openid)
 
-# OpenID: callback / verification
 @app.route('/api/steam/return', methods=['GET', 'POST'])
 def steam_return():
     data = {}
@@ -204,9 +220,11 @@ def steam_return():
         r = requests.post('https://steamcommunity.com/openid/login', data=verify, timeout=10)
         if r.status_code == 200 and 'is_valid:true' in r.text:
             claimed = data.get('openid.claimed_id') or data.get('openid.identity') or ''
-            m = re.search(r'/id/([0-9]+)$', claimed)
+            # CORREZIONE REGEX PER ESTRARRE STEAMID
+            m = re.search(r'/id/([0-9]+)/?$', claimed)
             if not m:
-                m = re.search(r'/id/([0-9]+)/?$', claimed)
+                m = re.search(r'/profiles/([0-9]+)/?$', claimed)
+            
             if m:
                 steamid = m.group(1)
                 db = load_db()

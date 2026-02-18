@@ -1,0 +1,93 @@
+<!--
+ Copyright (c) 2026 Trane2012
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Steam Achievement Tracker Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+    <!-- Login Overlay -->
+    <div id="loginOverlay">
+        <div id="loginCard">
+            <h2 style="color:white; margin-bottom:20px;">Steam Tracker</h2>
+            <a href="/api/steam/login"
+                style="display: flex; align-items: center; justify-content: center; background: linear-gradient(90deg, #56ccf2, #2f80ed); border-radius: 12px; width: 100%; height: 48px; box-shadow: 0 4px 15px rgba(47, 128, 237, 0.6); transition: background 0.3s ease; text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Logo"
+                    style="height: 24px; width: 24px;" />
+                <span style="margin-left: 10px; font-weight: bold; color: white; font-size: 1em;">Accedi con
+                    Steam</span>
+            </a>
+            <div style="margin: 20px 0; color: var(--muted); font-size: 0.9em;"></div>
+            <div style="color:var(--muted); font-size:0.8em; margin-bottom:15px;">OPPURE</div>
+            <input id="sidInput" placeholder="Incolla SteamID64..."
+                style="width:100%; box-sizing:border-box; margin-bottom:10px; text-align:center;" />
+            <button id="sidSaveBtn" style="width:100%; background:#2a475e;">Salva Manualmente</button>
+        </div>
+    </div>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <div style="font-weight:bold; font-size:1.2em; color:var(--blue); letter-spacing: 1px;">STEAM TRACKER</div>
+            <button onclick="showLogin()" style="border-color:#444; font-size:0.8em;">⚙️ Configura</button>
+        </div>
+        <div class="topbar-right">
+            <div id="totalStats" style="color:var(--muted); font-size:0.9em; font-weight: 500;">Ore: 0h</div>
+            <div id="profileArea" style="display:none;"></div>
+            <button onclick="toggleTheme()" id="themeBtn" style="margin-left:10px;">🌙 Tema</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div
+            style="background: rgba(0,0,0,0.03); padding: 15px; border-radius: 10px; margin-bottom: 25px; border: 1px solid rgba(0,0,0,0.05);">
+            <div style="display:flex; gap:12px; align-items:center;">
+                <input id="maxGames" type="number" value="40" style="width:60px" />
+                <button id="refreshBtn" style="background:var(--blue); color:white; font-weight:bold">Aggiorna</button>
+                <div style="display:flex; align-items:center; gap:10px; margin-left: 10px;">
+                    <button id="prevBtn">◀</button>
+                    <div id="pageInfo" style="font-weight:bold; min-width: 100px; text-align: center;">Pagina 1</div>
+                    <button id="nextBtn">▶</button>
+                </div>
+                <input id="search" placeholder="Cerca nella tua libreria..." style="flex:1; margin-left: 10px;" />
+            </div>
+
+            <!-- Completion bar now inside same container, with improved loading/expand behaviour -->
+            <div class="completion-summary-inline" id="completionSummaryInline">
+                <div style="display:flex; align-items:center; justify-content:center; width:100%;">
+                    <div class="completion-label-inline">Completamento medio</div>
+                </div>
+                <div id="completionBarBg" class="completion-bar-bg-inline loading">
+                    <div id="completionBar" class="completion-bar-fill-inline loading"></div>
+                </div>
+                <div class="completion-percent-inline hidden" id="completionPercent">
+                    <span id="completionText"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="list" class="grid"></div>
+    </div>
+
+    <div id="overlay" onclick="closePop()"></div>
+    <div id="popup">
+        <div id="popup-content"></div>
+        <button id="popup-close-btn" onclick="closePop()">Chiudi</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
