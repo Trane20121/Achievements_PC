@@ -12,23 +12,56 @@
             --card: #171a21;
             --gold: #ffd700;
             --muted: #88929b;
+            --text: #c7d5e0;
+            --container-bg: rgba(0, 0, 0, 0.3);
+            --border: rgba(255, 255, 255, 0.05);
+            --glass: rgba(255, 255, 255, 0.03);
+            --topbar-bg: rgba(0, 0, 0, 0.6);
+        }
+
+        /* LIGHT THEME VARS */
+        [data-theme="light"] {
+            --bg: #f0f2f5;
+            --card: #ffffff;
+            --text: #1b2838;
+            --muted: #65676b;
+            --container-bg: #ffffff;
+            --border: rgba(0, 0, 0, 0.08);
+            --blue: #1a73e8;
+            --glass: rgba(0, 0, 0, 0.04);
+            --topbar-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Bottoni e input: override per tema chiaro (specifico e dopo regole globali) */
+        [data-theme="light"] button,
+        [data-theme="light"] input {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            color: var(--text);
+            box-shadow: none;
+        }
+
+        [data-theme="light"] button:hover {
+            border-color: var(--blue);
+            background: linear-gradient(90deg, rgba(26, 115, 232, 0.06), rgba(26, 115, 232, 0.02));
         }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
             background: var(--bg);
-            color: #c7d5e0;
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .topbar {
             padding: 10px 20px;
-            background: rgba(0, 0, 0, 0.6);
+            background: var(--topbar-bg);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -60,6 +93,19 @@
             padding: 20px;
         }
 
+        /* ANIMAZIONE DI INGRESSO CARD */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* GRID E CARD */
         .grid {
             display: grid;
@@ -72,28 +118,70 @@
             border-radius: 10px;
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--glass);
             display: flex;
             flex-direction: column;
             min-height: 240px;
+            position: relative;
+            animation: fadeInUp 0.4s ease backwards;
+            color: var(--text);
+        }
+
+        /* Light theme card outline */
+        [data-theme="light"] .card {
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .card:hover {
             border-color: var(--blue);
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* BADGE COMPLETATO */
+        .badge-completed {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--gold);
+            color: #111;
+            font-size: 0.78em;
+            font-weight: 900;
+            padding: 6px 12px;
+            border-radius: 6px;
+            z-index: 12;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            pointer-events: none;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+        }
+
+        .card.completed .badge-completed {
+            display: block;
         }
 
         .img-container {
             width: 100%;
             height: 110px;
             overflow: hidden;
+            position: relative;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.0));
         }
 
         .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
         }
 
         .card-info {
@@ -102,14 +190,16 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            z-index: 2;
         }
 
         .title {
             font-weight: bold;
             font-size: 0.95em;
-            color: white;
+            color: var(--text);
             height: 2.6em;
             overflow: hidden;
+            line-height: 1.3;
         }
 
         .meta {
@@ -117,26 +207,37 @@
             justify-content: space-between;
             font-size: 0.85em;
             color: var(--muted);
+            align-items: center;
+            gap: 8px;
         }
 
         .prog-bg {
             height: 6px;
-            background: #000;
+            background: rgba(0, 0, 0, 0.35);
             margin-top: 10px;
             border-radius: 3px;
             overflow: hidden;
+        }
+
+        /* light theme prog-bg */
+        [data-theme="light"] .prog-bg {
+            background: rgba(0, 0, 0, 0.06);
         }
 
         .prog-fill {
             height: 100%;
             background: var(--blue);
             width: 0%;
-            transition: width 0.8s;
+            transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .card.completed .prog-fill {
+            background: var(--gold);
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
         }
 
         .card.no-achievements .prog-fill {
-            background: #444;
-            /* Grigio scuro per non confonderlo con i trofei reali */
+            background: #3a3f47;
             width: 100% !important;
         }
 
@@ -164,11 +265,21 @@
             width: 420px;
             max-height: 80vh;
             flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* light popup */
+        [data-theme="light"] #popup {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(18, 18, 18, 0.06);
         }
 
         #popup-content {
             overflow-y: auto;
             flex-grow: 1;
+            max-height: 60vh;
         }
 
         #popup-close-btn {
@@ -180,6 +291,7 @@
             width: 100%;
             cursor: pointer;
             margin-top: 15px;
+            font-weight: bold;
         }
 
         .ach-item {
@@ -190,6 +302,11 @@
             padding: 10px;
             border-radius: 8px;
             margin-bottom: 8px;
+            transition: background 0.2s;
+        }
+
+        .ach-item:hover {
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .ach-item img {
@@ -274,6 +391,7 @@
             }
         }
 
+        /* legacy shimmer (kept for other uses) */
         @keyframes shimmer {
             0% {
                 background-position: -200% 0;
@@ -284,20 +402,38 @@
             }
         }
 
+        /* SKELETON / PLACEHOLDERS */
+        .skeleton-inline {
+            display: inline-block;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.03) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 1.2s linear infinite;
+            border-radius: 6px;
+        }
+
+        [data-theme="light"] .skeleton-inline {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.09) 50%, rgba(0, 0, 0, 0.06) 100%);
+        }
+
         /* STILI BARRA DI COMPLETAMENTO MEDIA */
         .completion-summary-inline {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
-            background: rgba(102, 192, 244, 0.05);
+            background: rgba(102, 192, 244, 0.08);
             padding: 12px 15px;
             border-radius: 10px;
-            border: 1px solid rgba(102, 192, 244, 0.15);
+            border: 1px solid rgba(102, 192, 244, 0.12);
             margin-top: 15px;
             width: 100%;
             box-sizing: border-box;
             min-height: 65px;
+        }
+
+        [data-theme="light"] .completion-summary-inline {
+            background: linear-gradient(90deg, rgba(26, 115, 232, 0.06), rgba(26, 115, 232, 0.02));
+            border: 1px solid rgba(26, 115, 232, 0.12);
         }
 
         .completion-label-inline {
@@ -305,37 +441,88 @@
             color: var(--blue);
             font-size: 0.85em;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
+        /* background container (will shrink in loading state) */
         .completion-bar-bg-inline {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.35);
             height: 8px;
-            border-radius: 4px;
+            border-radius: 50px;
             overflow: hidden;
             position: relative;
-            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 80px;
-            /* Pillola iniziale */
-            margin: 0 auto;
+            transition: width 450ms cubic-bezier(0.2, 0.9, 0.2, 1), height 250ms ease;
+            width: 100%;
+            max-width: 900px;
         }
 
-        /* CLASSE PER ESPANSIONE */
+        [data-theme="light"] .completion-bar-bg-inline {
+            background: rgba(0, 0, 0, 0.06);
+        }
+
+        /* small centered pill while computing */
+        .completion-bar-bg-inline.loading {
+            width: 160px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1%;
+        }
+
+        /* expanded: full width */
         .completion-bar-bg-inline.expanded {
             width: 100%;
         }
 
+        /* barra di riempimento: stato normale */
         .completion-bar-fill-inline {
             height: 100%;
             width: 0%;
-            background: var(--blue);
-            transition: width 0.8s ease-out;
-            box-shadow: 0 0 10px rgba(102, 192, 244, 0.4);
+            background: linear-gradient(90deg, #2f80ed 0%, #56ccf2 100%) !important;
+            box-shadow: 0 0 12px rgba(86, 204, 242, 0.18);
+            transition: width 900ms cubic-bezier(0.25, 0.8, 0.25, 1), height 200ms ease, background 200ms ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+
+        /* LOADING state for the fill (shimmer inside the small pill) */
+        .completion-bar-fill-inline.loading {
+            width: 100% !important;
+            /* fill the small pill */
+            height: 8px !important;
+            /* aumentata da 6px */
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)) !important;
+            box-shadow: none !important;
+            border-radius: 50px;
+        }
+
+        .completion-bar-fill-inline.loading::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            height: 100%;
+            width: 60%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: translateX(0);
+            animation: shimmerMove 1.05s linear infinite;
+            border-radius: 50px;
+            z-index: 2;
+        }
+
+        @keyframes shimmerMove {
+            0% {
+                left: -150%;
+            }
+
+            100% {
+                left: 150%;
+            }
         }
 
         .completion-bar-fill-inline.shimmer-effect {
             width: 100% !important;
-            background: linear-gradient(90deg, transparent, rgba(102, 192, 244, 0.8), transparent);
+            background: linear-gradient(90deg, transparent, rgba(102, 192, 244, 0.85), transparent) !important;
             background-size: 200% 100%;
             animation: shimmer 1.2s infinite linear;
             box-shadow: none;
@@ -344,8 +531,40 @@
         .completion-percent-inline {
             font-weight: bold;
             font-size: 0.9em;
-            color: white;
+            color: var(--text);
             height: 1.2em;
+            opacity: 1;
+            transition: opacity 300ms ease, transform 300ms ease;
+        }
+
+        .completion-percent-inline.hidden {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+
+        /* Piccolo fix per testi in tema chiaro */
+        [data-theme="light"] .title {
+            color: var(--text);
+        }
+
+        [data-theme="light"] .completion-percent-inline {
+            color: var(--text);
+        }
+
+        /* responsiveness small screens */
+        @media (max-width: 700px) {
+            .topbar {
+                padding: 8px;
+            }
+
+            .completion-summary-inline {
+                padding: 10px;
+                min-height: 58px;
+            }
+
+            .completion-label-inline {
+                font-size: 0.78em;
+            }
         }
     </style>
 </head>
@@ -360,8 +579,8 @@
                 style="display: flex; align-items: center; justify-content: center; background: linear-gradient(90deg, #56ccf2, #2f80ed); border-radius: 12px; width: 100%; height: 48px; box-shadow: 0 4px 15px rgba(47, 128, 237, 0.6); transition: background 0.3s ease; text-decoration: none;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Logo"
                     style="height: 24px; width: 24px;" />
-                <text style="margin-left: 10px; font-weight: bold; color: white; font-size: 1em;">Accedi con
-                    Steam</text>
+                <span style="margin-left: 10px; font-weight: bold; color: white; font-size: 1em;">Accedi con
+                    Steam</span>
             </a>
             <div style="margin: 20px 0; color: var(--muted); font-size: 0.9em;"></div>
             <div style="color:var(--muted); font-size:0.8em; margin-bottom:15px;">OPPURE</div>
@@ -380,16 +599,17 @@
         <div class="topbar-right">
             <div id="totalStats" style="color:var(--muted); font-size:0.9em; font-weight: 500;">Ore: 0h</div>
             <div id="profileArea" style="display:none;"></div>
+            <button onclick="toggleTheme()" id="themeBtn" style="margin-left:10px;">🌙 Tema</button>
         </div>
     </div>
 
     <!-- Main Content -->
     <div class="container">
         <div
-            style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.05);">
+            style="background: rgba(0,0,0,0.03); padding: 15px; border-radius: 10px; margin-bottom: 25px; border: 1px solid rgba(0,0,0,0.05);">
             <div style="display:flex; gap:12px; align-items:center;">
                 <input id="maxGames" type="number" value="40" style="width:60px" />
-                <button id="refreshBtn" style="background:var(--blue); color:black; font-weight:bold">Aggiorna</button>
+                <button id="refreshBtn" style="background:var(--blue); color:white; font-weight:bold">Aggiorna</button>
                 <div style="display:flex; align-items:center; gap:10px; margin-left: 10px;">
                     <button id="prevBtn">◀</button>
                     <div id="pageInfo" style="font-weight:bold; min-width: 100px; text-align: center;">Pagina 1</div>
@@ -398,12 +618,15 @@
                 <input id="search" placeholder="Cerca nella tua libreria..." style="flex:1; margin-left: 10px;" />
             </div>
 
-            <div class="completion-summary-inline">
-                <div class="completion-label-inline">Completamento medio</div>
-                <div id="completionBarBg" class="completion-bar-bg-inline">
-                    <div id="completionBar" class="completion-bar-fill-inline"></div>
+            <!-- Completion bar now inside same container, with improved loading/expand behaviour -->
+            <div class="completion-summary-inline" id="completionSummaryInline">
+                <div style="display:flex; align-items:center; justify-content:center; width:100%;">
+                    <div class="completion-label-inline">Completamento medio</div>
                 </div>
-                <div class="completion-percent-inline" id="completionPercent">
+                <div id="completionBarBg" class="completion-bar-bg-inline loading">
+                    <div id="completionBar" class="completion-bar-fill-inline loading"></div>
+                </div>
+                <div class="completion-percent-inline hidden" id="completionPercent">
                     <span id="completionText"></span>
                 </div>
             </div>
@@ -458,6 +681,17 @@
         async function loadLibrary() {
             const listDiv = document.getElementById('list');
             listDiv.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;">Caricamento libreria...</div>';
+            // reset completion bar to loading state
+            const barBg = document.getElementById('completionBarBg');
+            const bar = document.getElementById('completionBar');
+            const pct = document.getElementById('completionPercent');
+            const txt = document.getElementById('completionText');
+            barBg.classList.add('loading');
+            bar.classList.add('loading');
+            barBg.classList.remove('expanded');
+            pct.classList.add('hidden');
+            txt.innerText = '';
+
             try {
                 const res = await fetch(`${API}/steam/games_summary`);
                 const data = await res.json();
@@ -476,19 +710,25 @@
             if (currentPage >= totalPages) currentPage = totalPages - 1;
             document.getElementById('pageInfo').innerText = `Pagina ${currentPage + 1} / ${totalPages}`;
             const slice = filtered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
-            document.getElementById('list').innerHTML = slice.map(g => `
-                <div class="card" id="card-${g.appid}" onclick="openPop('${g.appid}')">
-                  <div class="img-container"><img src="${g.img}" loading="lazy"></div>
-                  <div class="card-info">
-                    <div class="title" id="title-${g.appid}">${g.name}</div>
-                    <div class="meta">
-                      <span id="ach-${g.appid}" data-tooltip="Obiettivi"><div class="sp"></div></span>
-                      <span id="dlc-${g.appid}" data-tooltip="DLC">📦 <span class="dlc-loading" style="color:var(--muted)">Cercando...</span></span>
-                    </div>
-                    <div class="prog-bg"><div id="bar-${g.appid}" class="prog-fill"></div></div>
-                  </div>
-                </div>
-            `).join('');
+
+            document.getElementById('list').innerHTML = slice.map((g, index) => `
+    <div class="card" id="card-${g.appid}" onclick="openPop('${g.appid}')" style="animation-delay: ${index * 0.03}s">
+        <div class="img-container">
+            <div class="badge-completed">Completato</div>
+            <img src="${g.img}" loading="lazy" alt="${g.name}">
+        </div>
+        <div class="card-info">
+            <div class="title" id="title-${g.appid}">${g.name}</div>
+            <div class="meta">
+                <span id="ach-${g.appid}" data-tooltip="Obiettivi">
+                    <span class="skeleton-inline" style="width:60px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span>
+                </span>
+                <span id="dlc-${g.appid}" data-tooltip="DLC">📦 <span class="skeleton-inline" style="width:36px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span></span>
+            </div>
+            <div class="prog-bg"><div id="bar-${g.appid}" class="prog-fill"></div></div>
+        </div>
+    </div>
+`).join('');
             fetchDetails(slice);
         }
 
@@ -507,79 +747,106 @@
                 const achText = document.getElementById(`ach-${id}`);
                 const dlcEl = document.getElementById(`dlc-${id}`);
 
-                // GESTIONE OBIETTIVI
                 if (a && a.t > 0) {
-                    // Il gioco HA obiettivi
                     const trophy = (a.u === a.t) ? ' <span style="color:var(--gold)">🏆</span>' : '';
                     achText.innerHTML = `<b>${a.u}</b>/${a.t}${trophy}`;
                     bar.style.width = (a.u / a.t * 100) + '%';
-
                     if (a.u === a.t) {
                         card.classList.add('completed');
                         title.innerHTML = title.innerHTML.replace(' 🏆', '');
+                    } else {
+                        card.classList.remove('completed');
                     }
                 } else {
-                    // Il gioco NON HA obiettivi (a.t è 0 o non esiste)
                     achText.innerHTML = `<span style="font-size:0.8em; color:var(--muted);">Nessun obiettivo</span>`;
                     bar.style.width = '100%';
-                    card.classList.add('no-achievements'); // Classe speciale per barra grigia
+                    card.classList.add('no-achievements');
                 }
 
-                // GESTIONE DLC (rimane invariata)
-                if (dlcEl) {
-                    dlcEl.innerHTML = '📦 <span class="sp" style="display:inline-block; vertical-align:middle;"></span>';
-                }
+                // placeholder skeleton while fetching DLC details
+                if (dlcEl) dlcEl.innerHTML = '📦 <span class="skeleton-inline" style="width:36px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span>';
 
                 try {
                     const dRes = await fetch(`${API}/steam/game_details/${id}`);
                     const d = await dRes.json();
                     if (dlcEl) {
-                        if (typeof d.owned_dlc === 'number' && typeof d.total_dlc === 'number') {
-                            dlcEl.innerHTML = `📦 ${d.owned_dlc}/${d.total_dlc}`;
-                        } else if (d.total_dlc === 0) {
-                            dlcEl.innerHTML = '📦 0/0';
-                        } else {
-                            dlcEl.innerHTML = '📦 —';
-                        }
+                        if (typeof d.owned_dlc === 'number' && typeof d.total_dlc === 'number') dlcEl.innerHTML = `📦 ${d.owned_dlc}/${d.total_dlc}`;
+                        else if (d.total_dlc === 0) dlcEl.innerHTML = '📦 0/0';
+                        else dlcEl.innerHTML = '📦 —';
                     }
-                } catch (err) {
-                    if (dlcEl) dlcEl.innerHTML = '📦 —';
-                }
+                } catch (err) { if (dlcEl) dlcEl.innerHTML = '📦 —'; }
             });
         }
+
         async function updateCompletionSummary(games) {
             const percentText = document.getElementById('completionText');
             const bar = document.getElementById('completionBar');
             const barBg = document.getElementById('completionBarBg');
-            if (!games || games.length === 0) return;
+            const pctWrap = document.getElementById('completionPercent');
 
-            // RESET: Pillola piccola + Shimmer
+            if (!games || games.length === 0) {
+                // hide and clear
+                barBg.classList.remove('expanded');
+                barBg.classList.add('loading');
+                bar.classList.add('loading');
+                percentText.innerText = '';
+                pctWrap.classList.add('hidden');
+                return;
+            }
+
+            // --- START LOADING MINI BAR (centered pill) ---
             barBg.classList.remove('expanded');
-            bar.classList.add('shimmer-effect');
+            barBg.classList.add('loading');
+            bar.classList.remove('shimmer-effect');
+            bar.classList.add('loading');
+            // hide text while calculating
             percentText.innerText = '';
+            pctWrap.classList.add('hidden');
 
             const appids = games.map(g => g.appid);
             try {
                 const res = await fetch(`${API}/steam/achievements_bulk`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ appids }) });
                 const achs = await res.json();
                 let sum = 0, count = 0;
-                for (const id of appids) { const a = achs[id]; if (a && a.t > 0) { sum += (a.u / a.t); count++; } }
+                for (const id of appids) {
+                    const a = achs[id];
+                    if (a && a.t > 0) {
+                        sum += (a.u / a.t);
+                        count++;
+                    }
+                }
 
-                // AZIONE: Espandi il contenitore
+                // expand container: remove loading, add expanded
+                bar.classList.remove('loading');
+                barBg.classList.remove('loading');
+                // force reflow to ensure transition
+                void barBg.offsetWidth;
                 barBg.classList.add('expanded');
 
+                // small delay to let width expand then animate percentage
                 setTimeout(() => {
-                    bar.classList.remove('shimmer-effect');
+                    bar.style.height = '100%';
+                    bar.style.background = 'linear-gradient(90deg, #2f80ed 0%, #56ccf2 100%)';
                     if (count > 0) {
                         const pct = Math.round((sum / count) * 100);
+                        // animate to pct%
                         bar.style.width = `${pct}%`;
                         percentText.innerText = `${pct}% (${count} giochi analizzati)`;
+                    } else {
+                        bar.style.width = '0%';
+                        percentText.innerText = 'N/A';
                     }
-                }, 600); // Aspetta l'animazione di espansione
+                    // show text with fade-in
+                    pctWrap.classList.remove('hidden');
+                }, 260);
+
             } catch (err) {
+                bar.classList.remove('loading');
+                barBg.classList.remove('loading');
                 barBg.classList.add('expanded');
-                bar.classList.remove('shimmer-effect');
+                bar.style.width = '0%';
                 percentText.innerText = 'Errore nel calcolo';
+                pctWrap.classList.remove('hidden');
             }
         }
 
@@ -593,16 +860,28 @@
             const [schemaRes, playerRes] = await Promise.all([fetch(`${API}/steam/schema/${appid}`), fetch(`${API}/steam/player_achievements/${appid}`)]);
             const schema = (await schemaRes.json()).achievements || [];
             const playerMap = (await playerRes.json()).achievements || {};
-            let html = `<h3 style="color:var(--blue);margin-top:0;margin-bottom:15px;border-bottom:1px solid #333;padding-bottom:10px;">${g.name}</h3>`;
+            let html = `<h3 style="color:var(--blue);margin-top:0;margin-bottom:15px;border-bottom:1px solid #e6e6e6;padding-bottom:10px;">${g.name}</h3>`;
             if (schema.length === 0) html += "<p>Nessun obiettivo.</p>";
             else {
                 schema.forEach(a => {
                     const p = playerMap[a.name] || playerMap[a.displayName] || { achieved: 0 };
                     const unlocked = p.achieved === 1;
-                    html += `<div class="ach-item" style="${unlocked ? '' : 'opacity:0.4'}"><img src="${unlocked ? a.icon : a.icongray}"><div class="ach-text"><div class="ach-name">${a.displayName} ${unlocked ? '✅' : ''}</div><div class="ach-desc">${a.description || ''}</div></div></div>`;
+                    html += `<div class="ach-item" style="${unlocked ? '' : 'opacity:0.6'}"><img src="${unlocked ? a.icon : a.icongray}"><div class="ach-text"><div class="ach-name" style="color:var(--text)">${a.displayName} ${unlocked ? '✅' : ''}</div><div class="ach-desc">${a.description || ''}</div></div></div>`;
                 });
             }
             document.getElementById('popup-content').innerHTML = html;
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const isLight = body.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                body.removeAttribute('data-theme');
+                document.getElementById('themeBtn').innerText = '🌙 Tema';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                document.getElementById('themeBtn').innerText = '☀️ Chiaro';
+            }
         }
 
         document.getElementById('refreshBtn').onclick = async () => { await loadLibrary(); };
