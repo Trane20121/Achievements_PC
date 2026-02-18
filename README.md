@@ -89,8 +89,18 @@ Assicurati di avere Python installato.
 - pip
 
 ```sh
-pip install flask flask-cors requests requests-cache beautifulsoup4
+python --version
 ```
+
+Se restituisce una riga con scritto 'Python 3.14.3' o successive allora procedi a dare questo comando sotto.
+Prima di cio' apri la cartella downloads, fai tasto destro su un qualsiasi file e poi "Copia come percorso"
+
+```sh
+cd "C:\Users\TUONOMEUTENTE\Downloads\Achievements_PC"
+pip install -r requirements.txt
+```
+
+Cosi' facendo dovresti avere tutte le dipendenze gia' installate
 
 ### Installazione
 
@@ -103,15 +113,15 @@ git clone https://github.com/Trane20121/Achievements_PC.git
 cd Achievements_PC
 ```
 
-3. Inserisci la tua API Key e lo SteamID64 nell'interfaccia web dopo l'avvio.
+1. Inserisci la tua API Key e lo SteamID64 nell'interfaccia web dopo l'avvio.
 
-4. Avvia il server Python:
+2. Avvia il server Python:
 
 ```sh
 python server.py
 ```
 
-5. Apri `index.html` nel tuo browser.
+1. Apri `index.html` nel tuo browser.
 
 <p align="right">(<a href="#readme-top">Torna su</a>)</p>
 
@@ -135,7 +145,7 @@ Distribuito sotto Licenza MIT. Vedi `LICENSE` per ulteriori informazioni.
 
 ## Contatti
 
-Trane20121 - [@X](https://x.com/Trane20121) - bounty_95@hotmail.it
+Trane20121 - [@X](https://x.com/Trane20121) - <bounty_95@hotmail.it>
 
 Link Progetto: [https://github.com/Trane20121/Achievements_PC](https://github.com/Trane20121/Achievements_PC)
 
