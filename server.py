@@ -14,7 +14,7 @@ from flask_cors import CORS
 import requests
 import requests_cache
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import webbrowser # Aggiungi questo import in alto
+import webbrowser 
 
 # Hardcoded Steam API key (kept as requested).
 STEAM_API_KEY = "32191D6A0AA3C7AE0C4DE2EE70B8E2C9"
@@ -34,6 +34,7 @@ ACH_CACHE_FILE = os.path.join(CACHE_DIR, 'achievements_cache.json')
 OWNED_CACHE_FILE = os.path.join(CACHE_DIR, 'owned_cache.json')
 OWNED_LIST_CACHE_FILE = os.path.join(CACHE_DIR, 'owned_list_cache.json')
 SCHEMA_CACHE_FILE = os.path.join(CACHE_DIR, 'schema_cache.json')
+GLOBAL_PERCENT_CACHE_FILE = os.path.join(CACHE_DIR, 'global_percent_cache.json')
 
 APPDETAILS_TTL = 24 * 3600
 ACH_TTL = 6 * 3600
@@ -143,6 +144,34 @@ def fetch_schema_cached(appid, lang='italian'):
         return normalized  
     except Exception:  
         return []
+
+def fetch_global_achievement_percentages_cached(appid):
+    cache = _load_json(GLOBAL_PERCENT_CACHE_FILE)
+    now = int(time.time())
+    entry = cache.get(appid)
+    if entry and (entry.get('ts', 0) + SCHEMA_TTL) > now:
+        return entry.get('data', {})
+    try:
+        url = f"https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appid}"
+        r = requests.get(url, timeout=10)
+        j = r.json()
+        achs = j.get('achievementpercentages', {}).get('achievements', []) or []
+        mapping = {}
+        for a in achs:
+            mapping[a.get('name')] = float(a.get('percent', 0.0))
+        cache[appid] = {'ts': now, 'data': mapping}
+        _save_json(GLOBAL_PERCENT_CACHE_FILE, cache)
+        return mapping
+    except:
+        return {}
+
+@app.route('/api/steam/global_ach/<appid>', methods=['GET'])
+def api_global_ach(appid):
+    data = fetch_global_achievement_percentages_cached(appid)
+    return jsonify({'percentages': data})
+
+
+    return []
 
 def fetch_player_achievements(key, sid, appid):
     try:
@@ -274,7 +303,10 @@ def steam_profile():
             'steamid': p.get('steamid'),
             'persona_name': p.get('personaname'),
             'avatar': p.get('avatarfull'),
-            'profileurl': p.get('profileurl')
+            'profileurl': p.get('profileurl'),
+            'personastate': p.get('personastate'),
+            'gameextrainfo': p.get('gameextrainfo'),
+            'lastlogoff': p.get('lastlogoff')
         })
     except Exception as e:
         return jsonify({'error': 'Failed to fetch profile', 'detail': str(e)}), 500
@@ -348,13 +380,7 @@ def api_logout():
     _save_json(DB_FILE, db)
     return jsonify({'status': 'ok'})
 
-@app.route('/api/steam/schema/<appid>')  
-def get_schema(appid):  
-    lang = request.args.get('l', 'en')  # Prende il parametro 'l' o default 'en'  
-    # Chiamata all'API Steam con parametro lingua  
-    steam_url = f"https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?appid={appid}&l={lang}&key=YOUR_STEAM_KEY"  
-    response = requests.get(steam_url)  
-    return jsonify(response.json())
+
 
 if __name__ == '__main__':
     webbrowser.open("http://127.0.0.1:5000")

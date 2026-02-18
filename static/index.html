@@ -16,11 +16,9 @@
         <div id="loginCard">
             <h2 id="loginTitle" style="color:white; margin-bottom:20px;" data-i18n="title">Steam Tracker</h2>
             <a href="/api/steam/login"
-                style="display: flex; align-items: center; justify-content: center; background: linear-gradient(90deg, #56ccf2, #2f80ed); border-radius: 12px; width: 100%; height: 48px; box-shadow: 0 4px 15px rgba(47, 128, 237, 0.6); transition: background 0.3s ease; text-decoration: none;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Logo"
-                    style="height: 24px; width: 24px;" />
-                <span style="margin-left: 10px; font-weight: bold; color: white; font-size: 1em;"
-                    data-i18n="steam_login">Accedi con Steam</span>
+                style="display: flex; align-items: center; justify-content: center; transition: background 0.3s ease; text-decoration: none;">
+                <img src="https://community.fastly.steamstatic.com/public/images/signinthroughsteam/sits_01.png"
+                    alt="Steam Logo"/>
             </a>
             <div style="margin: 20px 0; color: var(--muted); font-size: 0.9em;"></div>
             <div id="orText" style="color:var(--muted); font-size:0.8em; margin-bottom:15px;" data-i18n="or">OPPURE
@@ -56,6 +54,17 @@
                 <input id="maxGames" type="number" value="40" style="width:60px" />
                 <button id="refreshBtn" style="background:var(--blue); color:white; font-weight:bold;"
                     data-i18n="update_btn">Aggiorna</button>
+                <select id="filterSelect" style="margin-left:10px;">
+                    <option value="all">Tutti</option>
+                    <option value="completed">Solo completati</option>
+                    <option value="inprogress">In corso</option>
+                    <option value="noach">Senza obiettivi</option>
+                </select>
+                <select id="sortSelect" style="margin-left:10px;">
+                    <option value="played">Più giocati</option>
+                    <option value="name">Nome (A‑Z)</option>
+                    <option value="completion">Percentuale di completamento</option>
+                </select>
                 <div style="display:flex; align-items:center; gap:10px; margin-left: 10px;">
                     <button id="prevBtn">◀</button>
                     <div id="pageInfo" style="font-weight:bold; min-width: 100px; text-align: center;" data-i18n="page">
