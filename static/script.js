@@ -6,6 +6,8 @@
 const API = "/api";
 let allGames = [];
 let currentPage = 0;
+let translations = {};
+let currentLang = 'it';
 
 function showLogin() { document.getElementById('loginOverlay').style.display = 'flex'; }
 function hideLogin() { document.getElementById('loginOverlay').style.display = 'none'; }
@@ -20,20 +22,33 @@ async function checkConfig() {
     try {
         const res = await fetch(`${API}/data`);
         const d = await res.json();
-        if (!d.steam_id) showLogin();
-        else { hideLogin(); await loadProfile(); loadLibrary(); }
-    } catch (e) { showLogin(); }
+        if (!d.steam_id) {
+            showLogin();
+        } else {
+            hideLogin();
+            await loadProfile();
+            await loadLibrary();
+        }
+    } catch (e) {
+        showLogin();
+    }
 }
 
 document.getElementById('sidSaveBtn').onclick = async () => {
     const sid = document.getElementById('sidInput').value.trim();
     if (!sid) return;
-    await fetch(`${API}/config`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ steam_id: sid })
-    });
-    hideLogin(); await loadProfile(); loadLibrary();
+    try {
+        await fetch(`${API}/config`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ steam_id: sid })
+        });
+        hideLogin();
+        await loadProfile();
+        await loadLibrary();
+    } catch (e) {
+        console.error("Errore durante il salvataggio dello SteamID", e);
+    }
 };
 
 async function loadProfile() {
@@ -42,15 +57,81 @@ async function loadProfile() {
         const p = await r.json();
         const area = document.getElementById('profileArea');
         area.style.display = 'flex';
-        area.innerHTML = `<img src="${p.avatar}" alt="avatar"><div class="profile-info"><div class="profile-name">${p.persona_name}</div><div class="profile-links"><a href="${p.profileurl}" target="_blank">Profilo</a><span onclick="doLogout()">Logout</span></div></div>`;
-    } catch (e) { document.getElementById('profileArea').style.display = 'none'; }
+        area.style.alignItems = 'center';
+        area.style.gap = '10px';
+
+        area.innerHTML = `
+            <img src="${p.avatar}" alt="avatar" style="width:32px; height:32px; border-radius:50%; border: 1px solid var(--blue);">
+            <div class="profile-info" style="display:flex; flex-direction:column; line-height:1.2;">
+                <span class="profile-name">${p.persona_name}</span>
+                <span class="logout-link" onclick="doLogout()" data-i18n="logout">${translations[currentLang]?.logout || 'Logout'}</span>
+            </div>
+        `;
+    } catch (e) {
+        document.getElementById('profileArea').style.display = 'none';
+    }
+}
+
+function translatePage() {
+    // Applichiamo le traduzioni a tutti gli elementi con data-i18n
+    applyTranslations();
+
+    // Gestione specifica per icone e placeholder che applyTranslations non copre bene
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const translation = translations[currentLang]?.[key];
+        if (!translation) return;
+
+        if (key === 'theme_btn' || key === 'theme_btn_light' || key === 'configure' || key === 'language_toggle' || key === 'update_btn') {
+            // Re-iniettiamo le icone se necessario (opzionale se già nel json)
+            if (key === 'configure' && !translation.includes('⚙️')) el.innerHTML = `⚙️ ${translation}`;
+            if (key === 'update_btn' && el.id === 'refreshBtn') el.textContent = translation;
+        }
+    });
+
+    const searchInput = document.getElementById('search');
+    if (searchInput) searchInput.placeholder = translations[currentLang]?.['search_placeholder'] || '';
+
+    const totalStats = document.getElementById('totalStats');
+    if (totalStats && window.lastTotalHours !== undefined) {
+        totalStats.textContent = `${translations[currentLang]?.['total_hours'] || 'Ore totali'}: ${window.lastTotalHours}h`;
+    }
+
+    const pageInfo = document.getElementById('pageInfo');
+    if (pageInfo && window.pageInfoData) {
+        pageInfo.textContent = `${translations[currentLang]?.['page'] || 'Pagina'} ${window.pageInfoData.current}`;
+    }
+}
+
+function applyTranslations() {
+    const langData = translations[currentLang] || {};
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (!key) return;
+
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = langData[key] || el.placeholder;
+        } else {
+            let text = langData[key] || el.innerText;
+
+            // Sostituzioni dinamiche
+            if (key === 'page_of' && window.pageInfoData) {
+                text = text.replace('{current}', window.pageInfoData.current).replace('{total}', window.pageInfoData.total);
+            }
+            if (key === 'avg_completion_desc' && window.avgCompletionData) {
+                text = text.replace('{percent}', window.avgCompletionData.percent).replace('{count}', window.avgCompletionData.count);
+            }
+
+            el.innerText = text;
+        }
+    });
 }
 
 async function doLogout() { await fetch(`${API}/steam/logout`, { method: 'POST' }); location.reload(); }
 
 async function loadLibrary() {
     const listDiv = document.getElementById('list');
-    listDiv.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;">Caricamento libreria...</div>';
+    listDiv.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:50px;">${translations[currentLang]?.loading_library || 'Caricamento libreria...'}</div>`;
 
     const barBg = document.getElementById('completionBarBg');
     const bar = document.getElementById('completionBar');
@@ -67,39 +148,48 @@ async function loadLibrary() {
         const res = await fetch(`${API}/steam/games_summary`);
         const data = await res.json();
         allGames = data.games || [];
-        document.getElementById('totalStats').innerText = 'Ore totali: ' + Math.round(allGames.reduce((acc, g) => acc + g.playtime, 0) / 60) + 'h';
+        const totalHours = Math.round(allGames.reduce((acc, g) => acc + g.playtime, 0) / 60);
+        window.lastTotalHours = totalHours;
+        document.getElementById('totalStats').innerText = `${translations[currentLang]?.total_hours || 'Ore totali'}: ${totalHours}h`;
         render();
-        updateCompletionSummary(allGames);
-    } catch (e) { listDiv.innerHTML = 'Errore caricamento.'; }
+        await updateCompletionSummary(allGames);
+    } catch (e) {
+        console.error('loadLibrary error', e);
+        listDiv.innerHTML = translations[currentLang]?.error_fetching_data || 'Errore caricamento.';
+    }
 }
 
 function render() {
     const pageSize = parseInt(document.getElementById('maxGames').value) || 40;
-    const term = document.getElementById('search').value.toLowerCase();
+    const term = (document.getElementById('search').value || '').toLowerCase();
     const filtered = allGames.filter(g => g.name.toLowerCase().includes(term));
     const totalPages = Math.ceil(filtered.length / pageSize) || 1;
     if (currentPage >= totalPages) currentPage = totalPages - 1;
-    document.getElementById('pageInfo').innerText = `Pagina ${currentPage + 1} / ${totalPages}`;
+    window.pageInfoData = { current: currentPage + 1, total: totalPages };
+
     const slice = filtered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
 
-    document.getElementById('list').innerHTML = slice.map((g, index) => `
-        <div class="card" id="card-${g.appid}" onclick="openPop('${g.appid}')" style="animation-delay: ${index * 0.03}s">
-            <div class="img-container">
-                <div class="badge-completed">Completato</div>
-                <img src="${g.img}" loading="lazy" alt="${g.name}">
-            </div>
-            <div class="card-info">
-                <div class="title" id="title-${g.appid}">${g.name}</div>
-                <div class="meta">
-                    <span id="ach-${g.appid}" data-tooltip="Obiettivi">
-                        <span class="skeleton-inline" style="width:60px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span>
-                    </span>
-                    <span id="dlc-${g.appid}" data-tooltip="DLC">📦 <span class="skeleton-inline" style="width:36px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span></span>
-                </div>
-                <div class="prog-bg"><div id="bar-${g.appid}" class="prog-fill"></div></div>
-            </div>
-        </div>
+    document.getElementById('list').innerHTML = slice.map((g, index) => `  
+        <div class="card" id="card-${g.appid}" onclick="openPop('${g.appid}')" style="animation-delay: ${index * 0.03}s">  
+            <div class="img-container">  
+                <div class="badge-completed" data-i18n="completed_badge">${translations[currentLang]?.completed_badge || 'COMPLETATO'}</div>  
+                <img src="${g.img}" loading="lazy" alt="${g.name}">  
+            </div>  
+            <div class="card-info">  
+                <div class="title" id="title-${g.appid}">${g.name}</div>  
+                <div class="meta">  
+                    <span id="ach-${g.appid}">  
+                        <span class="skeleton-inline" style="width:60px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span>  
+                    </span>  
+                    <span id="dlc-${g.appid}">📦 <span class="skeleton-inline" style="width:36px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span></span>  
+                </div>  
+                <div class="prog-bg"><div id="bar-${g.appid}" class="prog-fill"></div></div>  
+            </div>  
+        </div>  
     `).join('');
+
+    // Applichiamo le traduzioni subito dopo il render per i badge appena creati
+    applyTranslations();
     fetchDetails(slice);
 }
 
@@ -124,17 +214,15 @@ async function fetchDetails(games) {
             bar.style.width = (a.u / a.t * 100) + '%';
             if (a.u === a.t) {
                 card.classList.add('completed');
-                title.innerHTML = title.innerHTML.replace(' 🏆', '');
             } else {
                 card.classList.remove('completed');
             }
         } else {
-            achText.innerHTML = `<span style="font-size:0.8em; color:var(--muted);">Nessun obiettivo</span>`;
+            achText.innerHTML = `<span style="font-size:0.8em; color:var(--muted);">${translations[currentLang]?.no_achievements || 'Nessun obiettivo'}</span>`;
             bar.style.width = '100%';
             card.classList.add('no-achievements');
+            card.classList.remove('completed');
         }
-
-        if (dlcEl) dlcEl.innerHTML = '📦 <span class="skeleton-inline" style="width:36px;height:12px;display:inline-block;vertical-align:middle;border-radius:6px;"></span>';
 
         try {
             const dRes = await fetch(`${API}/steam/game_details/${id}`);
@@ -148,26 +236,38 @@ async function fetchDetails(games) {
     });
 }
 
+function setAverageCompletion(percent, count) {
+    window.avgCompletionData = { percent, count };
+    applyTranslations();
+    const bar = document.getElementById('completionBar');
+    const percentText = document.getElementById('completionText');
+    if (bar) {
+        bar.style.width = percent + '%';
+        bar.classList.remove('loading');
+    }
+    if (percentText) {
+        percentText.innerText = translations[currentLang]?.['avg_completion_desc']
+            .replace('{percent}', percent)
+            .replace('{count}', count);
+    }
+    const pctWrap = document.getElementById('completionPercent');
+    if (pctWrap) {
+        pctWrap.classList.remove('hidden');
+    }
+}
+
 async function updateCompletionSummary(games) {
     const percentText = document.getElementById('completionText');
     const bar = document.getElementById('completionBar');
     const barBg = document.getElementById('completionBarBg');
     const pctWrap = document.getElementById('completionPercent');
 
-    if (!games || games.length === 0) {
-        barBg.classList.remove('expanded');
-        barBg.classList.add('loading');
-        bar.classList.add('loading');
-        percentText.innerText = '';
-        pctWrap.classList.add('hidden');
-        return;
-    }
+    if (!games || games.length === 0) return;
 
     barBg.classList.remove('expanded');
     barBg.classList.add('loading');
-    bar.classList.remove('shimmer-effect');
     bar.classList.add('loading');
-    percentText.innerText = '';
+    percentText.innerText = translations[currentLang]?.['calculating'] || '';
     pctWrap.classList.add('hidden');
 
     const appids = games.map(g => g.appid);
@@ -197,21 +297,21 @@ async function updateCompletionSummary(games) {
             bar.style.background = 'linear-gradient(90deg, #2f80ed 0%, #56ccf2 100%)';
             if (count > 0) {
                 const pct = Math.round((sum / count) * 100);
-                bar.style.width = `${pct}%`;
-                percentText.innerText = `${pct}% (${count} giochi analizzati)`;
+                setAverageCompletion(pct, count);
             } else {
                 bar.style.width = '0%';
                 percentText.innerText = 'N/A';
+                pctWrap.classList.remove('hidden');
             }
-            pctWrap.classList.remove('hidden');
         }, 260);
 
     } catch (err) {
+        console.error('updateCompletionSummary error', err);
         bar.classList.remove('loading');
         barBg.classList.remove('loading');
         barBg.classList.add('expanded');
         bar.style.width = '0%';
-        percentText.innerText = 'Errore nel calcolo';
+        percentText.innerText = translations[currentLang]?.error_fetching_data || 'Error';
         pctWrap.classList.remove('hidden');
     }
 }
@@ -222,15 +322,17 @@ async function openPop(appid) {
     const popup = document.getElementById('popup');
     popup.style.display = 'flex';
     document.getElementById('popup-close-btn').style.display = 'block';
-    document.getElementById('popup-content').innerHTML = 'Caricamento obiettivi...';
+    document.getElementById('popup-content').innerHTML = translations[currentLang]?.loading || '...';
+
     const [schemaRes, playerRes] = await Promise.all([
         fetch(`${API}/steam/schema/${appid}`),
         fetch(`${API}/steam/player_achievements/${appid}`)
     ]);
     const schema = (await schemaRes.json()).achievements || [];
     const playerMap = (await playerRes.json()).achievements || {};
+
     let html = `<h3 style="color:var(--blue);margin-top:0;margin-bottom:15px;border-bottom:1px solid #e6e6e6;padding-bottom:10px;">${g.name}</h3>`;
-    if (schema.length === 0) html += "<p>Nessun obiettivo.</p>";
+    if (schema.length === 0) html += `<p>${translations[currentLang]?.no_achievements || "Nessun obiettivo."}</p>`;
     else {
         schema.forEach(a => {
             const p = playerMap[a.name] || playerMap[a.displayName] || { achieved: 0 };
@@ -241,20 +343,38 @@ async function openPop(appid) {
     document.getElementById('popup-content').innerHTML = html;
 }
 
+async function loadTranslations() {
+    try {
+        const response = await fetch('/static/lang.json', { cache: 'no-cache' });
+        translations = await response.json();
+    } catch (e) {
+        console.error('Errore caricamento lang.json', e);
+    }
+    translatePage();
+}
+
 function toggleTheme() {
     const body = document.body;
     const isLight = body.getAttribute('data-theme') === 'light';
     if (isLight) {
         body.removeAttribute('data-theme');
-        document.getElementById('themeBtn').innerText = '🌙 Tema';
     } else {
         body.setAttribute('data-theme', 'light');
-        document.getElementById('themeBtn').innerText = '☀️ Chiaro';
     }
+    translatePage(); // Aggiorna icone tema
+}
+
+function toggleLang() {
+    currentLang = currentLang === 'it' ? 'en' : 'it';
+    translatePage();
 }
 
 document.getElementById('refreshBtn').onclick = async () => { await loadLibrary(); };
 document.getElementById('prevBtn').onclick = () => { if (currentPage > 0) { currentPage--; render(); } };
 document.getElementById('nextBtn').onclick = () => { currentPage++; render(); };
 document.getElementById('search').oninput = () => { currentPage = 0; render(); };
-window.onload = checkConfig;
+
+window.addEventListener('DOMContentLoaded', async () => {
+    await loadTranslations();
+    await checkConfig();
+});
