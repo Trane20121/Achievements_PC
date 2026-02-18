@@ -7,7 +7,7 @@ const API = "/api";
 let allGames = [];
 let currentPage = 0;
 let translations = {};
-let currentLang = 'it';
+let currentLang = localStorage.getItem('st_lang') || 'it';
 let fetchController = null;
 
 function showLogin() { document.getElementById('loginOverlay').style.display = 'flex'; }
@@ -373,7 +373,32 @@ async function loadTranslations() {
         translations = await response.json();
     } catch (e) {
         console.error('Errore caricamento lang.json', e);
+        translations = {};
     }
+
+    // Popola il select delle lingue  
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+        langSelect.innerHTML = ''; // pulisci  
+        // Ordina le lingue se vuoi (es. it prima)  
+        const keys = Object.keys(translations);
+        keys.forEach(k => {
+            const opt = document.createElement('option');
+            opt.value = k;
+            opt.text = translations[k].language_name || k.toUpperCase();
+            langSelect.appendChild(opt);
+        });
+        // Imposta valore corrente  
+        if (keys.includes(currentLang)) langSelect.value = currentLang;
+        else langSelect.value = keys[0] || 'it';
+
+        langSelect.addEventListener('change', (ev) => {
+            currentLang = ev.target.value;
+            localStorage.setItem('st_lang', currentLang);
+            translatePage();
+        });
+    }
+
     translatePage();
 }
 
@@ -389,7 +414,13 @@ function toggleTheme() {
 }
 
 function toggleLang() {
-    currentLang = currentLang === 'it' ? 'en' : 'it';
+    const keys = Object.keys(translations);
+    const i = keys.indexOf(currentLang);
+    const next = keys[(i + 1) % keys.length];
+    currentLang = next;
+    localStorage.setItem('st_lang', currentLang);
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) langSelect.value = currentLang;
     translatePage();
 }
 
