@@ -14,6 +14,7 @@ from flask_cors import CORS
 import requests
 import requests_cache
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import webbrowser # Aggiungi questo import in alto
 
 # Hardcoded Steam API key (kept as requested).
 STEAM_API_KEY = "32191D6A0AA3C7AE0C4DE2EE70B8E2C9"
@@ -356,4 +357,5 @@ def get_schema(appid):
     return jsonify(response.json())
 
 if __name__ == '__main__':
+    webbrowser.open("http://127.0.0.1:5000")
     app.run(host='127.0.0.1', port=5000, debug=True)
