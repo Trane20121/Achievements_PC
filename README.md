@@ -24,8 +24,6 @@
     <a href="https://github.com/Trane20121/Achievements_PC"><strong>Esplora la documentazione »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Trane20121/Achievements_PC">Visualizza Demo</a>
-    ·
     <a href="https://github.com/Trane20121/Achievements_PC/issues">Segnala Bug</a>
     ·
     <a href="https://github.com/Trane20121/Achievements_PC/issues">Richiedi Funzionalità</a>
@@ -72,11 +70,10 @@ Caratteristiche principali:
 ### Tecnologie Utilizzate  
   
 - [![python-shield](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)  
-- [![flask-shield](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)  
-- [![chartjs-shield](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.dot_js&logoColor=white)](https://www.chartjs.org/)  
 - [![js-shield](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
   
 <p align="right">(<a href="#readme-top">Torna su</a>)</p>
+
 ## Per Iniziare
 
 Per avviare l'applicazione, è sufficiente eseguire il file `start.bat` presente nella cartella principale del progetto **come amministratore**.
