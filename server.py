@@ -3,7 +3,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-# server.py (revisione: usa cartella "static" per assets)
+
 import os
 import json
 import time
@@ -15,6 +15,7 @@ import requests
 import requests_cache
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import webbrowser 
+from waitress import serve
 
 # Hardcoded Steam API key (kept as requested).
 STEAM_API_KEY = "32191D6A0AA3C7AE0C4DE2EE70B8E2C9"
@@ -253,7 +254,7 @@ def steam_return():
         r = requests.post('https://steamcommunity.com/openid/login', data=verify, timeout=10)
         if r.status_code == 200 and 'is_valid:true' in r.text:
             claimed = data.get('openid.claimed_id') or data.get('openid.identity') or ''
-            # CORREZIONE REGEX PER ESTRARRE STEAMID
+            # Correzione regex per estrarre SteamID
             m = re.search(r'/id/([0-9]+)/?$', claimed)
             if not m:
                 m = re.search(r'/profiles/([0-9]+)/?$', claimed)
@@ -267,7 +268,7 @@ def steam_return():
         return "Login Steam fallito o non valido", 400
     except Exception as e:
         return f"Errore di verifica OpenID: {str(e)}", 500
-
+    
 @app.route('/api/config', methods=['POST'])
 def api_config():
     db = load_db()
@@ -384,4 +385,4 @@ def api_logout():
 
 if __name__ == '__main__':
     webbrowser.open("http://127.0.0.1:5000")  
-    app.run(host='127.0.0.1', port=5000, debug=True, use_reloader=False)
+    serve(app, host='127.0.0.1', port=5000)
