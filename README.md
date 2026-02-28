@@ -80,50 +80,11 @@ Caratteristiche principali:
 
 ## Per Iniziare
 
-Segui questi passaggi per configurare il progetto localmente.
+Per avviare l'applicazione, è sufficiente eseguire il file `start.bat` presente nella cartella principale del progetto **come amministratore**.
 
-### Prerequisiti
+Questo script si occuperà di installare automaticamente Python (se non presente), le dipendenze necessarie e avviare il server.
 
-Assicurati di avere Python installato.
-
-- pip
-
-```sh
-python --version
-```
-
-Se restituisce una riga con scritto 'Python 3.14.3' o successive allora procedi a dare questo comando sotto.
-Prima di cio' apri la cartella downloads, fai tasto destro su un qualsiasi file e poi "Copia come percorso"
-
-```sh
-cd "C:\Users\TUONOMEUTENTE\Downloads\Achievements_PC"
-pip install -r requirements.txt
-```
-
-Cosi' facendo dovresti avere tutte le dipendenze gia' installate
-
-### Installazione
-
-1. Ottieni una Steam API Key su: [https://steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey)
-
-2. Clona il repository:
-
-```sh
-git clone https://github.com/Trane20121/Achievements_PC.git
-cd Achievements_PC
-```
-
-1. Inserisci la tua API Key e lo SteamID64 nell'interfaccia web dopo l'avvio.
-
-2. Avvia il server Python:
-
-```sh
-python server.py
-```
-
-1. Apri `index.html` nel tuo browser.
-
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+---
 
 ## Contribuire
 
@@ -164,7 +125,6 @@ Link Progetto: [https://github.com/Trane20121/Achievements_PC](https://github.co
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hermes-de-micheli-b7029b21b/
 [python-shield]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
-[python-url]: https://www.python.org/
 [flask-shield]: https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white
 [flask-url]: https://flask.palletsprojects.com/
 [chartjs-shield]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.dot_js&logoColor=white
