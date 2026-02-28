@@ -69,20 +69,22 @@ Caratteristiche principali:
 
 <p align="right">(<a href="#readme-top">Torna su</a>)</p>
 
-### Tecnologie Utilizzate
-
-- [![python-shield][python-shield]][python-url]
-- [![flask-shield][flask-shield]][flask-url]
-- [![chartjs-shield][chartjs-shield]][chartjs-url]
-- [![js-shield][js-shield]][js-url]
-
+### Tecnologie Utilizzate  
+  
+- [![python-shield](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)  
+- [![flask-shield](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)  
+- [![chartjs-shield](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.dot_js&logoColor=white)](https://www.chartjs.org/)  
+- [![js-shield](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
+  
 <p align="right">(<a href="#readme-top">Torna su</a>)</p>
-
 ## Per Iniziare
 
 Per avviare l'applicazione, è sufficiente eseguire il file `start.bat` presente nella cartella principale del progetto **come amministratore**.
 
 Questo script si occuperà di installare automaticamente Python (se non presente), le dipendenze necessarie e avviare il server.
+
+> **Nota:**
+> Per chiudere il server avviato tramite `start.bat`, chiudi la pagina del browser aperta automaticamente e poi premi `Alt + C` nella finestra del terminale per terminare il processo Python.
 
 ---
 
@@ -124,10 +126,3 @@ Link Progetto: [https://github.com/Trane20121/Achievements_PC](https://github.co
 [license-url]: https://github.com/Trane20121/Achievements_PC/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hermes-de-micheli-b7029b21b/
-[python-shield]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
-[flask-shield]: https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white
-[flask-url]: https://flask.palletsprojects.com/
-[chartjs-shield]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.dot_js&logoColor=white
-[chartjs-url]: https://www.chartjs.org/
-[js-shield]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
-[js-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
