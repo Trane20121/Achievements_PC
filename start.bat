@@ -1,36 +1,60 @@
 @echo off
-setlocal
+setlocal enabledelayedexpansion
 
-:: Controlla se python è installato e versione >= 3.7
+:: Forza il percorso sulla cartella del batch (risolve errori UNC/Rete)
+pushd "%~dp0"
+
+:: 1. Controllo se Python è già installato
 python --version >nul 2>&1
-if errorlevel 1 (
-    echo Python non trovato. Procedo con il download e installazione...
-    set "PYTHON_INSTALLER=python-installer.exe"
-    if not exist "%PYTHON_INSTALLER%" (
-        echo Scarico Python 3.12...
-        powershell -Command "Invoke-WebRequest -Uri https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe -OutFile %PYTHON_INSTALLER%"
+if %errorlevel% neq 0 (
+    echo [INFO] Python non trovato.
+    
+    :: 2. Controllo se Winget è presente
+    winget --version >nul 2>&1
+    if %errorlevel% neq 0 (
+        echo [INFO] Winget non trovato. Installazione tramite PowerShell...
+        
+        :: Esecuzione logica basata sulla soluzione di Vladan (StackOverflow)
+        powershell -Command "$progressPreference = 'silentlyContinue'; $URL = (Invoke-WebRequest -Uri 'https://api.github.com/repos/microsoft/winget-cli/releases/latest').Content | ConvertFrom-Json | Select-Object -ExpandProperty 'assets' | Where-Object 'browser_download_url' -Match '.msixbundle' | Select-Object -ExpandProperty 'browser_download_url'; Write-Host 'Scaricamento Winget...'; Invoke-WebRequest -Uri $URL -OutFile 'Setup.msix' -UseBasicParsing; Write-Host 'Installazione...'; Add-AppxPackage -Path 'Setup.msix'; Remove-Item 'Setup.msix'"
+        
+        if !errorlevel! neq 0 (
+            echo [ERRORE] L'installazione di Winget e fallita.
+            pause
+            exit /b 1
+        )
+        echo [OK] Winget installato correttamente.
     )
-    echo Installazione Python in corso...
-    start /wait "" "%PYTHON_INSTALLER%" /quiet InstallAllUsers=1 PrependPath=1 Include_pip=1
-    if errorlevel 1 (
-        echo Errore durante l'installazione di Python.
-        pause
-        exit /b 1
-    )
+
+    :: 3. Installazione Python tramite Winget
+    echo [INFO] Installazione Python 3.12...
+    winget install --id Python.Python.3.12 --exact --silent --accept-source-agreements --accept-package-agreements
+    
+    :: Ricarica il PATH per vedere subito Python
+    call :REFRESH_PATH
 ) else (
-    echo Python trovato.
+    echo [OK] Python e gia installato.
 )
 
-:: Aggiorna pip
+:: 4. Installazione dipendenze
+echo [INFO] Aggiornamento pip e installazione librerie...
 python -m pip install --upgrade pip
-
-:: Installa dipendenze
-echo Installazione dipendenze Python...
 python -m pip install flask flask-cors requests requests-cache waitress
 
-:: Avvia il server
-echo Avvio server...
-start "" "http://127.0.0.1:5000"
-python server.py
+:: 5. Avvio server
+if exist server.py (
+    echo [OK] Avvio server in corso...
+    python server.py
+) else (
+    echo [ERRORE] File server.py non trovato.
+)
 
 pause
+popd
+goto :eof
+
+:: Funzione per aggiornare le variabili d'ambiente nella sessione corrente
+:REFRESH_PATH
+for /f "tokens=2*" %%a in ('reg query "HKCU\Environment" /v Path 2^>nul') do set "USERPATH=%%b"
+for /f "tokens=2*" %%a in ('reg query "HKLM\System\CurrentControlSet\Control\Session Manager\Environment" /v Path 2^>nul') do set "SYSPATH=%%b"
+set "PATH=%USERPATH%;%SYSPATH%"
+goto :eof
