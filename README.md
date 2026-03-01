@@ -1,7 +1,8 @@
 # Achievements_PC
 
-<a id="readme-top"></a>
+<!-- readme-top -->
 
+```markdown
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -9,50 +10,13 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<br />
+## ![Logo](https://avatars.githubusercontent.com/u/115975065?v=4) Steam Achievement Tracker
 
-<div align="center">
-  <a href="https://github.com/Trane20121/Achievements_PC">
-    <img src="https://avatars.githubusercontent.com/u/115975065?v=4" alt="Logo" width="80" height="80" />
-  </a>
+Un'applicazione web locale per monitorare i tuoi obiettivi Steam, visualizzare i progressi e analizzare le statistiche di gioco.
 
-  <h2 align="center">Steam Achievement Tracker</h2>
+[**Esplora la documentazione »**](https://github.com/Trane20121/Achievements_PC)
 
-  <p align="center">
-    Un'applicazione web locale per monitorare i tuoi obiettivi Steam, visualizzare i progressi e analizzare le statistiche di gioco.
-    <br />
-    <a href="https://github.com/Trane20121/Achievements_PC"><strong>Esplora la documentazione »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/Trane20121/Achievements_PC/issues">Segnala Bug</a>
-    ·
-    <a href="https://github.com/Trane20121/Achievements_PC/issues">Richiedi Funzionalità</a>
-  </p>
-</div>
-
-<details>
-  <summary>Indice dei contenuti</summary>
-
-  <ol>
-    <li>
-      <a href="#informazioni-sul-progetto">Informazioni sul Progetto</a>
-      <ul>
-        <li><a href="#tecnologie-utilizzate">Tecnologie Utilizzate</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#per-iniziare">Per Iniziare</a>
-      <ul>
-        <li><a href="#prerequisiti">Prerequisiti</a></li>
-        <li><a href="#installazione">Installazione</a></li>
-      </ul>
-    </li>
-    <li><a href="#contribuire">Contribuire</a></li>
-    <li><a href="#licenza">Licenza</a></li>
-    <li><a href="#contatti">Contatti</a></li>
-  </ol>
-
-</details>
+[Segnala Bug](https://github.com/Trane20121/Achievements_PC/issues) · [Richiedi Funzionalità](https://github.com/Trane20121/Achievements_PC/issues)
 
 ## Informazioni sul Progetto
 
@@ -67,25 +31,25 @@ Caratteristiche principali:
 
 > **Nota importante sulla Privacy:**  
 > Per poter visualizzare correttamente i dati degli achievement e delle statistiche di gioco, il tuo profilo Steam deve essere impostato come **Pubblico**. Se il profilo è privato o visibile solo agli amici, l'app non potrà accedere ai dati necessari.  
-> 
+>
 > Puoi modificare la privacy del tuo profilo seguendo le istruzioni ufficiali di Steam:  
 > [Guida Ufficiale: Impostazioni sulla privacy del profilo](https://help.steampowered.com/it/faqs/view/588C-C67D-0251-C276)  
-> 
+>
 > In sintesi, assicurati che nelle impostazioni di privacy del tuo profilo sia abilitata la visibilità pubblica per:  
 >
 > - **Profilo**  
 > - **Dettagli di gioco**
 
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+[↑ Back to top](#readme-top)
 
-### Tecnologie Utilizzate  
+### Tecnologie Utilizzate
   
 - [![python-shield](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)  
 - [![flask-shield](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 - [![chartjs-shield](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.dot_js&logoColor=white)](https://www.chartjs.org/)
 - [![js-shield](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
   
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+[↑ Torna su](#readme-top)
 
 ## Per Iniziare
 
@@ -108,13 +72,13 @@ I contributi sono ciò che rende la community open source un posto fantastico pe
 4. Fai il Push sul Branch (`git push origin feature/AmazingFeature`)  
 5. Apri una Pull Request
 
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+[↑ Torna su](#readme-top)
 
 ## Licenza
 
 Distribuito sotto Licenza MIT. Vedi `LICENSE` per ulteriori informazioni.
 
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+[↑ Torna su](#readme-top)
 
 ## Contatti
 
