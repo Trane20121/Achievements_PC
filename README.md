@@ -1,8 +1,9 @@
+<a name="readme-top"></a>
+
 # Achievements_PC
 
-<!-- readme-top -->
+<div align="center">
 
-```markdown
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -10,83 +11,102 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-## ![Logo](https://avatars.githubusercontent.com/u/115975065?v=4) Steam Achievement Tracker
+</div>
 
-Un'applicazione web locale per monitorare i tuoi obiettivi Steam, visualizzare i progressi e analizzare le statistiche di gioco.
+<br />
 
-[**Esplora la documentazione »**](https://github.com/Trane20121/Achievements_PC)
+<div align="center">
+  <a href="https://github.com/Trane20121/Achievements_PC">
+    <img src="https://avatars.githubusercontent.com/u/115975065?v=4" alt="Logo" width="80" height="80">
+  </a>
 
-[Segnala Bug](https://github.com/Trane20121/Achievements_PC/issues) · [Richiedi Funzionalità](https://github.com/Trane20121/Achievements_PC/issues)
+  <h3 align="center">Steam Achievement Tracker</h3>
 
-## Informazioni sul Progetto
-
-Questa applicazione permette di aggregare i dati del tuo profilo Steam tramite API ufficiali e scraping, offrendo una dashboard pulita con grafici (Chart.js) per visualizzare la percentuale di completamento degli obiettivi e il tempo di gioco.
-
-Caratteristiche principali:
-
-- Dashboard con grafici interattivi.
-- Filtro automatico per giochi con achievement.
-- Ordinamento per tempo di gioco e ultimo avvio.
-- Cache locale per prestazioni ottimali.
-
-> **Nota importante sulla Privacy:**  
-> Per poter visualizzare correttamente i dati degli achievement e delle statistiche di gioco, il tuo profilo Steam deve essere impostato come **Pubblico**. Se il profilo è privato o visibile solo agli amici, l'app non potrà accedere ai dati necessari.  
->
-> Puoi modificare la privacy del tuo profilo seguendo le istruzioni ufficiali di Steam:  
-> [Guida Ufficiale: Impostazioni sulla privacy del profilo](https://help.steampowered.com/it/faqs/view/588C-C67D-0251-C276)  
->
-> In sintesi, assicurati che nelle impostazioni di privacy del tuo profilo sia abilitata la visibilità pubblica per:  
->
-> - **Profilo**  
-> - **Dettagli di gioco**
-
-[↑ Back to top](#readme-top)
-
-### Tecnologie Utilizzate
-  
-- [![python-shield](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)  
-- [![flask-shield](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-- [![chartjs-shield](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.dot_js&logoColor=white)](https://www.chartjs.org/)
-- [![js-shield](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
-  
-[↑ Torna su](#readme-top)
-
-## Per Iniziare
-
-Per avviare l'applicazione, è sufficiente eseguire il file `start.bat` presente nella cartella principale del progetto **come amministratore**.
-
-Questo script si occuperà di installare automaticamente Python (se non presente), le dipendenze necessarie e avviare il server.
-
-> **Nota per la chiusura:**  
-> Per chiudere il server avviato tramite `start.bat`, chiudi la pagina del browser aperta automaticamente e poi premi `Alt + C` (o `Ctrl + C`) nella finestra del terminale per terminare il processo Python.
+  <p align="center">
+    Un'applicazione web locale per monitorare i tuoi obiettivi Steam, visualizzare i progressi e analizzare le statistiche di gioco.
+    <br />
+    <a href="https://github.com/Trane20121/Achievements_PC"><strong>Esplora la documentazione »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Trane20121/Achievements_PC/issues">Segnala Bug</a>
+    ·
+    <a href="https://github.com/Trane20121/Achievements_PC/issues">Richiedi Funzionalità</a>
+  </p>
+</div>
 
 ---
 
-## Contribuire
+## 🧐 Informazioni sul Progetto
 
-I contributi sono ciò che rende la community open source un posto fantastico per imparare, ispirare e creare. Ogni contributo che farai è **molto apprezzato**.
+Questa applicazione permette di aggregare i dati del tuo profilo Steam tramite API ufficiali e scraping, offrendo una dashboard pulita con grafici interattivi per visualizzare la percentuale di completamento degli obiettivi e il tempo di gioco.
 
-1. Fai il Fork del progetto  
-2. Crea il tuo Feature Branch (`git checkout -b feature/AmazingFeature`)  
-3. Fai il Commit delle tue modifiche (`git commit -m 'Add some AmazingFeature'`)  
-4. Fai il Push sul Branch (`git push origin feature/AmazingFeature`)  
-5. Apri una Pull Request
+### 🌟 Caratteristiche principali:
 
-[↑ Torna su](#readme-top)
+- **Dashboard Dinamica:** Grafici interattivi realizzati con Chart.js.
+- **Smart Filtering:** Filtro automatico per mostrare solo i giochi che possiedono achievement.
+- **Ordinamento Intelligente:** Organizza la tua libreria per tempo di gioco o ultimo avvio.
+- **Performance:** Cache locale per minimizzare le chiamate alle API e velocizzare il caricamento.
 
-## Licenza
+> [!IMPORTANT]
+> **Nota sulla Privacy:** Per poter visualizzare correttamente i dati, il tuo profilo Steam deve essere impostato come **Pubblico**. Assicurati che nelle [Impostazioni sulla privacy](https://help.steampowered.com/it/faqs/view/588C-C67D-0251-C276) siano pubblici:
+> * Profilo
+> * Dettagli di gioco
 
-Distribuito sotto Licenza MIT. Vedi `LICENSE` per ulteriori informazioni.
+<p align="right">(<a href="#readme-top">torna su</a>)</p>
 
-[↑ Torna su](#readme-top)
+### 🛠 Tecnologie Utilizzate
 
-## Contatti
+* [![Python][python-shield]][python-url]
+* [![Flask][flask-shield]][flask-url]
+* [![Chart.js][chartjs-shield]][chartjs-url]
+* [![JavaScript][js-shield]][js-url]
 
-Trane20121 - [@X](https://x.com/Trane20121) - <bounty_95@hotmail.it>
+---
 
-Link Progetto: [https://github.com/Trane20121/Achievements_PC](https://github.com/Trane20121/Achievements_PC)
+## 🚀 Per Iniziare
 
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+Il progetto è progettato per essere "Plug & Play" su Windows. Non è necessario installare manualmente Python o configurare variabili d'ambiente.
+
+1. Scarica o clona la repository.
+2. Fai click destro sul file **`start.bat`**.
+3. Seleziona **"Esegui come amministratore"**.
+
+**Cosa fa lo script automaticamente?**
+- Controlla la presenza di Python e lo installa tramite `winget` se mancante.
+- Installa o aggiorna tutte le dipendenze necessarie (`Flask`, `Waitress`, ecc.).
+- Configura il PATH di sistema.
+- Avvia il server web locale.
+
+> [!TIP]
+> **Per chiudere l'app:** Premi `Ctrl + C` nella finestra del terminale e chiudi la scheda del browser.
+
+<p align="right">(<a href="#readme-top">torna su</a>)</p>
+
+---
+
+## 🤝 Contribuire
+
+I contributi sono ciò che rende la community open source un posto fantastico per imparare, ispirare e creare.
+
+1. Fai il Fork del progetto.
+2. Crea il tuo Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Fai il Commit delle tue modifiche (`git commit -m 'Add some AmazingFeature'`).
+4. Fai il Push sul Branch (`git push origin feature/AmazingFeature`).
+5. Apri una Pull Request.
+
+---
+
+## 📄 Licenza
+
+Distribuito sotto Licenza MIT. Vedi il file `LICENSE` per ulteriori informazioni.
+
+## ✉️ Contatti
+
+Trane20121 - [@X](https://x.com/Trane20121) - bounty_95@hotmail.it
+
+Project Link: [https://github.com/Trane20121/Achievements_PC](https://github.com/Trane20121/Achievements_PC)
+
+<p align="right">(<a href="#readme-top">torna su</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/Trane20121/Achievements_PC.svg?style=for-the-badge
 [contributors-url]: https://github.com/Trane20121/Achievements_PC/graphs/contributors
@@ -100,3 +120,11 @@ Link Progetto: [https://github.com/Trane20121/Achievements_PC](https://github.co
 [license-url]: https://github.com/Trane20121/Achievements_PC/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hermes-de-micheli-b7029b21b/
+[python-shield]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
+[python-url]: https://www.python.org/
+[flask-shield]: https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white
+[flask-url]: https://flask.palletsprojects.com/
+[chartjs-shield]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.dot_js&logoColor=white
+[chartjs-url]: https://www.chartjs.org/
+[js-shield]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+[js-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
