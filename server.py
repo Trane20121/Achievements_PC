@@ -16,11 +16,12 @@ import requests_cache
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import webbrowser 
 from waitress import serve
+from bs4 import BeautifulSoup
 
 # Hardcoded Steam API key (kept as requested).
 STEAM_API_KEY = "32191D6A0AA3C7AE0C4DE2EE70B8E2C9"
 
-requests_cache.install_cache('steam_cache', backend='sqlite', expire_after=3600)
+requests_cache.install_cache('steam_cache', backend='sqlite', expire_after=7200)  # 2 hours
 
 # CONFIGURAZIONE CARTELLA STATIC
 app = Flask(__name__, static_folder='static', static_url_path='/static')
@@ -37,12 +38,13 @@ OWNED_LIST_CACHE_FILE = os.path.join(CACHE_DIR, 'owned_list_cache.json')
 SCHEMA_CACHE_FILE = os.path.join(CACHE_DIR, 'schema_cache.json')
 GLOBAL_PERCENT_CACHE_FILE = os.path.join(CACHE_DIR, 'global_percent_cache.json')
 
-APPDETAILS_TTL = 24 * 3600
-ACH_TTL = 6 * 3600
-OWNED_TTL = 5 * 60
-OWNED_LIST_TTL = 60
-SCHEMA_TTL = 24 * 3600
-MAX_WORKERS = 10
+# Increased cache TTL for better performance
+APPDETAILS_TTL = 48 * 3600  # 48 hours
+ACH_TTL = 12 * 3600  # 12 hours
+OWNED_TTL = 10 * 60  # 10 minutes
+OWNED_LIST_TTL = 120  # 2 minutes
+SCHEMA_TTL = 48 * 3600  # 48 hours
+MAX_WORKERS = 20
 
 def _load_json(path):
     if os.path.exists(path):
@@ -146,26 +148,131 @@ def fetch_schema_cached(appid, lang='italian'):
     except Exception:  
         return []
 
-def fetch_global_achievement_percentages_cached(appid):
-    cache = _load_json(GLOBAL_PERCENT_CACHE_FILE)
-    now = int(time.time())
-    entry = cache.get(appid)
-    if entry and (entry.get('ts', 0) + SCHEMA_TTL) > now:
-        return entry.get('data', {})
-    try:
-        url = f"https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appid}"
-        r = requests.get(url, timeout=10)
-        j = r.json()
-        achs = j.get('achievementpercentages', {}).get('achievements', []) or []
-        mapping = {}
-        for a in achs:
-            mapping[a.get('name')] = float(a.get('percent', 0.0))
-        cache[appid] = {'ts': now, 'data': mapping}
-        _save_json(GLOBAL_PERCENT_CACHE_FILE, cache)
-        return mapping
-    except:
+def scrape_global_achievement_percentages(appid):  
+    """  
+    Scrape la pagina https://steamcommunity.com/stats/{appid}/achievements  
+    Restituisce mapping: { displayName_lower: percent_float, ... }  
+    """  
+    url = f"https://steamcommunity.com/stats/{appid}/achievements"  
+    try:  
+        r = requests.get(url, timeout=12, headers={'User-Agent': 'Mozilla/5.0'})  
+        r.raise_for_status()  
+        soup = BeautifulSoup(r.text, 'html.parser')  
+  
+        mapping = {}  
+        processed_titles = set()  # Per evitare duplicati
+  
+        # Metodo generale: cerchiamo testi che contengono percentuali (es. "0.01%")  
+        # e associamo la percentuale al titolo dell'achievement (h3 o simili)  
+        pct_nodes = soup.find_all(text=re.compile(r'[\d]+(?:[\.,]\d+)?%'))  
+        for txt in pct_nodes:  
+            pct_match = re.search(r'([\d\.,]+)%', txt)  
+            if not pct_match:  
+                continue  
+            pct_str = pct_match.group(1).replace(',', '.')  
+            try:  
+                pct = float(pct_str)  
+            except:  
+                continue  
+  
+            # Troviamo il titolo vicino al nodo della percentuale  
+            # saliamo fino a 4 livelli per trovare un <h3> o un elemento di nome  
+            parent = txt.parent  
+            title = None  
+            cur = parent  
+            for _ in range(5):  
+                if cur is None:  
+                    break  
+                # Cerca <h3> (usato spesso per il nome)  
+                h3 = cur.find('h3')  
+                if h3 and h3.text.strip():  
+                    title = h3.text.strip()  
+                    break  
+                # Cerca elementi con classi indicative  
+                name_el = cur.find(class_=re.compile(r'(achieve|achievement).*name', re.I))  
+                if name_el and name_el.get_text(strip=True):  
+                    title = name_el.get_text(strip=True)  
+                    break  
+                cur = cur.parent  
+  
+            # fallback: testo precedente immediato  
+            if not title:  
+                prev = parent.find_previous(string=True)  
+                if prev and prev.strip():  
+                    title = prev.strip()  
+  
+            if title and title.lower() not in processed_titles:  
+                processed_titles.add(title.lower())
+                mapping[title.lower()] = pct  
+  
+        return mapping  
+    except Exception as e:  
+        print(f"❌ Errore scraping per {appid}: {e}")  
         return {}
-
+    
+def fetch_global_achievement_percentages_cached(appid):  
+    cache = _load_json(GLOBAL_PERCENT_CACHE_FILE)  
+    now = int(time.time())  
+    appid_str = str(appid)  
+  
+    # Se abbiamo una cache valida la restituiamo  
+    entry = cache.get(appid_str)  
+    if entry and (entry.get('ts', 0) + SCHEMA_TTL) > now:  
+        return entry.get('data', {})  
+  
+    # Endpoint da provare (ordine: v2, poi v0002 con format)  
+    endpoints = [  
+        f"https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appid}",  
+        f"https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid={appid}&format=json"  
+    ]  
+  
+    # Retry/backoff params  
+    max_retries = 3  
+    backoff = 1.0  
+  
+    for url in endpoints:  
+        for attempt in range(1, max_retries + 1):  
+    # --- FALLBACK: SCRAPING DELLA PAGINA WEB ---  
+            scraped = scrape_global_achievement_percentages(appid)  
+            if scraped:  
+                # Costruiamo la mapping finale utilizzando lo schema per associare displayName -> technicalName  
+                final_map = {}  
+                try:  
+                    schema = fetch_schema_cached(appid, lang='english')  # english by default for matching  
+                    # Crea lookup displayName_lower -> technical name  
+                    display_to_tech = {}  
+                    for s in schema:  
+                        name = s.get('name') or ''  
+                        display = s.get('displayName') or name  
+                        if name:  
+                            display_to_tech[display.lower()] = name.lower()  
+                            # Also map technical name to itself (if scraped contained it)  
+                            display_to_tech[name.lower()] = name.lower()  
+        
+                    # Per ogni scraped displayName, se troviamo la technical name la usiamo, altrimenti salviamo la coppia displayName->pct  
+                    for dname_lower, pct in scraped.items():  
+                        tech = display_to_tech.get(dname_lower)  
+                        if tech:  
+                            final_map[tech] = pct  
+                        # Always include displayName key as fallback  
+                        final_map[dname_lower] = pct  
+        
+                    # Se schema non conteneva mapping (vuoto), esporta scraped così com'è  
+                    if not final_map and scraped:  
+                        for k, v in scraped.items():  
+                            final_map[k] = v  
+        
+                    cache[appid_str] = {'ts': now, 'data': final_map}  
+                    _save_json(GLOBAL_PERCENT_CACHE_FILE, cache)  
+                    return final_map  
+                except Exception as e:  
+  
+    # Fallback: cache risultato negativo per breve tempo per non spammare l'API  
+                    short_ttl = 600  # 10 minuti  
+                    cache[appid_str] = {'ts': now, 'data': {}, 'neg': True, 'ttl': short_ttl}  
+                    _save_json(GLOBAL_PERCENT_CACHE_FILE, cache)  
+                    return {}
+            
 @app.route('/api/steam/global_ach/<appid>', methods=['GET'])
 def api_global_ach(appid):
     data = fetch_global_achievement_percentages_cached(appid)
@@ -380,7 +487,6 @@ def api_logout():
     db['steam_id'] = ""
     _save_json(DB_FILE, db)
     return jsonify({'status': 'ok'})
-
 
 
 if __name__ == '__main__':

@@ -1,6 +1,8 @@
+<a name="readme-top"></a>
+
 # Achievements_PC
 
-<a id="readme-top"></a>
+<div align="center">
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -9,14 +11,16 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+</div>
+
 <br />
 
 <div align="center">
   <a href="https://github.com/Trane20121/Achievements_PC">
-    <img src="https://avatars.githubusercontent.com/u/115975065?v=4" alt="Logo" width="80" height="80" />
+    <img src="https://avatars.githubusercontent.com/u/115975065?v=4" alt="Logo" width="80" height="80">
   </a>
 
-  <h2 align="center">Steam Achievement Tracker</h2>
+  <h3 align="center">Steam Achievement Tracker</h3>
 
   <p align="center">
     Un'applicazione web locale per monitorare i tuoi obiettivi Steam, visualizzare i progressi e analizzare le statistiche di gioco.
@@ -24,132 +28,85 @@
     <a href="https://github.com/Trane20121/Achievements_PC"><strong>Esplora la documentazione »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Trane20121/Achievements_PC">Visualizza Demo</a>
-    ·
     <a href="https://github.com/Trane20121/Achievements_PC/issues">Segnala Bug</a>
     ·
     <a href="https://github.com/Trane20121/Achievements_PC/issues">Richiedi Funzionalità</a>
   </p>
 </div>
 
-<details>
-  <summary>Indice dei contenuti</summary>
+---
 
-  <ol>
-    <li>
-      <a href="#informazioni-sul-progetto">Informazioni sul Progetto</a>
-      <ul>
-        <li><a href="#tecnologie-utilizzate">Tecnologie Utilizzate</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#per-iniziare">Per Iniziare</a>
-      <ul>
-        <li><a href="#prerequisiti">Prerequisiti</a></li>
-        <li><a href="#installazione">Installazione</a></li>
-      </ul>
-    </li>
-    <li><a href="#contribuire">Contribuire</a></li>
-    <li><a href="#licenza">Licenza</a></li>
-    <li><a href="#contatti">Contatti</a></li>
-  </ol>
+## 🧐 Informazioni sul Progetto
 
-</details>
+Questa applicazione permette di aggregare i dati del tuo profilo Steam tramite API ufficiali e scraping, offrendo una dashboard pulita con grafici interattivi per visualizzare la percentuale di completamento degli obiettivi e il tempo di gioco.
 
-## Informazioni sul Progetto
+### 🌟 Caratteristiche principali:
 
-Questa applicazione permette di aggregare i dati del tuo profilo Steam tramite API ufficiali e scraping, offrendo una dashboard pulita con grafici (Chart.js) per visualizzare la percentuale di completamento degli obiettivi e il tempo di gioco.
+- **Dashboard Dinamica:** Grafici interattivi realizzati con Chart.js.
+- **Smart Filtering:** Filtro automatico per mostrare solo i giochi che possiedono achievement.
+- **Ordinamento Intelligente:** Organizza la tua libreria per tempo di gioco o ultimo avvio.
+- **Performance:** Cache locale per minimizzare le chiamate alle API e velocizzare il caricamento.
 
-Caratteristiche principali:
+> [!IMPORTANT]
+> **Nota sulla Privacy:** Per poter visualizzare correttamente i dati, il tuo profilo Steam deve essere impostato come **Pubblico**. Assicurati che nelle [Impostazioni sulla privacy](https://help.steampowered.com/it/faqs/view/588C-C67D-0251-C276) siano pubblici:
+> * Profilo
+> * Dettagli di gioco
 
-- Dashboard con grafici interattivi.
-- Filtro automatico per giochi con achievement.
-- Ordinamento per tempo di gioco e ultimo avvio.
-- Cache locale per prestazioni ottimali.
+<p align="right">(<a href="#readme-top">torna su</a>)</p>
 
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+### 🛠 Tecnologie Utilizzate
 
-### Tecnologie Utilizzate
+* [![Python][python-shield]][python-url]
+* [![Flask][flask-shield]][flask-url]
+* [![Chart.js][chartjs-shield]][chartjs-url]
+* [![JavaScript][js-shield]][js-url]
 
-- [![python-shield][python-shield]][python-url]
-- [![flask-shield][flask-shield]][flask-url]
-- [![chartjs-shield][chartjs-shield]][chartjs-url]
-- [![js-shield][js-shield]][js-url]
+---
 
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+## 🚀 Per Iniziare
 
-## Per Iniziare
+Il progetto è progettato per essere "Plug & Play" su Windows. Non è necessario installare manualmente Python o configurare variabili d'ambiente.
 
-Segui questi passaggi per configurare il progetto localmente.
+1. Scarica o clona la repository.
+2. Fai click destro sul file **`start.bat`**.
+3. Seleziona **"Esegui come amministratore"**.
 
-### Prerequisiti
+**Cosa fa lo script automaticamente?**
+- Controlla la presenza di Python e lo installa tramite `winget` se mancante.
+- Installa o aggiorna tutte le dipendenze necessarie (`Flask`, `Waitress`, ecc.).
+- Configura il PATH di sistema.
+- Avvia il server web locale.
 
-Assicurati di avere Python installato.
+> [!TIP]
+> **Per chiudere l'app:** Premi `Ctrl + C` nella finestra del terminale e chiudi la scheda del browser.
 
-- pip
+<p align="right">(<a href="#readme-top">torna su</a>)</p>
 
-```sh
-python --version
-```
+---
 
-Se restituisce una riga con scritto 'Python 3.14.3' o successive allora procedi a dare questo comando sotto.
-Prima di cio' apri la cartella downloads, fai tasto destro su un qualsiasi file e poi "Copia come percorso"
+## 🤝 Contribuire
 
-```sh
-cd "C:\Users\TUONOMEUTENTE\Downloads\Achievements_PC"
-pip install -r requirements.txt
-```
+I contributi sono ciò che rende la community open source un posto fantastico per imparare, ispirare e creare.
 
-Cosi' facendo dovresti avere tutte le dipendenze gia' installate
+1. Fai il Fork del progetto.
+2. Crea il tuo Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Fai il Commit delle tue modifiche (`git commit -m 'Add some AmazingFeature'`).
+4. Fai il Push sul Branch (`git push origin feature/AmazingFeature`).
+5. Apri una Pull Request.
 
-### Installazione
+---
 
-1. Ottieni una Steam API Key su: [https://steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey)
+## 📄 Licenza
 
-2. Clona il repository:
+Distribuito sotto Licenza MIT. Vedi il file `LICENSE` per ulteriori informazioni.
 
-```sh
-git clone https://github.com/Trane20121/Achievements_PC.git
-cd Achievements_PC
-```
+## ✉️ Contatti
 
-1. Inserisci la tua API Key e lo SteamID64 nell'interfaccia web dopo l'avvio.
+Trane20121 - [@X](https://x.com/Trane20121) - bounty_95@hotmail.it
 
-2. Avvia il server Python:
+Project Link: [https://github.com/Trane20121/Achievements_PC](https://github.com/Trane20121/Achievements_PC)
 
-```sh
-python server.py
-```
-
-1. Apri `index.html` nel tuo browser.
-
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
-
-## Contribuire
-
-I contributi sono ciò che rende la community open source un posto fantastico per imparare, ispirare e creare. Ogni contributo che farai è **molto apprezzato**.
-
-1. Fai il Fork del progetto  
-2. Crea il tuo Feature Branch (`git checkout -b feature/AmazingFeature`)  
-3. Fai il Commit delle tue modifiche (`git commit -m 'Add some AmazingFeature'`)  
-4. Fai il Push sul Branch (`git push origin feature/AmazingFeature`)  
-5. Apri una Pull Request
-
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
-
-## Licenza
-
-Distribuito sotto Licenza MIT. Vedi `LICENSE` per ulteriori informazioni.
-
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
-
-## Contatti
-
-Trane20121 - [@X](https://x.com/Trane20121) - <bounty_95@hotmail.it>
-
-Link Progetto: [https://github.com/Trane20121/Achievements_PC](https://github.com/Trane20121/Achievements_PC)
-
-<p align="right">(<a href="#readme-top">Torna su</a>)</p>
+<p align="right">(<a href="#readme-top">torna su</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/Trane20121/Achievements_PC.svg?style=for-the-badge
 [contributors-url]: https://github.com/Trane20121/Achievements_PC/graphs/contributors
