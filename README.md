@@ -65,11 +65,24 @@ Caratteristiche principali:
 - Ordinamento per tempo di gioco e ultimo avvio.
 - Cache locale per prestazioni ottimali.
 
+> **Nota importante sulla Privacy:**  
+> Per poter visualizzare correttamente i dati degli achievement e delle statistiche di gioco, il tuo profilo Steam deve essere impostato come **Pubblico**. Se il profilo è privato o visibile solo agli amici, l'app non potrà accedere ai dati necessari.  
+> 
+> Puoi modificare la privacy del tuo profilo seguendo le istruzioni ufficiali di Steam:  
+> [Guida Ufficiale: Impostazioni sulla privacy del profilo](https://help.steampowered.com/it/faqs/view/588C-C67D-0251-C276)  
+> 
+> In sintesi, assicurati che nelle impostazioni di privacy del tuo profilo sia abilitata la visibilità pubblica per:  
+>
+> - **Profilo**  
+> - **Dettagli di gioco**
+
 <p align="right">(<a href="#readme-top">Torna su</a>)</p>
 
 ### Tecnologie Utilizzate  
   
 - [![python-shield](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)  
+- [![flask-shield](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+- [![chartjs-shield](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.dot_js&logoColor=white)](https://www.chartjs.org/)
 - [![js-shield](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
   
 <p align="right">(<a href="#readme-top">Torna su</a>)</p>
@@ -80,8 +93,8 @@ Per avviare l'applicazione, è sufficiente eseguire il file `start.bat` presente
 
 Questo script si occuperà di installare automaticamente Python (se non presente), le dipendenze necessarie e avviare il server.
 
-> **Nota:**
-> Per chiudere il server avviato tramite `start.bat`, chiudi la pagina del browser aperta automaticamente e poi premi `Alt + C` nella finestra del terminale per terminare il processo Python.
+> **Nota per la chiusura:**  
+> Per chiudere il server avviato tramite `start.bat`, chiudi la pagina del browser aperta automaticamente e poi premi `Alt + C` (o `Ctrl + C`) nella finestra del terminale per terminare il processo Python.
 
 ---
 
