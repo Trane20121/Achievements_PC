@@ -7,19 +7,21 @@ import os
 import json
 import time
 import re
+import threading
+import signal
+import sys
 from urllib.parse import urlencode
 from flask import Flask, jsonify, request, redirect, send_from_directory, url_for
 from flask_cors import CORS
 import requests
 import requests_cache
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import webbrowser 
+import webbrowser
 from waitress import serve
 
-# Hardcoded Steam API key
+# CONFIGURAZIONE
 STEAM_API_KEY = "32191D6A0AA3C7AE0C4DE2EE70B8E2C9"
-
-requests_cache.install_cache('steam_cache', backend='sqlite', expire_after=3600)
+requests_cache.install_cache('steam_cache', backend='sqlite', expire_after=7200)
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 CORS(app)
@@ -28,20 +30,23 @@ DB_FILE = 'database.json'
 CACHE_DIR = 'cache'
 os.makedirs(CACHE_DIR, exist_ok=True)
 
-APPDETAILS_CACHE_FILE = os.path.join(CACHE_DIR, 'appdetails_cache.json')
-ACH_CACHE_FILE = os.path.join(CACHE_DIR, 'achievements_cache.json')
-OWNED_CACHE_FILE = os.path.join(CACHE_DIR, 'owned_cache.json')
+ACH_CACHE_FILE        = os.path.join(CACHE_DIR, 'achievements_cache.json')
 OWNED_LIST_CACHE_FILE = os.path.join(CACHE_DIR, 'owned_list_cache.json')
-SCHEMA_CACHE_FILE = os.path.join(CACHE_DIR, 'schema_cache.json')
-GLOBAL_PERCENT_CACHE_FILE = os.path.join(CACHE_DIR, 'global_percent_cache.json')
+SCHEMA_CACHE_FILE     = os.path.join(CACHE_DIR, 'schema_cache.json')
+STORE_CACHE_FILE      = os.path.join(CACHE_DIR, 'store_cache.json')   # ← NUOVO
 
-APPDETAILS_TTL = 24 * 3600
-ACH_TTL = 6 * 3600
-OWNED_TTL = 5 * 60
-OWNED_LIST_TTL = 60
-SCHEMA_TTL = 24 * 3600
-MAX_WORKERS = 10
+ACH_TTL        = 12 * 3600
+OWNED_LIST_TTL = 300
+SCHEMA_TTL     = 48 * 3600
+STORE_TTL      = 48 * 3600   # ← NUOVO: dati Store (genere, anno, is_free)
+MAX_WORKERS    = 20
 
+last_heartbeat = time.time()
+HEARTBEAT_TIMEOUT = 30
+
+# ─────────────────────────────────────────────
+#  HELPERS JSON
+# ─────────────────────────────────────────────
 def _load_json(path):
     if os.path.exists(path):
         try:
@@ -57,10 +62,11 @@ def _save_json(path, data):
 
 def load_db():
     db = _load_json(DB_FILE)
-    if not db:
-        db = {"steam_id": "", "tsa_profile_url": "", "ubisoft_games": []}
-    return db
+    return db if db else {"steam_id": "", "tsa_profile_url": "", "ubisoft_games": []}
 
+# ─────────────────────────────────────────────
+#  CACHE LISTA GIOCHI POSSEDUTI
+# ─────────────────────────────────────────────
 def get_owned_games_list_cached(steamid):
     cache = _load_json(OWNED_LIST_CACHE_FILE)
     now = int(time.time())
@@ -68,135 +74,118 @@ def get_owned_games_list_cached(steamid):
     if entry and (entry.get('ts', 0) + OWNED_LIST_TTL) > now:
         return entry.get('games', [])
     try:
-        url = f"https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key={STEAM_API_KEY}&steamid={steamid}&include_appinfo=true&include_played_free_games=true"
-        r = requests.get(url, timeout=12)
+        url = (
+            f"https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/"
+            f"?key={STEAM_API_KEY}&steamid={steamid}"
+            f"&include_appinfo=true&include_played_free_games=true"
+        )
+        r = requests.get(url, timeout=10)
         games = r.json().get('response', {}).get('games', []) or []
-        games.sort(key=lambda x: x.get('playtime_forever', 0), reverse=True)
         cache[steamid] = {'ts': now, 'games': games}
         _save_json(OWNED_LIST_CACHE_FILE, cache)
         return games
     except:
-        return []
+        return entry.get('games', []) if entry else []
 
-def get_owned_appids_cached(steamid):
-    cache = _load_json(OWNED_CACHE_FILE)
+# ─────────────────────────────────────────────
+#  CACHE DATI STORE (genere, anno, is_free)  ← NUOVO
+# ─────────────────────────────────────────────
+def fetch_store_details_cached(appid):
+    """
+    Restituisce dict con:
+      - release_year: int | None
+      - genres: list[str]
+      - is_free: bool
+    Usa cache locale con TTL di 48h.
+    """
+    cache = _load_json(STORE_CACHE_FILE)
     now = int(time.time())
-    entry = cache.get(steamid)
-    if entry and (entry.get('ts', 0) + OWNED_TTL) > now:
-        return set(entry.get('owned', []))
-    owned = set()
+    key = str(appid)
+
+    if key in cache and (cache[key].get('ts', 0) + STORE_TTL) > now:
+        return cache[key].get('data', {})
+
+    result = {'release_year': None, 'genres': [], 'is_free': False}
     try:
-        url = f"https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key={STEAM_API_KEY}&steamid={steamid}&include_appinfo=false&include_played_free_games=true"
-        r = requests.get(url, timeout=10)
-        for g in r.json().get('response', {}).get('games', []):
-            owned.add(str(g.get('appid')))
+        url = f"https://store.steampowered.com/api/appdetails?appids={appid}&filters=basic,genres,release_date"
+        r = requests.get(url, timeout=8)
+        if r.status_code == 200:
+            payload = r.json().get(str(appid), {})
+            if payload.get('success'):
+                d = payload.get('data', {})
+                result['is_free'] = bool(d.get('is_free', False))
+                # Generi
+                result['genres'] = [g['description'] for g in d.get('genres', [])]
+                # Anno di uscita
+                rd = d.get('release_date', {})
+                date_str = rd.get('date', '')
+                if date_str:
+                    # Cerca 4 cifre che iniziano con 19 o 20
+                    m = re.search(r'(19|20)\d{2}', date_str)
+                    if m:
+                        result['release_year'] = int(m.group(0))
+                    else:
+                        # Se non trova l'anno (es. "TBA"), mettiamo un valore nullo
+                        result['release_year'] = None
     except:
         pass
-    cache[steamid] = {'ts': now, 'owned': list(owned)}
-    _save_json(OWNED_CACHE_FILE, cache)
-    return owned
 
-def fetch_appdetails_cached(appid):
-    cache = _load_json(APPDETAILS_CACHE_FILE)
-    now = int(time.time())
-    if appid in cache and (cache[appid].get('ts', 0) + APPDETAILS_TTL) > now:
-        return cache[appid].get('data', {})
-    try:
-        r = requests.get(f"https://store.steampowered.com/api/appdetails?appids={appid}", timeout=8)
-        j = r.json()
-        if j and j.get(str(appid), {}).get('success'):
-            data = j[str(appid)]['data']
-            cache[appid] = {'ts': now, 'data': data}
-            _save_json(APPDETAILS_CACHE_FILE, cache)
-            return data
-    except:
-        pass
-    return {}
+    cache[key] = {'ts': now, 'data': result}
+    _save_json(STORE_CACHE_FILE, cache)
+    return result
 
-def fetch_schema_cached(appid, lang='italian'):  
-    cache = _load_json(SCHEMA_CACHE_FILE)  
-    now = int(time.time())  
-    cache_key = f"{appid}:{lang}"  
-    entry = cache.get(cache_key)  
-    if entry and (entry.get('ts', 0) + SCHEMA_TTL) > now:  
-        return entry.get('data', [])  
-    try:  
-        url = f"https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key={STEAM_API_KEY}&appid={appid}&l={lang}"  
-        r = requests.get(url, timeout=10)  
-        j = r.json()  
-        achs = j.get('game', {}).get('availableGameStats', {}).get('achievements', []) or []  
-        normalized = []  
-        for a in achs:  
-            normalized.append({  
-                'name': a.get('name'),  
-                'displayName': a.get('displayName') or a.get('name'),  
-                'description': a.get('description') or '',  
-                'icon': a.get('icon') or '',  
-                'icongray': a.get('icongray') or ''  
-            })  
-        cache[cache_key] = {'ts': now, 'data': normalized}  
-        _save_json(SCHEMA_CACHE_FILE, cache)  
-        return normalized  
-    except:  
-        return []
-
-def fetch_global_achievement_percentages_cached(appid):
-    cache = _load_json(GLOBAL_PERCENT_CACHE_FILE)
-    now = int(time.time())
-    entry = cache.get(appid)
-    if entry and (entry.get('ts', 0) + SCHEMA_TTL) > now:
-        return entry.get('data', {})
-    try:
-        url = f"https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appid}"
-        r = requests.get(url, timeout=10)
-        j = r.json()
-        achs = j.get('achievementpercentages', {}).get('achievements', []) or []
-        mapping = {a.get('name'): float(a.get('percent', 0.0)) for a in achs}
-        cache[appid] = {'ts': now, 'data': mapping}
-        _save_json(GLOBAL_PERCENT_CACHE_FILE, cache)
-        return mapping
-    except:
-        return {}
-
-@app.route('/api/steam/global_ach/<appid>', methods=['GET'])
-def api_global_ach(appid):
-    return jsonify({'percentages': fetch_global_achievement_percentages_cached(appid)})
-
-def fetch_player_achievements(key, sid, appid):
-    try:
-        url = f"https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v1/?key={key}&steamid={sid}&appid={appid}"
-        r = requests.get(url, timeout=10)
-        j = r.json()
-        achs = j.get('playerstats', {}).get('achievements', []) or []
-        mapping = {}
-        for a in achs:
-            apiname = a.get('apiname') or a.get('name')
-            mapping[apiname] = {
-                'achieved': int(a.get('achieved', 0)),
-                'unlocktime': int(a.get('unlocktime', 0)) if a.get('unlocktime') else 0
-            }
-        return mapping
-    except:
-        return {}
-
+# ─────────────────────────────────────────────
+#  CACHE ACHIEVEMENTS PLAYER
+# ─────────────────────────────────────────────
 def fetch_player_achievements_cached(key, sid, appid):
     cache = _load_json(ACH_CACHE_FILE)
     now = int(time.time())
-    key_cache = f"{sid}:{appid}"
-    if key_cache in cache and (cache[key_cache].get('ts', 0) + ACH_TTL) > now:
-        return cache[key_cache].get('summary', {'u':0, 't':0})
-    try:
-        url = f"https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v1/?key={key}&steamid={sid}&appid={appid}"
-        r = requests.get(url, timeout=5)
-        achs = r.json().get('playerstats', {}).get('achievements', []) or []
-        u = sum(1 for a in achs if a.get('achieved') == 1)
-        t = len(achs)
-        cache[key_cache] = {'ts': now, 'summary': {'u': u, 't': t}}
-        _save_json(ACH_CACHE_FILE, cache)
-        return {'u': u, 't': t}
-    except:
-        return {'u': 0, 't': 0}
+    cache_key = f"{sid}:{appid}"
+    if cache_key in cache and (cache[cache_key].get('ts', 0) + ACH_TTL) > now:
+        return cache[cache_key].get('summary', {'u': 0, 't': 0})
 
+    unlocked, total = 0, 0
+    try:
+        url = (
+            f"https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v1/"
+            f"?key={key}&steamid={sid}&appid={appid}"
+        )
+        r = requests.get(url, timeout=7)
+        if r.status_code == 200:
+            achs = r.json().get('playerstats', {}).get('achievements', []) or []
+            total = len(achs)
+            unlocked = sum(1 for a in achs if a.get('achieved') == 1)
+    except:
+        pass
+
+    res = {'u': unlocked, 't': total}
+    cache[cache_key] = {'ts': now, 'summary': res}
+    _save_json(ACH_CACHE_FILE, cache)
+    return res
+
+# ─────────────────────────────────────────────
+#  HEARTBEAT / WATCHDOG / GOODBYE
+# ─────────────────────────────────────────────
+@app.route('/api/heartbeat', methods=['POST'])
+def heartbeat():
+    global last_heartbeat
+    last_heartbeat = time.time()
+    return jsonify({'status': 'ok'})
+
+@app.route('/api/goodbye', methods=['POST'])
+def goodbye():
+    os._exit(0)
+
+def watchdog():
+    time.sleep(20)
+    while True:
+        time.sleep(5)
+        if (time.time() - last_heartbeat) > HEARTBEAT_TIMEOUT:
+            os._exit(0)
+
+# ─────────────────────────────────────────────
+#  STATIC / INDEX
+# ─────────────────────────────────────────────
 @app.route('/')
 def index():
     return send_from_directory('static', 'index.html')
@@ -205,127 +194,206 @@ def index():
 def serve_static(path):
     return send_from_directory('static', path)
 
-@app.route('/api/steam/login', methods=['GET'])
+# ─────────────────────────────────────────────
+#  STEAM LOGIN (OpenID)
+# ─────────────────────────────────────────────
+@app.route('/api/steam/login')
 def steam_login():
-    return_to = url_for('steam_return', _external=True)
-    realm = request.host_url.rstrip('/')
     params = {
         'openid.ns': 'http://specs.openid.net/auth/2.0',
         'openid.mode': 'checkid_setup',
-        'openid.return_to': return_to,
-        'openid.realm': realm,
+        'openid.return_to': url_for('steam_return', _external=True),
+        'openid.realm': request.host_url.rstrip('/'),
         'openid.identity': 'http://specs.openid.net/auth/2.0/identifier_select',
         'openid.claimed_id': 'http://specs.openid.net/auth/2.0/identifier_select'
     }
     return redirect('https://steamcommunity.com/openid/login?' + urlencode(params))
 
-@app.route('/api/steam/return', methods=['GET', 'POST'])
+@app.route('/api/steam/return')
 def steam_return():
-    data = {**request.args.to_dict(), **request.form.to_dict()}
-    if not data: return "Empty response", 400
-    
-    verify = {**data, 'openid.mode': 'check_authentication'}
-    try:
-        r = requests.post('https://steamcommunity.com/openid/login', data=verify, timeout=10)
-        if r.status_code == 200 and 'is_valid:true' in r.text:
-            claimed = data.get('openid.claimed_id') or data.get('openid.identity') or ''
-            steamid = None
-            
-            m_prof = re.search(r'/profiles/([0-9]+)', claimed)
-            if m_prof:
-                steamid = m_prof.group(1)
-            else:
-                m_id = re.search(r'/id/([^/]+)', claimed)
-                if m_id:
-                    val = m_id.group(1)
-                    if val.isdigit() and len(val) >= 16:
-                        steamid = val
-                    else:
-                        rv = requests.get(f"https://api.steampowered.com/ISteamUser/ResolveVanityURL/v1/?key={STEAM_API_KEY}&vanityurl={val}").json()
-                        if rv.get('response', {}).get('success') == 1:
-                            steamid = rv['response']['steamid']
-            
-            if steamid:
-                db = load_db()
-                db['steam_id'] = steamid
-                _save_json(DB_FILE, db)
-                return redirect('/')
-        return "Login failed", 400
-    except:
-        return "Verification error", 500
+    claimed = request.args.get('openid.claimed_id', '')
+    m = re.search(r'/id/([0-9]+)/?$', claimed) or re.search(r'/profiles/([0-9]+)/?$', claimed)
+    if m:
+        db = load_db()
+        db['steam_id'] = m.group(1)
+        _save_json(DB_FILE, db)
+    return redirect('/')
+
+# ─────────────────────────────────────────────
+#  API DATA
+# ─────────────────────────────────────────────
+@app.route('/api/data')
+def api_data():
+    return jsonify(load_db())
 
 @app.route('/api/config', methods=['POST'])
 def api_config():
     db = load_db()
-    payload = request.json or {}
-    for key in ['steam_id', 'tsa_profile_url', 'ubisoft_games']:
-        if key in payload: db[key] = payload[key]
+    body = request.json or {}
+    if 'steam_id' in body:
+        db['steam_id'] = body['steam_id']
     _save_json(DB_FILE, db)
-    return jsonify({"status": "ok"})
+    return jsonify({'status': 'ok'})
 
-@app.route('/api/data', methods=['GET'])
-def api_data():
-    return jsonify(load_db())
-
-@app.route('/api/steam/profile', methods=['GET'])
-def steam_profile():
-    sid = load_db().get('steam_id')
-    if not sid: return jsonify({'error': 'No SID'}), 400
-    try:
-        r = requests.get(f"https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key={STEAM_API_KEY}&steamids={sid}")
-        p = r.json()['response']['players'][0]
-        return jsonify({
-            'steamid': p.get('steamid'), 'persona_name': p.get('personaname'),
-            'avatar': p.get('avatarfull'), 'profileurl': p.get('profileurl'),
-            'personastate': p.get('personastate'), 'gameextrainfo': p.get('gameextrainfo'),
-            'lastlogoff': p.get('lastlogoff')
-        })
-    except: return jsonify({'error': 'Fetch failed'}), 500
-
-@app.route('/api/steam/games_summary', methods=['GET'])
+# ─────────────────────────────────────────────
+#  GAMES SUMMARY  ← aggiornato con store data
+# ─────────────────────────────────────────────
+@app.route('/api/steam/games_summary')
 def games_summary():
     sid = load_db().get('steam_id')
-    if not sid: return jsonify({"error": "No SID"}), 400
+    if not sid:
+        return jsonify({"error": "No SID"}), 400
+
     games = get_owned_games_list_cached(sid)
-    out = [{"appid": str(g['appid']), "name": g.get('name', 'Unknown'), "playtime": g.get('playtime_forever', 0), "img": f"https://cdn.cloudflare.steamstatic.com/steam/apps/{g['appid']}/header.jpg"} for g in games]
+    store_cache = _load_json(STORE_CACHE_FILE)
+    
+    out = []
+    for g in games:
+        appid = str(g['appid'])
+        # Prendi dalla cache se c'è, altrimenti metti valori vuoti temporanei
+        cached_entry = store_cache.get(appid, {}).get('data', {})
+        
+        out.append({
+            "appid":        appid,
+            "name":         g.get('name', 'Unknown'),
+            "playtime":     g.get('playtime_forever', 0),
+            "last_played":  g.get('rtime_last_played') or g.get('last_played') or 0,
+            "img":          f"https://cdn.cloudflare.steamstatic.com/steam/apps/{appid}/header.jpg",
+            "release_year": cached_entry.get('release_year'),
+            "genres":       cached_entry.get('genres', []),
+            "is_free":      cached_entry.get('is_free', False)
+        })
+
+    # Avvia il popolamento della cache in un thread separato per non bloccare la risposta
+    def populate_cache_bg(appids):
+        for aid in appids:
+            fetch_store_details_cached(aid)
+            time.sleep(0.2) # Rispetta i limiti di Steam
+
+    needing_cache = [str(g['appid']) for g in games if str(g['appid']) not in store_cache]
+    if needing_cache:
+        threading.Thread(target=populate_cache_bg, args=(needing_cache,), daemon=True).start()
+
     return jsonify({"total_count": len(out), "games": out})
 
+# ─────────────────────────────────────────────
+#  ACHIEVEMENTS BULK
+# ─────────────────────────────────────────────
 @app.route('/api/steam/achievements_bulk', methods=['POST'])
 def ach_bulk():
     sid = load_db().get('steam_id')
-    if not sid: return jsonify({"error": "No SID"}), 400
     appids = request.json.get('appids', [])
     res = {}
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
         futures = {ex.submit(fetch_player_achievements_cached, STEAM_API_KEY, sid, aid): aid for aid in appids}
-        for f in as_completed(futures): res[futures[f]] = f.result()
+        for f in as_completed(futures):
+            res[futures[f]] = f.result()
     return jsonify(res)
 
-@app.route('/api/steam/game_details/<appid>', methods=['GET'])
-def game_details(appid):
+# ─────────────────────────────────────────────
+#  SCHEMA ACHIEVEMENTS
+# ─────────────────────────────────────────────
+@app.route('/api/steam/schema/<appid>')
+def steam_schema(appid):
+    lang = request.args.get('l', 'english')
+    cache = _load_json(SCHEMA_CACHE_FILE)
+    now = int(time.time())
+    key = f"{appid}:{lang}"
+    if key in cache and (cache[key].get('ts', 0) + SCHEMA_TTL) > now:
+        return jsonify(cache[key].get('data', {}))
+    try:
+        url = (
+            f"https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/"
+            f"?key={STEAM_API_KEY}&appid={appid}&l={lang}"
+        )
+        r = requests.get(url, timeout=10)
+        data = r.json().get('game', {}).get('availableGameStats', {})
+        achs = data.get('achievements', [])
+        result = {'achievements': achs}
+        cache[key] = {'ts': now, 'data': result}
+        _save_json(SCHEMA_CACHE_FILE, cache)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'achievements': [], 'error': str(e)})
+
+# ─────────────────────────────────────────────
+#  PLAYER ACHIEVEMENTS
+# ─────────────────────────────────────────────
+@app.route('/api/steam/player_achievements/<appid>')
+def player_achievements(appid):
     sid = load_db().get('steam_id')
-    data = fetch_appdetails_cached(appid)
-    dlcs = [str(x) for x in data.get('dlc', [])]
-    owned = get_owned_appids_cached(sid) if sid else set()
-    return jsonify({"total_dlc": len(dlcs), "owned_dlc": sum(1 for d in dlcs if d in owned)})
+    if not sid:
+        return jsonify({"error": "No SID"}), 400
+    try:
+        url = (
+            f"https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v1/"
+            f"?key={STEAM_API_KEY}&steamid={sid}&appid={appid}&l=italian"
+        )
+        r = requests.get(url, timeout=10)
+        achs = r.json().get('playerstats', {}).get('achievements', []) or []
+        ach_map = {a['apiname']: {'achieved': a.get('achieved', 0), 'unlocktime': a.get('unlocktime', 0)} for a in achs}
+        return jsonify({'achievements': ach_map})
+    except Exception as e:
+        return jsonify({'achievements': {}, 'error': str(e)})
 
-@app.route('/api/steam/schema/<appid>', methods=['GET'])  
-def api_schema(appid):  
-    l_map = {'en':'english','it':'italian','fr':'french','de':'german','es':'spanish','pt':'portuguese','ru':'russian','zh':'schinese','jp':'japanese'}
-    s_lang = l_map.get(request.args.get('l', 'en').lower(), 'english')
-    return jsonify({'achievements': fetch_schema_cached(appid, s_lang)})
+# ─────────────────────────────────────────────
+#  GLOBAL ACHIEVEMENT PERCENTAGES
+# ─────────────────────────────────────────────
+@app.route('/api/steam/global_ach/<appid>')
+def global_ach(appid):
+    try:
+        url = (
+            f"https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/"
+            f"?gameid={appid}"
+        )
+        r = requests.get(url, timeout=10)
+        achs = r.json().get('achievementpercentages', {}).get('achievements', []) or []
+        pct_map = {a['name'].lower(): round(a.get('percent', 0), 2) for a in achs}
+        return jsonify({'percentages': pct_map})
+    except Exception as e:
+        return jsonify({'percentages': {}, 'error': str(e)})
 
-@app.route('/api/steam/player_achievements/<appid>', methods=['GET'])
-def api_player_achievements(appid):
+# ─────────────────────────────────────────────
+#  STEAM PROFILE
+# ─────────────────────────────────────────────
+@app.route('/api/steam/profile')
+def steam_profile():
     sid = load_db().get('steam_id')
-    if not sid: return jsonify({'error': 'No SID'}), 400
-    return jsonify({'achievements': fetch_player_achievements(STEAM_API_KEY, sid, appid)})
+    if not sid:
+        return jsonify({"error": "No SID"}), 400
+    try:
+        url = (
+            f"https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/"
+            f"?key={STEAM_API_KEY}&steamids={sid}"
+        )
+        r = requests.get(url, timeout=10)
+        players = r.json().get('response', {}).get('players', [])
+        if not players:
+            return jsonify({"error": "Player not found"}), 404
+        p = players[0]
+        return jsonify({
+            'persona_name': p.get('personaname', ''),
+            'avatar':       p.get('avatarfull', ''),
+            'profileurl':   p.get('profileurl', ''),
+            'personastate': p.get('personastate', 0)
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
+# ─────────────────────────────────────────────
+#  STEAM LOGOUT
+# ─────────────────────────────────────────────
 @app.route('/api/steam/logout', methods=['POST'])
-def api_logout():
-    db = load_db(); db['steam_id'] = ""; _save_json(DB_FILE, db)
+def steam_logout():
+    db = load_db()
+    db['steam_id'] = ''
+    _save_json(DB_FILE, db)
     return jsonify({'status': 'ok'})
 
+# ─────────────────────────────────────────────
+#  MAIN
+# ─────────────────────────────────────────────
 if __name__ == '__main__':
-    webbrowser.open("http://127.0.0.1:5000")  
+    threading.Thread(target=watchdog, daemon=True).start()
+    threading.Timer(1.0, lambda: webbrowser.open("http://127.0.0.1:5000")).start()
     serve(app, host='127.0.0.1', port=5000)
