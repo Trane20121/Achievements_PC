@@ -23,7 +23,7 @@
   <h3 align="center">Steam Achievement Tracker</h3>
 
   <p align="center">
-    Un'applicazione web locale per monitorare i tuoi obiettivi Steam, visualizzare i progressi e analizzare le statistiche di gioco.
+    Un'applicazione web locale avanzata per monitorare i tuoi obiettivi Steam, visualizzare i progressi in tempo reale e analizzare la tua libreria con stile.
     <br />
     <a href="https://github.com/Trane20121/Achievements_PC"><strong>Esplora la documentazione »</strong></a>
     <br />
@@ -38,28 +38,35 @@
 
 ## 🧐 Informazioni sul Progetto
 
-Questa applicazione permette di aggregare i dati del tuo profilo Steam tramite API ufficiali e scraping, offrendo una dashboard pulita con grafici interattivi per visualizzare la percentuale di completamento degli obiettivi e il tempo di gioco.
+Questa applicazione aggrega i dati del tuo profilo Steam tramite API ufficiali, offrendo una dashboard moderna e reattiva. Non è solo un visualizzatore, ma uno strumento di analisi per i cacciatori di obiettivi.
 
 ### 🌟 Caratteristiche principali:
 
-- **Dashboard Dinamica:** Grafici interattivi realizzati con Chart.js.
-- **Smart Filtering:** Filtro automatico per mostrare solo i giochi che possiedono achievement.
-- **Ordinamento Intelligente:** Organizza la tua libreria per tempo di gioco o ultimo avvio.
-- **Performance:** Cache locale per minimizzare le chiamate alle API e velocizzare il caricamento.
+- **Dashboard Multilingua:** Supporto completo per 9 lingue (Italiano, Inglese, Francese, Tedesco, Spagnolo, Portoghese, Russo, Cinese, Giapponese).
+- **Sistema di Temi:** Passa istantaneamente dalla modalità **Dark** alla modalità **Light** con un toggle moderno e animato.
+- **Analisi Obiettivi Avanzata:**
+  - Popup dettagliati con icone originali e grigie.
+  - Statistiche globali di rarità (percentuale di sblocco mondiale).
+  - Date di sblocco localizzate.
+- **Barra di Completamento Dinamica:** Calcolo in tempo reale della media di completamento basata solo sui giochi che supportano gli achievement.
+- **Smart Filtering & Search:** Filtra per stato (Completati, In Corso, Mai Giocati) e cerca istantaneamente nella tua libreria.
+- **Performance:** Sistema di caching intelligente per minimizzare le chiamate API e garantire caricamenti fulminei.
 
 > [!IMPORTANT]
 > **Nota sulla Privacy:** Per poter visualizzare correttamente i dati, il tuo profilo Steam deve essere impostato come **Pubblico**. Assicurati che nelle [Impostazioni sulla privacy](https://help.steampowered.com/it/faqs/view/588C-C67D-0251-C276) siano pubblici:
-> * Profilo
-> * Dettagli di gioco
+>
+> - Profilo
+> - Dettagli di gioco
 
 <p align="right">(<a href="#readme-top">torna su</a>)</p>
 
 ### 🛠 Tecnologie Utilizzate
 
-* [![Python][python-shield]][python-url]
-* [![Flask][flask-shield]][flask-url]
-* [![Chart.js][chartjs-shield]][chartjs-url]
-* [![JavaScript][js-shield]][js-url]
+- [![Python][python-shield]][python-url]
+- [![Flask][flask-shield]][flask-url]
+- [![JavaScript][js-shield]][js-url]
+- [![Chart.js][chartjs-shield]][chartjs-url]
+- [![TailwindCSS][tailwind-shield]][tailwind-url]
 
 ---
 
@@ -68,17 +75,17 @@ Questa applicazione permette di aggregare i dati del tuo profilo Steam tramite A
 Il progetto è progettato per essere "Plug & Play" su Windows. Non è necessario installare manualmente Python o configurare variabili d'ambiente.
 
 1. Scarica o clona la repository.
-2. Fai click destro sul file **`start.bat`**.
-3. Seleziona **"Esegui come amministratore"**.
+2. Fai doppio click sul file **`start.bat`**.
+3. Se richiesto, seleziona **"Esegui come amministratore"** (solo la prima volta per l'installazione automatica di Python).
 
 **Cosa fa lo script automaticamente?**
+
 - Controlla la presenza di Python e lo installa tramite `winget` se mancante.
-- Installa o aggiorna tutte le dipendenze necessarie (`Flask`, `Waitress`, ecc.).
-- Configura il PATH di sistema.
-- Avvia il server web locale.
+- Crea un ambiente virtuale e installa le dipendenze (`Flask`, `Waitress`, `requests`).
+- Avvia il server web locale e apre automaticamente il browser.
 
 > [!TIP]
-> **Per chiudere l'app:** Premi `Ctrl + C` nella finestra del terminale e chiudi la scheda del browser.
+> **Per chiudere l'app:** Chiudi la finestra del terminale o premi `Ctrl + C`.
 
 <p align="right">(<a href="#readme-top">torna su</a>)</p>
 
@@ -128,3 +135,5 @@ Project Link: [https://github.com/Trane20121/Achievements_PC](https://github.com
 [chartjs-url]: https://www.chartjs.org/
 [js-shield]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
 [js-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[tailwind-shield]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwind-url]: https://tailwindcss.com/

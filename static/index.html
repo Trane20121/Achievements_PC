@@ -1,335 +1,346 @@
-<!--
- Copyright (c) 2026 Trane2012
-
- This software is released under the MIT License.
- https://opensource.org/licenses/MIT
--->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title data-i18n="title">Steam Tracker</title>
-    <link rel="shortcut icon" type="image/png" href="/static/favicon.png?v=1">
-    <link rel="stylesheet" href="/static/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" rel="stylesheet">
-</head>
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.png?v=1" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
-    <!-- ─────────────────────────────────────────────
-         LOGIN OVERLAY
-    ───────────────────────────────────────────── -->
-    <div id="loginOverlay">
-        <div id="loginCard">
-            <h2 id="loginTitle" style="color:white; margin-bottom:20px;" data-i18n="title">Steam Tracker</h2>
-            <a href="/api/steam/login"
-                style="display:flex; align-items:center; justify-content:center; transition:background 0.3s ease; text-decoration:none;">
-                <img src="https://community.fastly.steamstatic.com/public/images/signinthroughsteam/sits_01.png"
-                    alt="Accedi con Steam" />
-            </a>
-            <div style="margin:20px 0; color:var(--muted); font-size:0.9em;"></div>
-            <div id="orText" style="color:var(--muted); font-size:0.8em; margin-bottom:15px;" data-i18n="or">OPPURE
-            </div>
-            <input id="sidInput" placeholder="Steam ID"
-                style="width:55%; box-sizing:border-box; margin-bottom:10px; text-align:center;" />
-            <button id="sidSaveBtn" style="width:55%; background:#2a475e;" data-i18n="save_manual">Salva
-                Manualmente</button>
+  <body>
+    <!-- LOGIN OVERLAY -->
+    <div
+      id="loginOverlay"
+      style="
+        display: flex;
+        position: fixed;
+        inset: 0;
+        background: #1b2838;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div
+        id="loginCard"
+        style="
+          background: #171a21;
+          padding: 40px;
+          border-radius: 15px;
+          border: 1px solid #333;
+          text-align: center;
+          width: 350px;
+        "
+      >
+        <h2
+          id="loginTitle"
+          style="color: white; margin-bottom: 20px"
+          data-i18n="title"
+        >
+          Steam Tracker
+        </h2>
+        <a
+          href="/api/steam/login"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            text-decoration: none;
+          "
+        >
+          <img
+            src="https://community.fastly.steamstatic.com/public/images/signinthroughsteam/sits_01.png"
+            alt="Accedi con Steam"
+          />
+        </a>
+        <div
+          style="margin: 20px 0; color: var(--muted); font-size: 0.9em"
+        ></div>
+        <div
+          id="orText"
+          style="color: var(--muted); font-size: 0.8em; margin-bottom: 15px"
+          data-i18n="or"
+        >
+          OPPURE
         </div>
+        <input
+          id="sidInput"
+          placeholder="Steam ID"
+          style="
+            width: 55%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            text-align: center;
+          "
+        />
+        <button
+          id="sidSaveBtn"
+          style="width: 55%; background: #2a475e"
+          data-i18n="save_manual"
+        >
+          Salva Manualmente
+        </button>
+      </div>
     </div>
 
-    <!-- ─────────────────────────────────────────────
-         TOPBAR
-    ───────────────────────────────────────────── -->
+    <!-- TOPBAR -->
     <div class="topbar">
-        <div class="topbar-left">
-            <div id="appTitle" style="font-weight:bold; font-size:1.2em; color:var(--blue); letter-spacing:1px;"
-                data-i18n="title">STEAM TRACKER</div>
-            <button onclick="showLogin()" id="configBtn" style="border-color:#444; font-size:0.8em;"
-                data-i18n="configure">⚙️ Configura</button>
+      <div class="topbar-left">
+        <div
+          id="appTitle"
+          style="
+            font-weight: bold;
+            font-size: 1.2em;
+            color: var(--blue);
+            letter-spacing: 1px;
+          "
+          data-i18n="title"
+        >
+          STEAM TRACKER
         </div>
-        <div class="topbar-right">
-            <div id="totalStats" style="color:var(--muted); font-size:0.9em; font-weight:500;">Ore: 0h</div>
-            <div id="profileArea" style="display:flex; align-items:center; gap:8px; margin-left:15px;"></div>
-            <button onclick="toggleTheme()" id="themeBtn" style="margin-left:10px;" data-i18n="theme_btn"></button>
-            <select id="langSelect" aria-label="Seleziona lingua" style="margin-left:10px;"></select>
+        <button
+          onclick="showLogin()"
+          id="configBtn"
+          style="border-color: #444; font-size: 0.8em"
+          data-i18n="configure"
+        >
+          ⚙️ Configura
+        </button>
+      </div>
+
+      <div
+        class="topbar-right"
+        style="display: flex; align-items: center; gap: 10px"
+      >
+        <div
+          id="totalStats"
+          style="display: flex; align-items: center; gap: 6px"
+        >
+          <span data-i18n="total_hours">Ore totali</span>:
+          <span id="totalHoursValue">0</span>h
         </div>
+
+        <div
+          id="profileArea"
+          style="display: flex; align-items: center; gap: 8px; margin-left: 6px"
+        ></div>
+
+        <!-- THEME TOGGLE + LANG -->
+        <div
+          style="display: flex; align-items: center; gap: 8px; margin-left: 8px"
+        >
+          <button
+            id="themeBtn"
+            aria-label="Toggle theme"
+            onclick="toggleTheme()"
+            class="theme-toggle"
+            data-i18n="theme_btn"
+            title="Toggle theme"
+          >
+            <span class="theme-switch" aria-hidden="true">
+              <span class="theme-icon theme-icon-sun">☀️</span>
+              <span class="switch-knob"></span>
+              <span class="theme-icon theme-icon-moon">🌙</span>
+            </span>
+          </button>
+
+          <select
+            id="langSelect"
+            aria-label="Seleziona lingua"
+            style="margin-left: 6px"
+          ></select>
+        </div>
+      </div>
     </div>
 
-    <!-- ─────────────────────────────────────────────
-         FILTER BACKDROP
-    ───────────────────────────────────────────── -->
-    <div id="filterBackdrop" onclick="closeDrawer()"></div>
+    <!-- FILTER BACKDROP -->
+    <div id="filterBackdrop" class="filter-backdrop"></div>
 
-    <!-- ─────────────────────────────────────────────
-         FILTER DRAWER
-    ───────────────────────────────────────────── -->
+    <!-- FILTER DRAWER -->
     <div id="filterDrawer">
-        <div class="drawer-header">
-            <span class="drawer-title">🎛️ Filtri & Ordinamento</span>
-            <button class="drawer-close-btn" onclick="closeDrawer()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-title" data-i18n="filter_title"
+          >🎛️ Filtri & Ordinamento</span
+        >
+        <button
+          id="closeFiltersBtn"
+          class="drawer-close-btn"
+          aria-label="Chiudi filtri"
+        >
+          ✕
+        </button>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-section">
+          <div class="drawer-section-title" data-i18n="filter_playtime">
+            ⏱️ Ore giocate
+          </div>
+          <div id="playtimeSlider" style="margin: 8px 4px 4px"></div>
+          <div id="playtimeRangeLabel" class="drawer-range-label">
+            0h - 200h+
+          </div>
         </div>
-        <div class="drawer-body">
 
-            <!-- STATO ACHIEVEMENTS -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">🏆 Stato achievements</div>
-                <div class="drawer-chips">
-                    <label class="chip">
-                        <input type="checkbox" class="filter-status" value="completed" checked>
-                        <span>✅ Completati</span>
-                    </label>
-                    <label class="chip">
-                        <input type="checkbox" class="filter-status" value="inprogress" checked>
-                        <span>🔄 In corso</span>
-                    </label>
-                    <label class="chip">
-                        <input type="checkbox" class="filter-status" value="noach" checked>
-                        <span>⬜ Nessun obiettivo</span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- STATO INSTALLAZIONE -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">🖥️ Stato installazione</div>
-                <div class="drawer-chips">
-                    <label class="chip">
-                        <input type="checkbox" class="filter-install" value="installed" checked>
-                        <span>💾 Installati</span>
-                    </label>
-                    <label class="chip">
-                        <input type="checkbox" class="filter-install" value="not_installed" checked>
-                        <span>☁️ In libreria</span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- PREZZO / FREE-TO-PLAY -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">💰 Prezzo</div>
-                <div class="drawer-chips">
-                    <label class="chip">
-                        <input type="checkbox" id="filterFreeToPlay" checked>
-                        <span>🆓 Free-to-Play</span>
-                    </label>
-                    <label class="chip">
-                        <input type="checkbox" id="filterPaid" checked>
-                        <span>💳 A pagamento</span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- ORE GIOCATE -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">⏱️ Ore giocate</div>
-                <div id="playtimeSlider" style="margin: 8px 4px 4px;"></div>
-                <div id="playtimeRangeLabel" class="drawer-range-label">0h - 200h+</div>
-            </div>
-
-            <!-- COMPLETAMENTO % -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">📊 Completamento %</div>
-                <div id="completionSlider" style="margin: 8px 4px 4px;"></div>
-                <div id="completionRangeLabel" class="drawer-range-label">0% - 100%</div>
-            </div>
-
-            <!-- ANNO DI USCITA -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">🗓️ Anno di uscita</div>
-                <div id="yearSlider" style="margin: 8px 4px 4px;"></div>
-                <div id="yearRangeLabel" class="drawer-range-label">1990 - 2026</div>
-            </div>
-
-            <!-- GENERE -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">🔤 Genere</div>
-                <select id="genreFilter" class="drawer-select">
-                    <option value="all">Tutti i generi</option>
-                    <!-- Popolato dinamicamente da script.js -->
-                </select>
-            </div>
-
-            <!-- ULTIMO ACCESSO -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">📅 Ultimo accesso</div>
-                <select id="lastPlayedFilter" class="drawer-select">
-                    <option value="all">Tutti</option>
-                    <option value="7">Ultima settimana</option>
-                    <option value="30">Ultimo mese</option>
-                    <option value="180">Ultimi 6 mesi</option>
-                    <option value="365">Ultimo anno</option>
-                    <option value="never">Mai giocato</option>
-                </select>
-            </div>
-
-            <!-- ORDINA PER -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">↕️ Ordina per</div>
-                <select id="sortSelect" class="drawer-select">
-                    <option value="played" data-i18n="sort_played">Più giocati</option>
-                    <option value="name" data-i18n="sort_name">Nome (A‑Z)</option>
-                    <option value="name_desc">Nome (Z‑A)</option>
-                    <option value="completion" data-i18n="sort_completion">Completamento (↓)</option>
-                    <option value="completion_asc">Completamento (↑)</option>
-                    <option value="recent">Giocati di recente</option>
-                </select>
-            </div>
-
-            <!-- GIOCHI PER PAGINA -->
-            <div class="drawer-section">
-                <div class="drawer-section-title">📄 Giochi per pagina</div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <input id="maxGames" type="number" value="40" class="drawer-number-input" min="5" max="200"
-                        step="5" />
-                    <span style="font-size:0.8em; color:var(--muted);">giochi</span>
-                </div>
-            </div>
-
-            <!-- RESET FILTRI -->
-            <button id="resetFiltersBtn" class="reset-filters-btn">↺ Reset filtri</button>
-
+        <div class="drawer-section">
+          <div class="drawer-section-title" data-i18n="filter_completion_pct">
+            📊 Completamento
+          </div>
+          <div class="filter-group">
+            <button
+              id="btnCompleted"
+              class="filter-toggle-btn active"
+              data-value="completed"
+              data-i18n="filter_completed"
+            >
+              Completati
+            </button>
+            <button
+              id="btnInProgress"
+              class="filter-toggle-btn active"
+              data-value="inprogress"
+              data-i18n="filter_inprogress"
+            >
+              In corso
+            </button>
+          </div>
         </div>
+
+        <div class="drawer-section">
+          <label class="section-label" data-i18n="sort_label"
+            ><i class="fas fa-sort-amount-down"></i> Ordina per</label
+          >
+          <select id="sortSelect" class="drawer-select">
+            <option value="played" data-i18n="sort_played">Più giocati</option>
+            <option value="name" data-i18n="sort_name">Nome (A‑Z)</option>
+            <option value="name_desc" data-i18n="sort_name_desc">
+              Nome (Z‑A)
+            </option>
+            <option value="completion" data-i18n="sort_completion">
+              Completamento (↓)
+            </option>
+            <option value="completion_asc" data-i18n="sort_completion_asc">
+              Completamento (↑)
+            </option>
+            <option value="recent" data-i18n="sort_recent">
+              Giocati di recente
+            </option>
+          </select>
+        </div>
+
+        <div class="drawer-section">
+          <div class="drawer-section-title" data-i18n="games_per_page">
+            📄 Giochi per pagina
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px">
+            <input
+              id="maxGames"
+              type="number"
+              value="40"
+              class="drawer-number-input"
+              min="5"
+              max="200"
+              step="5"
+            />
+            <span
+              style="font-size: 0.8em; color: var(--muted)"
+              data-i18n="games_per_page"
+              >giochi</span
+            >
+          </div>
+        </div>
+
+        <button
+          id="resetFiltersBtn"
+          class="btn-reset-modern"
+          data-i18n="reset_filters"
+        >
+          <i class="fas fa-undo-alt"></i> Reset filtri
+        </button>
+      </div>
     </div>
 
-    <!-- ─────────────────────────────────────────────
-         MAIN CONTENT
-    ───────────────────────────────────────────── -->
+    <!-- MAIN CONTENT -->
     <div class="container">
-        <div class="main-panel">
-
-            <!-- TOOLBAR -->
-            <div class="toolbar">
-                <div class="toolbar-left">
-                    <button class="filter-toggle-btn" onclick="toggleDrawer()">
-                        🎛️ Filtri <span class="filter-badge" id="activeFiltersBadge"></span>
-                    </button>
-                    <button id="refreshBtn" class="refresh-btn">🔄 Aggiorna</button>
-                </div>
-                <div class="toolbar-center">
-                    <button id="prevBtn" class="nav-btn" title="Pagina precedente">◀</button>
-                    <div id="pageInfo" class="page-info">Pagina 1</div>
-                    <button id="nextBtn" class="nav-btn" title="Pagina successiva">▶</button>
-                </div>
-                <div class="toolbar-right">
-                    <input id="search" class="search-input" placeholder="🔍 Cerca nella libreria..." />
-                </div>
-            </div>
-
-            <!-- BARRA COMPLETAMENTO MEDIO -->
-            <div class="completion-summary-inline" id="completionSummaryInline">
-                <div style="display:flex; align-items:center; justify-content:center; width:100%;">
-                    <div class="completion-label-inline" data-i18n="avg_completion">Completamento medio</div>
-                </div>
-                <div id="completionBarBg" class="completion-bar-bg-inline loading">
-                    <div id="completionBar" class="completion-bar-fill-inline loading"></div>
-                </div>
-                <div class="completion-percent-inline hidden" id="completionPercent">
-                    <span id="completionText"></span>
-                </div>
-            </div>
-
-            <!-- GRIGLIA CARD -->
-            <div id="list" class="grid"></div>
+      <div class="main-panel">
+        <!-- TOOLBAR -->
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <button id="filterToggleBtn" class="filter-toggle-btn">
+              🎛️
+              <span
+                class="filter-badge"
+                id="activeFiltersBadge"
+                style="display: none"
+                >0</span
+              >
+            </button>
+            <button id="refreshBtn" class="refresh-btn" data-i18n="update_btn">
+              🔄 Aggiorna
+            </button>
+          </div>
+          <div class="toolbar-center">
+            <button id="prevBtn" class="nav-btn" title="Pagina precedente">
+              ◀
+            </button>
+            <div id="pageInfo" class="page-info">Pagina 1</div>
+            <button id="nextBtn" class="nav-btn" title="Pagina successiva">
+              ▶
+            </button>
+          </div>
+          <div class="toolbar-right">
+            <input
+              id="search"
+              class="search-input"
+              placeholder="🔍 Cerca nella libreria..."
+            />
+          </div>
         </div>
 
-        <!-- POPUP DETTAGLIO GIOCO -->
-        <div id="overlay" onclick="closePop()"></div>
-        <div id="popup">
-            <div id="popup-content"></div>
-            <button id="popup-close-btn" onclick="closePop()" data-i18n="close">Chiudi</button>
+        <!-- COMPLETION BAR -->
+        <div class="completion-summary-inline" id="completionSummaryInline">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+            "
+          >
+            <div class="completion-label-inline" data-i18n="avg_completion">
+              Completamento medio
+            </div>
+          </div>
+          <div id="completionBarBg" class="completion-bar-bg-inline loading">
+            <div
+              id="completionBar"
+              class="completion-bar-fill-inline loading"
+            ></div>
+          </div>
+          <div class="completion-percent-inline hidden" id="completionPercent">
+            <span id="completionText"></span>
+          </div>
         </div>
+
+        <!-- GRID -->
+        <div id="list" class="grid"></div>
+      </div>
+
+      <!-- POPUP -->
+      <div id="overlay" onclick="closePop()"></div>
+      <div id="popup">
+        <div id="popup-content"></div>
+        <button id="popup-close-btn" onclick="closePop()" data-i18n="close">
+          Chiudi
+        </button>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
     <script src="/static/script.js"></script>
-
-    <script>
-        // ─────────────────────────────────────────────
-        //  DRAWER LOGIC
-        // ─────────────────────────────────────────────
-        function toggleDrawer() {
-            const drawer = document.getElementById('filterDrawer');
-            const backdrop = document.getElementById('filterBackdrop');
-            if (drawer.classList.contains('open')) {
-                closeDrawer();
-            } else {
-                drawer.classList.add('open');
-                backdrop.classList.add('visible');
-            }
-        }
-
-        function closeDrawer() {
-            document.getElementById('filterDrawer').classList.remove('open');
-            document.getElementById('filterBackdrop').classList.remove('visible');
-        }
-
-        // ─────────────────────────────────────────────
-        //  BADGE FILTRI ATTIVI
-        // ─────────────────────────────────────────────
-        function updateFilterBadge() {
-            let count = 0;
-
-            // Checkbox stato achievements non selezionate
-            count += document.querySelectorAll('.filter-status:not(:checked)').length;
-
-            // Checkbox installazione non selezionate
-            count += document.querySelectorAll('.filter-install:not(:checked)').length;
-
-            // Checkbox prezzo non selezionate
-            if (!document.getElementById('filterFreeToPlay')?.checked) count++;
-            if (!document.getElementById('filterPaid')?.checked) count++;
-
-            // Slider ore
-            if (typeof playtimeRange !== 'undefined') {
-                if (playtimeRange.min > 0 || playtimeRange.max < 200) count++;
-            }
-
-            // Slider completamento
-            if (typeof completionRange !== 'undefined') {
-                if (completionRange.min > 0 || completionRange.max < 100) count++;
-            }
-
-            // Slider anno
-            if (typeof yearRange !== 'undefined') {
-                if (yearRange.min > 1990 || yearRange.max < 2026) count++;
-            }
-
-            // Genere
-            if (document.getElementById('genreFilter')?.value !== 'all') count++;
-
-            // Ultimo accesso
-            if (document.getElementById('lastPlayedFilter')?.value !== 'all') count++;
-
-            // Sort
-            if (document.getElementById('sortSelect')?.value !== 'played') count++;
-
-            // Ricerca
-            if (document.getElementById('search')?.value?.trim() !== '') count++;
-
-            const badge = document.getElementById('activeFiltersBadge');
-            if (badge) {
-                badge.textContent = count > 0 ? count : '';
-                badge.style.display = count > 0 ? 'inline-flex' : 'none';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('filterDrawer').addEventListener('change', updateFilterBadge);
-            document.getElementById('search')?.addEventListener('input', updateFilterBadge);
-
-            // MutationObserver per gli slider (noUiSlider non emette eventi DOM standard)
-            const sliderObserver = new MutationObserver(updateFilterBadge);
-            const observerConfig = { attributes: true, subtree: true };
-            ['playtimeSlider', 'completionSlider', 'yearSlider'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) sliderObserver.observe(el, observerConfig);
-            });
-
-            updateFilterBadge();
-        });
-    </script>
-</body>
-
+  </body>
 </html>

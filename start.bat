@@ -35,11 +35,22 @@ if %errorlevel% neq 0 (
     echo [OK] Python e gia installato.
 )
 
-:: 4. Installazione dipendenze
+:: 4. Controllo se i requirements sono già installati
+set REQUIREMENTS_CHECK_FILE=requirements_check.txt
+if exist "%REQUIREMENTS_CHECK_FILE%" (
+    echo [INFO] Requirements gia' installati, salto l'installazione.
+    goto START_SERVER
+)
+
+:: Installazione dipendenze
 echo [INFO] Aggiornamento pip e installazione librerie...
 python -m pip install --upgrade pip
 python -m pip install flask flask-cors requests requests-cache waitress
 
+:: Creazione file di controllo per requirements
+echo. > "%REQUIREMENTS_CHECK_FILE%"
+
+:START_SERVER
 :: 5. Avvio server
 if exist server.py (
     echo [OK] Avvio server in corso...
